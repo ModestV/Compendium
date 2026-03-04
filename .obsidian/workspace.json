@@ -36,15 +36,17 @@
             }
           },
           {
-            "id": "8be62ce30239239b",
+            "id": "527f8ad2501044a5",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Учёба/Английский язык/Homeworks/Homework №15 02.25.26.md"
+                "file": "Учёба/Математический анализ/Лекции Математики.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Homework №15 02.25.26"
+              "icon": "lucide-file",
+              "title": "Лекции Математики"
             }
           }
         ],
@@ -243,13 +245,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8be62ce30239239b",
+  "active": "527f8ad2501044a5",
   "lastOpenFiles": [
+    "Учёба/Английский язык/Homeworks/Homework №15 02.25.26.md",
     "Учёба/Английский язык/Homework English.md",
     "Учёба/Математический анализ/Лекции Математики.md",
     "Photoes/Pasted Image 20260303211740_833.png",
     "Photoes/Pasted Image 20260303211812_447.png",
-    "Учёба/Английский язык/Homeworks/Homework №15 02.25.26.md",
     "Photoes/Pasted Image 20260303213309_114.png",
     "Расписание/Модеус.md",
     "README.md",
