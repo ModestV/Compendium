@@ -71,4 +71,7 @@ $$[\hat{A}]_{Б'}=T_{Б' \to Б}\cdot[\hat{A}]_{Б}\cdot T_{Б \to Б'}$$
 $=([\hat{A}]_{Б}+[\hat{B}]_{Б})[\bar{x}]_{Б}$
 	$[\hat{A}+\hat{B}]_{Б}\cdot[\bar{x}]_{Б}=([\hat{A}]_{Б}+[\hat{B}]_{Б})[\bar{x}]_{Б}$ - это верно для любого $\bar{x}\implies[\text{тот же приём, что в теореме 4}]=\left[ \hat{A}+\hat{B} \right]_{Б}=[\hat{A}]_{Б}+[\hat{B}]_{Б}$ 
 2. $(\hat{A}\hat{B})(\bar{x})=\hat{A}(\hat{B}(\bar{x}))$
-$[(\hat{A}\hat{B})(ba)]$
+$[(\hat{A}\hat{B})(\bar{x})]_{Б}=[\hat{A}\hat{B}]_{Б}[\bar{x}]_{Б}$
+$[\hat{A}(\hat{B}(\bar{x}))]_{Б}=[\hat{A}]_{Б} \cdot [\hat{B}(\bar{x})]_{Б}=[\hat{A}]\cdot[\hat{B}]_{Б}\cdot[\bar{x}]_{Б}$
+$[\hat{A}\hat{B}]_{Б}[\bar{x}]_{Б}=[\hat{A}]_{Б}[\hat{B}]_{Б}[\bar{x}]_{Б}$ - это верно для любого $\bar{x\implies[\dots}\implies[\hat{A}\hat{B}]_{Б}=[\hat{A}]_{Б}[\hat{B}]_{Б}$
+3. $(\alpha  \hat{A})(\bar{x})=@$
