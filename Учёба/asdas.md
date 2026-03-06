@@ -14,12 +14,44 @@ $$
 C_{11} \\
 C_{21} \\
 \vdots \\
-C_{n_{1}}
+C_{n1}
 \end{pmatrix}=\begin{pmatrix}
 D_{11} \\
 D_{21} \\
 \vdots \\
-D_{n_{1}}
+D_{n1}
 \end{pmatrix}
 $$Возьмём:
-$$\bar{x}_{n\times1}=\begin{pmatrix}1 \\ 0 \\ 0 \\ \vdots \\ 0\end{pmatrix}$$
+$$\bar{x}_{n\times1}=\begin{pmatrix}0 \\ 1 \\ 0 \\ \vdots \\ 0\end{pmatrix}$$
+$$
+\begin{pmatrix}
+C_{12} \\
+C_{22} \\
+\vdots \\
+C_{n2}
+\end{pmatrix}=\begin{pmatrix}
+D_{12} \\
+D_{22} \\
+\vdots \\
+D_{n2}
+\end{pmatrix}
+$$
+$$
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots.
+$$
+Возьмём:
+$$\bar{x}_{n\times1}=\begin{pmatrix}0 \\ 0 \\  \vdots \\0 \\
+ 1\end{pmatrix}$$
+ $$
+\begin{pmatrix}
+C_{1n} \\
+C_{2n} \\
+\vdots \\
+C_{nn}
+\end{pmatrix}=\begin{pmatrix}
+D_{1n} \\
+D_{2n} \\
+\vdots \\
+D_{nn}
+\end{pmatrix}
+$$
