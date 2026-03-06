@@ -1,7 +1,0 @@
-{
-  "autoSync": true,
-  "bidirectionalSync": false,
-  "pythonInterpreter": "python",
-  "notebookEditorCommand": "jupyter-lab",
-  "enableCodeBlocks": true
-}
