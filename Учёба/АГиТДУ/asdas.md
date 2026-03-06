@@ -73,8 +73,18 @@ $=([\hat{A}]_{Б}+[\hat{B}]_{Б})[\bar{x}]_{Б}$
 2. $(\hat{A}\hat{B})(\bar{x})=\hat{A}(\hat{B}(\bar{x}))$
 $[(\hat{A}\hat{B})(\bar{x})]_{Б}=[\hat{A}\hat{B}]_{Б}[\bar{x}]_{Б}$
 $[\hat{A}(\hat{B}(\bar{x}))]_{Б}=[\hat{A}]_{Б} \cdot [\hat{B}(\bar{x})]_{Б}=[\hat{A}]\cdot[\hat{B}]_{Б}\cdot[\bar{x}]_{Б}$
-$[\hat{A}\hat{B}]_{Б}[\bar{x}]_{Б}=[\hat{A}]_{Б}[\hat{B}]_{Б}[\bar{x}]_{Б}$ - это верно для любого $\bar{x\implies[\dots}\implies[\hat{A}\hat{B}]_{Б}=[\hat{A}]_{Б}[\hat{B}]_{Б}$
+$[\hat{A}\hat{B}]_{Б}[\bar{x}]_{Б}=[\hat{A}]_{Б}[\hat{B}]_{Б}[\bar{x}]_{Б}$ - это верно для любого $\bar{x}\implies[\dots]\implies[\hat{A}\hat{B}]_{Б}=[\hat{A}]_{Б}[\hat{B}]_{Б}$
 3. $(\alpha  \hat{A})(\bar{x})=\alpha \cdot(\hat{A}(\bar{x}))$
 $[(\alpha  \hat{A})(\bar{x})]_{Б}=[\alpha  \hat{A}]_{Б}\cdot[\bar{x}]_{Б}$
 $[\alpha \cdot(\hat{A}(\bar{x}))]_{Б}=\alpha \cdot[\hat{A}(\bar{x})]_{Б}=\alpha[\hat{A}]_{Б}[\bar{x}]_{Б}$
-$[\alpha  \hat{A}]_{Б}[\bar{x}]_{Б}=\alpha[\hat{A}]_{Б}[\bar{x}]_{Б}$ - это верно для любого $\bar{x}\implies[\dots}\implies[\alpha  \hat{A}]_{Б}=\alpha[\hat{A}]_{Б}$
+$[\alpha  \hat{A}]_{Б}[\bar{x}]_{Б}=\alpha[\hat{A}]_{Б}[\bar{x}]_{Б}$ - это верно для любого $\bar{x}\implies[\dots\implies][\alpha  \hat{A}]_{Б}=\alpha[\hat{A}]_{Б}$
+
+
+Данная теорема, строго говоря, должна предшествовать утверждению линейности, но линейность очевидна:
+$$
+(\hat{A}+\hat{B})(\alpha  \bar{x}+\beta  \bar{y})=\hat{A}(\alpha  \bar{x}+  \beta  \bar{y})+\hat{B}(\alpha  \bar{x}+  \beta  \bar{y})=
+$$
+$$
+\alpha  \hat{A}(\bar{x})+\beta  \hat{A}(\bar{y})+\alpha  \hat{A}(\bar{x})+\alpha  \hat{A}(\bar{x})
+$$
+
