@@ -65,4 +65,6 @@ $$[\hat{A}]_{Б'}=T_{Б' \to Б}\cdot[\hat{A}]_{Б}\cdot T_{Б \to Б'}$$
 3. $\forall \alpha \in P$    $[\alpha  \hat{A}]_{Б}=\alpha[\hat{A}]_{Б}$
 
 <font color="#60d6a7"><u>Доказательство.</u></font>
-1
+1. $(\hat{A}+\hat{B})(\bar{x})=\hat{A}(\bar{x})+\hat{B}(\bar{x})$
+	$[(\bar{A}+\bar{B})(\bar{x})]_{Б}=[\hat{A}+\hat{B}]_{Б}\cdot[\bar{x}]_{Б}$
+	$[\hat{A}(\bar{x})]+\hat{B}(\bar{x})]_{[}$
