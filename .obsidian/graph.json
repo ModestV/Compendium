@@ -4,9 +4,16 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": false,
+  "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
+    {
+      "query": "Экзамен",
+      "color": {
+        "a": 1,
+        "rgb": 14701233
+      }
+    },
     {
       "query": "АГиТДУ",
       "color": {
@@ -62,13 +69,6 @@
         "a": 1,
         "rgb": 1769702
       }
-    },
-    {
-      "query": "",
-      "color": {
-        "a": 1,
-        "rgb": 14701233
-      }
     }
   ],
   "collapse-display": true,
@@ -81,6 +81,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.25883865621816293,
+  "scale": 0.258838656218164,
   "close": false
 }
