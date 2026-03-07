@@ -1,0 +1,86 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "АГиТДУ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "Матан",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "Дискретка",
+      "color": {
+        "a": 1,
+        "rgb": 3595059
+      }
+    },
+    {
+      "query": "АДиИИ",
+      "color": {
+        "a": 1,
+        "rgb": 1028326
+      }
+    },
+    {
+      "query": "English",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "Python",
+      "color": {
+        "a": 1,
+        "rgb": 10625512
+      }
+    },
+    {
+      "query": "Физика",
+      "color": {
+        "a": 1,
+        "rgb": 12309007
+      }
+    },
+    {
+      "query": "ИТиС",
+      "color": {
+        "a": 1,
+        "rgb": 1769702
+      }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 14701233
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.25883865621816293,
+  "close": false
+}
