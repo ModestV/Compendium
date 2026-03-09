@@ -80,3 +80,5 @@ $[\alpha \cdot(\hat{A}(\bar{x}))]_{Б}=\alpha \cdot[\hat{A}(\bar{x})]_{Б}=\alph
 $[\alpha  \hat{A}]_{Б}[\bar{x}]_{Б}=\alpha[\hat{A}]_{Б}[\bar{x}]_{Б}$ - это верно для любого $\bar{x}\implies[\dots\implies][\alpha  \hat{A}]_{Б}=\alpha[\hat{A}]_{Б}$
 
 ### <font color="#FFB100">§2 Ядро и область линейных пространств</font>
+
+
