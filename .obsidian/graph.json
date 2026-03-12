@@ -69,6 +69,13 @@
         "a": 1,
         "rgb": 1769702
       }
+    },
+    {
+      "query": "ОПД",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
     }
   ],
   "collapse-display": true,
