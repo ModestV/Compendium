@@ -79,3 +79,47 @@ def rational_to_decimal(numerator: int, denominator: int, precision: int = 10) -
 print(rational_to_decimal(1234567,9876543))
 ```
 
+# Задание 3.
+
+```Python
+def custom_string_to_int(string_representation: str) -> int:
+    """
+    Converts a string representation of an integer to its corresponding int value.
+
+    Args:
+    string_representation (str): The string to convert. Must represent a valid integer.
+
+    Returns:
+    int: The integer value represented by the string.
+
+    Raises:
+    ValueError: If the input string is not a valid integer representation.
+    """
+    if not isinstance(string_representation, str):
+        raise ValueError("Это не строка")
+    if string_representation == "":
+        raise ValueError("Пустую строку нельзя обработать")
+    index = 0
+    sign = 1
+    result = 0
+    # Обработка знака
+    if string_representation[0] == "-":
+        sign = -1
+        index = 1
+    elif string_representation[0] == "+":
+        index = 1
+    # Если строка состоит только из знака
+    if index == len(string_representation):
+        raise ValueError()
+    # Обработка цифр
+    while index < len(string_representation):
+        char = string_representation[index]
+        # Проверка, что символ является цифрой
+        if char < '0' or char > '9':
+            raise ValueError()
+        digit = ord(char) - ord('0')
+        result = result * 10 + digit
+        index += 1
+    return sign * result
+print(custom_string_to_int("0"))
+```
