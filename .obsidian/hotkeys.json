@@ -7,20 +7,34 @@
       "key": "`"
     }
   ],
-  "callout-manager:manage-callouts": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "Q"
-    }
-  ],
   "obsidian-text-format:callout": [
     {
       "modifiers": [
         "Mod"
       ],
       "key": "A"
+    }
+  ],
+  "workspace:next-tab": [
+    {
+      "modifiers": [
+        "Ctrl"
+      ],
+      "key": "PageDown"
+    }
+  ],
+  "text-snippets-obsidian:text-snippets": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "tab"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
     }
   ]
 }
