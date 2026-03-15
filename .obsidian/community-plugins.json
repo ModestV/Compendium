@@ -10,5 +10,6 @@
   "system3-relay",
   "obsidian-text-format",
   "obsidian-full-calendar",
-  "callout-manager"
+  "callout-manager",
+  "obsidian-meta-bind-plugin"
 ]
