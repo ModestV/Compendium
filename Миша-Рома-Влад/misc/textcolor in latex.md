@@ -1,3 +1,4 @@
+
 $$
 \begin{vmatrix}
 \textcolor{GreenYellow}{GreenYellow}\\
