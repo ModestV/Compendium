@@ -6,5 +6,21 @@
       ],
       "key": "`"
     }
+  ],
+  "callout-manager:manage-callouts": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
+    }
+  ],
+  "obsidian-text-format:callout": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "A"
+    }
   ]
 }
