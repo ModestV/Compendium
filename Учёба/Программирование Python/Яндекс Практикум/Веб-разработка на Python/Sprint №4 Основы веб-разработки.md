@@ -22,8 +22,14 @@
 ## <font color="#FFD473">Пути и view-функции</font>
 ### <font color="#FFB100">Планирование адресов и конвертеры путей</font>
 ### <font color="#FFB100">Распределение адресов по приложениям</font>
-
-### iew-функции: от запроса до ответа
-
+### <font color="#FFB100">view-функции: от запроса до ответа</font>
 ## <font color="#FFD473">Вёрстка для бэкенда</font>
+### <font color="#FFB100">Веб-страницы: язык HTML</font>
+### <font color="#FFB100">Структура HTML-документа</font>
+
+### <font color="#FFB100">CSS: стили, селекторы и синтаксис</font>
+
+### <font color="#FFB100">Иерархия HTML-документа и наследование стилей</font>
+
+### <font color="#FFB100">Фреймворк Bootstrap: быстрая HTML-вёрстка</font>
 ## <font color="#FFD473">HTML  и шаблоны Django</font>
