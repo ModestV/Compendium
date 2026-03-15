@@ -1,4 +1,5 @@
-Оператор SELECT
+#СиВД 
+# Оператор SELECT
 
 ```PostgreSQL
 SELECT * FROM superheroes
@@ -36,7 +37,7 @@ LIMIT 10
 
 (•) Ключевое слово LIMIT позволяет вывести только определённое количество результатов, то есть N-количество строк столбцов
 
-Оператор WHERE
+# Оператор WHERE
 
 ```PostgreSQL
 SELECT *
@@ -122,7 +123,7 @@ WHERE hair NOT IN ('Blond Hair','Black Hair','Brown Hair','Red Hair')
 
 (•) Применение операции NOT в связке с IN: ''Все супергерои, волосы которых необычного цвета"
 
-Оператор ORDER BY
+# Оператор ORDER BY
 
 ```PostgreSQL
 SELECT *
