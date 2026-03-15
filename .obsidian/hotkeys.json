@@ -32,9 +32,15 @@
     },
     {
       "modifiers": [
+        "Shift"
+      ],
+      "key": " "
+    },
+    {
+      "modifiers": [
         "Mod"
       ],
-      "key": "Q"
+      "key": " "
     }
   ]
 }
