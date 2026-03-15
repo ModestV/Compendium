@@ -83,6 +83,13 @@
         "a": 1,
         "rgb": 10383381
       }
+    },
+    {
+      "query": "ВвИД",
+      "color": {
+        "a": 1,
+        "rgb": 2765310
+      }
     }
   ],
   "collapse-display": true,
