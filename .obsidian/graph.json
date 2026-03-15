@@ -71,17 +71,17 @@
       }
     },
     {
-      "query": "",
-      "color": {
-        "a": 1,
-        "rgb": 14701138
-      }
-    },
-    {
       "query": "ОПД",
       "color": {
         "a": 1,
         "rgb": 14221189
+      }
+    },
+    {
+      "query": "СиВД",
+      "color": {
+        "a": 1,
+        "rgb": 10383381
       }
     }
   ],
@@ -90,11 +90,11 @@
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
+  "collapse-forces": false,
   "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.3628873693012164,
+  "repelStrength": 8.75,
+  "linkStrength": 0.71875,
+  "linkDistance": 99,
+  "scale": 0.25883865621816626,
   "close": false
 }
