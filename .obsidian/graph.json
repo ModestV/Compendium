@@ -4,7 +4,7 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": true,
+  "showOrphans": false,
   "collapse-color-groups": false,
   "colorGroups": [
     {
@@ -88,7 +88,7 @@
       "query": "ВвИД",
       "color": {
         "a": 1,
-        "rgb": 2765310
+        "rgb": 8063601
       }
     }
   ],
@@ -102,6 +102,6 @@
   "repelStrength": 8.75,
   "linkStrength": 0.71875,
   "linkDistance": 99,
-  "scale": 0.3628873693012167,
+  "scale": 0.25883865621816654,
   "close": false
 }
