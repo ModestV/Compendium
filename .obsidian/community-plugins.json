@@ -11,5 +11,7 @@
   "obsidian-text-format",
   "obsidian-full-calendar",
   "callout-manager",
-  "obsidian-meta-bind-plugin"
+  "obsidian-meta-bind-plugin",
+  "templater-obsidian",
+  "quickadd"
 ]
