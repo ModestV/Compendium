@@ -8,10 +8,8 @@
   "obsidian-plotly",
   "obsidian-latex-suite",
   "system3-relay",
-  "obsidian-text-format",
   "obsidian-full-calendar",
   "callout-manager",
   "obsidian-meta-bind-plugin",
-  "templater-obsidian",
-  "quickadd"
+  "text-snippets-obsidian"
 ]
