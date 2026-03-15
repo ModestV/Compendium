@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "ОПД",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -102,6 +102,6 @@
   "repelStrength": 8.75,
   "linkStrength": 0.71875,
   "linkDistance": 99,
-  "scale": 0.3628873693012185,
+  "scale": 0.9154683103853142,
   "close": false
 }
