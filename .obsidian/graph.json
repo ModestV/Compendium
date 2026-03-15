@@ -1,10 +1,10 @@
 {
   "collapse-filter": false,
-  "search": "ОПД",
+  "search": "Экзамен",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": false,
+  "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
     {
@@ -102,6 +102,6 @@
   "repelStrength": 8.75,
   "linkStrength": 0.71875,
   "linkDistance": 99,
-  "scale": 0.9154683103853142,
+  "scale": 0.4940023407144776,
   "close": false
 }
