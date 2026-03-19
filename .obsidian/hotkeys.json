@@ -49,13 +49,31 @@
         "Mod"
       ],
       "key": "U"
-    },
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "Q"
     }
   ],
-  "workspace:goto-tab-1": []
+  "workspace:goto-tab-1": [],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957396723": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "1"
+    }
+  ],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957457226": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "2"
+    }
+  ],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957426938": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "3"
+    }
+  ]
 }
