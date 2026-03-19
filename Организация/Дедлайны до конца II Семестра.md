@@ -55,7 +55,8 @@
 - [ ] Библиотека TensorFlow
 - [ ] Библиотека CatBoost
 - [ ] Платформа Hugging Face и её библиотеки
-- [ ] Promt En
+- [ ] Основы Prompt Engineering
+- [ ] Линейная Регрессия
 ### Конспект: ОПД
 - [ ] SMART(ER)
 - [ ] Waterfall & Agile
