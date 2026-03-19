@@ -12,5 +12,6 @@
   "callout-manager",
   "obsidian-meta-bind-plugin",
   "text-snippets-obsidian",
-  "obsidian-task-progress-bar"
+  "obsidian-task-progress-bar",
+  "obsidian-wrap-with-shortcuts"
 ]
