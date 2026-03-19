@@ -40,14 +40,15 @@
 - [ ] Физика: Лабораторная №5 
 - [ ] Физика: Лабораторная №6 
 - [ ] Физика: Лабораторная №7 
-- [ ] АГиТДУ: Тест №1 (31/05/26)
+- [ ] АГиТДУ: Тест №1 (31/05/26) 
 - [ ] АГиТДУ: КР
 - [ ] Python: Warm Up (23/02/26)
-- [ ] Python: Brain Workout Pt0 (01/03/26)
-- [ ] Python: Remember Everything 0 (15/03/26)
-- [ ] Python: Memory Map Pt1 (15/03/26)
-- [ ] Python: Brain Workout Pt1 (15/03/26)
-- [ ] Python: Защита №1 (25/03/26)
-- [ ] Python: Защита №2
+- [x] Python: Brain Workout Pt0 (01/03/26)
+- [x] Python: Remember Everything 0 (15/03/26)
+- [x] Python: Memory Map Pt1 (15/03/26)
+- [x] Python: Brain Workout Pt1 (15/03/26)
+- [ ] Python: Защита Remember Everything 0 (25/03/26)
+- [ ] Python: LinkedLists and Co Pt0 (29/03/26)
+- [ ] Python: Brain Workout Pt2 (29/03/26)
 - [ ] Python: Коллоквиум
 - [ ] Python: Игра на Pygame
