@@ -50,10 +50,12 @@
 - [ ] Библиотеку NumPy
 - [ ] Библиотеку Pandas
 - [ ] Библиотека Matplotlib
+- [ ] Библиотека SciPy
 - [ ] Библиотека PyTorch
 - [ ] Библиотека TensorFlow
-- [ ] 
-
+- [ ] Библиотека CatBoost
+- [ ] Платформа Hugging Face и её библиотеки
+- [ ] Promt En
 ### Конспект: ОПД
 - [ ] SMART(ER)
 - [ ] Waterfall & Agile
