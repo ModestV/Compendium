@@ -49,6 +49,13 @@
         "Mod"
       ],
       "key": "U"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
     }
-  ]
+  ],
+  "workspace:goto-tab-1": []
 }
