@@ -71,8 +71,7 @@ WHERE year BETWEEN 2000 and 2005
 SELECT *
 FROM superheroes
 WHERE hair IN ('Strawberry Blond Hair', 'Red Hair', 'Auburn Hair')
-```
-
+ ```
 (•) Применение оператора IN: "Все супергерои, волосы которых попадают в указанные список"
 
 ```PostgreSQL
