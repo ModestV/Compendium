@@ -396,52 +396,52 @@
 	- [ ] <font color="#FFD473">Права лимиты запросов</font>
 		- [ ] Что будет в спринте
 		- [ ] Проверка прав: Permissions
-		- [ ] Throttling: ограничение количества запросов
-		- [ ] Пагинация в API
-		- [ ] Фильтрация, сортировка и поиск
+		- [ ] <font color="#FFB100">Throttling: ограничение количества запросов</font>
+		- [ ] <font color="#FFB100">Пагинация в API</font>
+		- [ ] <font color="#FFB100">Фильтрация, сортировка и поиск</font>
 	- [ ] <font color="#FFD473">Взаимодействие фронтенда и бэкенда</font>
-		- [ ] Добавление фотографий. Упрощаем взаимодействие с фронтендом
-		- [ ] Multi Page Application vs Single Page Application
-		- [ ] Документация для API
-		- [ ] SPA для Kittygram
-		- [ ] CORS и политика единого источника
-		- [ ] Обзор проекта Kittygram
+		- [ ] <font color="#FFB100">Добавление фотографий. Упрощаем взаимодействие с фронтендом</font>
+		- [ ] <font color="#FFB100">Multi Page Application vs Single Page Application</font>
+		- [ ] <font color="#FFB100">Документация для API</font>
+		- [ ] <font color="#FFB100">SPA для Kittygram</font>
+		- [ ] <font color="#FFB100">CORS и политика единого источника</font>
+		- [ ] <font color="#FFB100">Обзор проекта Kittygram</font>
 	- [ ] <font color="#FFD473">Проект. API для Yatube</font>
-		- [ ] Подготовка к работе над проектом
-		- [ ] Проверка проекта
-		- [ ] Проект. API для Yatube
-		- [ ] Чек-лист для проверка
-		- [ ] Обратная связь о курсе
+		- [ ] <font color="#FFB100"> <font color="#FFB100"></font>Подготовка к работе над проектом</font>
+		- [ ] <font color="#FFB100">Проверка проекта</font>
+		- [ ] <font color="#FFB100">Проект. API для Yatube</font>
+		- [ ] <font color="#FFB100">Чек-лист для проверка</font>
+		- [ ] <font color="#FFB100">Обратная связь о курсе</font>
 - [ ] <font color="#9F3ED5">Docker для Python-разработчика</font>
 	- [ ] <font color="#FFD473">Работа на сервере</font>
-		- [ ] Введение в спринт
-		- [ ] Введение в DevOps. Куда деплоить приложение
-		- [ ] Подключение к серверу
-		- [ ] Внеплановая задача и первый деплой
-		- [ ] Server Gateway Interface: выбор, установка и управление
-		- [ ] Веб- и обратный прокси-сервер Nginx: установка и настройка
+		- [ ] <font color="#FFB100">Введение в спринт</font>
+		- [ ] <font color="#FFB100">Введение в DevOps. Куда деплоить приложение</font>
+		- [ ] <font color="#FFB100">Подключение к серверу</font>
+		- [ ] <font color="#FFB100">Внеплановая задача и первый деплой</font>
+		- [ ] <font color="#FFB100">Server Gateway Interface: выбор, установка и управление</font>
+		- [ ] <font color="#FFB100">Веб- и обратный прокси-сервер Nginx: установка и настройка</font>
 	- [ ] <font color="#FFD473">Docker: приложение в коробке</font>
-		- [ ] Новая задача: проект в коробочке
-		- [ ] Виртуальные машины и контейнеры
-		- [ ] Установка Docker
-		- [ ] Запуск приложений в docker-контейнерах
-		- [ ] Упаковка проекта в Docker-образ
-		- [ ] Сервер Gunicorn и Docker volume
-		- [ ] DockerHub
-		- [ ] Архитектура приложения в Docker
-		- [ ] PostgreSQL n Docker Network
-		- [ ] Docker-compose: сборка проекта
-		- [ ] Docker-compose: Nginx и статика
+		- [ ] <font color="#FFB100">Новая задача: проект в коробочке</font>
+		- [ ] <font color="#FFB100">Виртуальные машины и контейнеры</font>
+		- [ ] <font color="#FFB100">Установка Docker</font>
+		- [ ] <font color="#FFB100">Запуск приложений в docker-контейнерах</font>
+		- [ ] <font color="#FFB100">Упаковка проекта в Docker-образ</font>
+		- [ ] <font color="#FFB100">Сервер Gunicorn и Docker volume</font>
+		- [ ] <font color="#FFB100">DockerHub</font>
+		- [ ] <font color="#FFB100">Архитектура приложения в Docker</font>
+		- [ ] <font color="#FFB100">PostgreSQL n Docker Network</font>
+		- [ ] <font color="#FFB100">Docker-compose: сборка проекта</font>
+		- [ ] <font color="#FFB100">Docker-compose: Nginx и статика</font>
 	- [ ] <font color="#FFD473">Автоматизация. Деплой на сервер</font>
-		- [ ] Автоматизация деплоя: CI/CD
-		- [ ] GitHub Actions. Первый workflow
-		- [ ] Workflow для CI: линтер и тесты
-		- [ ] Workflow для CD: сборка образов и перезапуск контейнеров
+		- [ ] <font color="#FFB100">Автоматизация деплоя: CI/CD</font>
+		- [ ] <font color="#FFB100">GitHub Actions. Первый workflow</font>
+		- [ ] <font color="#FFB100">Workflow для CI: линтер и тесты</font>
+		- [ ] <font color="#FFB100">Workflow для CD: сборка образов и перезапуск контейнеров</font>
 	- [ ] <font color="#FFD473">Проект. Контейнеры и CI/CD для Kittygram</font>
-		- [ ] Подготовка к работе над проектом
-		- [ ] Проект. Контейнеры и CI/CD для Kittygram
-		- [ ] Чек-лист. Автоматическое тестирование и деплой проекта Kittygram с применением CI/CD
-		- [ ] Обратная связь о курсе
+		- [ ] <font color="#FFB100">Подготовка к работе над проектом</font>
+		- [ ] <font color="#FFB100">Проект. Контейнеры и CI/CD для Kittygram</font>
+		- [ ] <font color="#FFB100">Чек-лист. Автоматическое тестирование и деплой проекта Kittygram с применением CI/CD</font>
+		- [ ] <font color="#FFB100">Обратная связь о курсе</font>
 - [ ]<font color="#9F3ED5"> Финальный проект</font>
 	- [ ] <font color="#FFD473">В шаге от новой вершины</font>
 	- [ ] <font color="#FFD473">TeamFinder: функциональность проекта</font>
@@ -454,18 +454,18 @@
 	- [ ] <font color="#FFD473">Обратная связь о курсе</font>
 - [ ] <font color="#9F3ED5">Использование ИИ в разработке</font>
 	- [ ] <font color="#FFD473">Введение в искусственный интеллект</font>
-		- [ ] Эволюция ИИ
-		- [ ] Как работают нейросети
-		- [ ] Безопасность и этика
-		- [ ] Выбор инструментов
-		- [ ] Основы промт-инжиниринга
+		- [ ] <font color="#FFB100">Эволюция ИИ</font>
+		- [ ] <font color="#FFB100">Как работают нейросети</font>
+		- [ ] <font color="#FFB100">Безопасность и этика</font>
+		- [ ] <font color="#FFB100">Выбор инструментов</font>
+		- [ ] <font color="#FFB100">Основы промт-инжиниринга</font>
 	- [ ] <font color="#FFD473">ИИ для обучения и исследований</font>
-		- [ ] Поиск информации и объяснение теории
-		- [ ] Генерация учебных задач для практики
-		- [ ] Планирование работы по проекту
+		- [ ] <font color="#FFB100">Поиск информации и объяснение теории</font>
+		- [ ] <font color="#FFB100">Генерация учебных задач для практики</font>
+		- [ ] <font color="#FFB100">Планирование работы по проекту</font>
 	- [ ] <font color="#FFD473">Базовые кейсы в разработке</font>
-		- [ ] Генерация фрагментов кода
-		- [ ] Отладка кода
-		- [ ] Документирование
-		- [ ] Генерация тестовых данных и автотестов
-		- [ ] Обратная связь о курсе
+		- [ ] <font color="#FFB100">Генерация фрагментов кода</font>
+		- [ ] <font color="#FFB100">Отладка кода</font>
+		- [ ] <font color="#FFB100">Документирование</font>
+		- [ ] <font color="#FFB100">Генерация тестовых данных и автотестов</font>
+		- [ ] <font color="#FFB100">Обратная связь о курсе</font>
