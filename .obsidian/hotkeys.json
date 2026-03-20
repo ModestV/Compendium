@@ -52,10 +52,29 @@
     }
   ],
   "workspace:goto-tab-1": [],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957426938": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "2"
+    }
+  ],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773977815900": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "5"
+    }
+  ],
   "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957396723": [
     {
       "modifiers": [
-        "Alt"
+        "Alt",
+        "Shift"
       ],
       "key": "1"
     }
@@ -63,17 +82,19 @@
   "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957457226": [
     {
       "modifiers": [
-        "Alt"
-      ],
-      "key": "2"
-    }
-  ],
-  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773957426938": [
-    {
-      "modifiers": [
-        "Alt"
+        "Alt",
+        "Shift"
       ],
       "key": "3"
+    }
+  ],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1773977779375": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "4"
     }
   ]
 }
