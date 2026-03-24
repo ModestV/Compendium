@@ -16,8 +16,19 @@
 - [ ] Конспект: Матан
 
 ### Стажировки:
-- [ ] Контур: Data Science
-
+- [ ] Контур: Data Science:
+	- [ ] SQL
+	- [ ] Git
+	- [ ] Python
+	- [ ] pandas
+	- [ ] numpy
+	- [ ] matplotlib
+	- [ ] scikit-learn
+	- [ ] lightgbm
+	- [ ] pytorch
+	- [ ] tensorflow
+	- [ ] 02.04 - 20.04 - Тестовое задание
+- [ ] Т-Образование:
 ### Дедлайны:
 - [x] СиВД: SQL (03/03/26)
 - [x] СиВД: Pandas (12/03/26)
