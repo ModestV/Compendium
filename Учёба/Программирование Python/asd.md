@@ -27,6 +27,54 @@
 - После вопросительного знака могут идти параметры, они отделяются друг от друга символом &.
 - Кодирование URL: если в URL применяются "запрещённые" символы, их кодируют с помощью "разрешённых".
 #### <font color="#FFB100">Кириллица в адресной строке</font>
+- Кириллица в адресах может вызывать проблемы при отображении.
+- Браузеры и Python-библиотека urllib.parse могут кодировать и декодировать адреса.
+- Функция quote() из urllib.parse заменяет запрещенные символы на допустимые.
+- Функция unquote() из urllib.parse преобразует закодированные символы в читаемые.
+```python
+import urllib.parse
+
+strings = [
+    'Что такое backend',
+    'Привет!',
+    ' ',        # Просто пробел.
+    'letiště',  # Аэропорт по-чешски.
+    'München',  # Крупнейший город Баварии.
+    'Champs-Élysées',  # Елисейские поля.
+    '東京',     # А это Токио.
+]
+
+for s in strings:
+    encoded = urllib.parse.quote(s)          # Зашифрованная строка.
+    decoded = urllib.parse.unquote(encoded)  # Расшифрованная обратно строка.
+    print(decoded, '-', encoded)
+```
+
+```
+Результат
+
+Что такое backend - %D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20backend
+Привет! - %D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21
+  - %20
+letiště - leti%C5%A1t%C4%9B
+München - M%C3%BCnchen
+Champs-Élysées - Champs-%C3%89lys%C3%A9es
+東京 - %E6%9D%B1%E4%BA%AC
+```
+
+- Задача: расшифровать запрос пользователя и ответить на него.
+```python
+import urllib.parse
+
+
+url = 'https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B5%D0%B7%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%20%D1%82%D0%B0%D0%BA%D1%81%D0%B8'
+
+question = url.split('=')[1]
+
+print(urllib.parse.unquote(question))
+```
+
+
 #### <font color="#FFB100">Исходный код страницы</font>
 #### <font color="#FFB100">HTTP-ответы</font>
 #### <font color="#FFB100">HTTP-запросы</font>
