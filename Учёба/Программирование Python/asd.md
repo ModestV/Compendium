@@ -74,6 +74,11 @@ question = url.split('=')[1]
 print(urllib.parse.unquote(question))
 ```
 
+```
+Результат
+
+как бесплатно ездить на такси
+```
 
 #### <font color="#FFB100">Исходный код страницы</font>
 #### <font color="#FFB100">HTTP-ответы</font>
