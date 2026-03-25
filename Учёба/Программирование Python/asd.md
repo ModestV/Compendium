@@ -176,7 +176,6 @@ print(response.url)
 https://yandex.ru/search/?text=%D1%87%D1%82%D0%BE+%D1%82%D0%B0%D0%BA%D0%BE%D0%B5+backend&lr=213
 ```
 
-
 #### <font color="#FFB100">Заголовки запросов и ответов</font>
 #### <font color="#FFB100">Обработка ошибок</font>
 #### <font color="#FFB100">Анфиса на все руки</font>
