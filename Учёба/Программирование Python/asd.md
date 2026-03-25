@@ -150,6 +150,33 @@ print(response.text) # Печатаем код запрошенной стран
 ```
 
 #### <font color="#FFB100">Передаём параметры в URL</font>
+- Python позволяет удобно формировать адреса URL с параметрами из словаря.
+- Функция get() производит нужные преобразования, нужно лишь передать параметры через именованный аргумент params.
+- Бывают такие параметры, которым не нужно присваивать значение, а достаточно передать только имя.
+- Для таких параметров в словаре в качестве значения указывается пустая строка.
+
+```python
+import requests
+
+search_parameters = {
+    'text': 'что такое backend',
+    'lr': 213
+}
+url = 'https://yandex.ru/search/'
+# Функция get() приняла на вход URL и параметры поиска,
+# а дальше она знает, что делать
+response = requests.get(url, params=search_parameters)
+
+print(response.status_code)
+print(response.url)
+```
+
+```
+200
+https://yandex.ru/search/?text=%D1%87%D1%82%D0%BE+%D1%82%D0%B0%D0%BA%D0%BE%D0%B5+backend&lr=213
+```
+
+
 #### <font color="#FFB100">Заголовки запросов и ответов</font>
 #### <font color="#FFB100">Обработка ошибок</font>
 #### <font color="#FFB100">Анфиса на все руки</font>
