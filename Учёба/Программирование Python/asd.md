@@ -799,6 +799,76 @@ admin/
 
 ---
 #### <font color="#FFB100">Распределение адресов по приложениям</font>
+- Файлы urls.py из приложений подключаются к корневому файлу urls.py с помощью функции include().
+- Адреса проектируют так, чтобы они соответствовали названиям приложений, в которых эти адреса обрабатываются.
+- Django даёт возможность разделить список urlpatterns на части в соответствии с приложениями и хранить эти части в директориях приложений.
+- В корневом urls.py указывают ссылки на файлы urls.py приложений.
+- При запросе к URL catalog/1/ в корневом файле urls.py сработает путь path('catalog/', include('catalog.urls')).
+- Отдельное приложение для главной страницы - homepage - создавать не обязательно.
+
+Чтобы сослаться из корневого _urls.py_ на файлы _urls.py_ приложений, применяют функцию `include()` (англ. «включить», «встроить»); её указывают вторым аргументом в `path()`, вместо имени view-функции:
+```python
+# Корневой файл urls.py 
+
+# Импортируем встроенные функции include() и path().
+from django.urls import include, path
+
+urlpatterns = [    
+    # Если на сервер пришёл запрос к главной странице,
+    # Django проверит на совпадение с запрошенным URL 
+    # все path() в файле urls.py приложения homepage.
+    path('', include('homepage.urls')),
+
+    # Если в приложении homepage не найдётся совпадений,
+    # Django продолжит искать совпадения здесь, в корневом файле urls.py.
+
+    # Если запрос начинается с catalog/, 
+    # Django будет искать совпадения в файле urls.py
+    # приложения catalog.
+    path('catalog/', include('catalog.urls')),
+]
+```
+
+Приложение **homepage** создано для одной-единственной задачи: обрабатывать запросы только к главной странице — и ни к каким другим. Поэтому файл _urls.py_ этого приложения будет работать только с одним адресом:
+
+```python
+# homepage/urls.py
+
+# Импортируем функцию path() 
+# и файл homepage/views.py, в котором объявлена view-функция index().
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    # Если вызван URL без относительного адреса (шаблон — пустые кавычки),
+    # то вызывается view-функция index() из файла views.py
+    path('', views.index),
+]
+```
+
+Файл _urls.py_ приложения **catalog**:
+
+```python
+# catalog/urls.py
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    # Если пришёл запрос к относительному URL catalog/,
+    # то запрос из корневого urls.py перенаправляется сюда, 
+    # в файл catalog/urls.py;
+    # и если в запросе после 'catalog/' ничего нет (пустая строка),
+    # будет вызвана view-функция product_list() из файла catalog/views.py
+    path('', views.product_list),
+
+    # Если в запросе после 'catalog/' стоит '1/' или '2/',
+    # будет вызвана view-функция product_detail() из файла catalog/views.py
+    path('1/', views.product_detail),
+    path('2/', views.product_detail),
+]
+```
 #### <font color="#FFB100">View-фуункции: от запроса до ответа</font>
 ### <font color="#FFD473">Вёрстка для бэкендера</font>
 #### <font color="#FFB100">Веб-страницы: язык HTML</font>
