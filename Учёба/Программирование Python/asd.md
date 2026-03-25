@@ -564,7 +564,21 @@ Django появился в 2005 году. С тех пор тысячи спец
 
 Запуск Django-проекта:
 
+```bash
+python manage.py runserver # В Windows
+# или
+python3 manage.py runserver # В Linux/macOS.
 
+# В последующих примерах команд мы будем указывать только один вариант;
+# если у вас Windows - пишите python;
+# если у вас Linux или macOS - пишите python3.
+```
+
+```bash
+...
+Starting development server at <http://127.0.0.1:8000/>
+Quit the server with CTRL-BREAK.
+```
 #### <font color="#FFB100">Приложения в Django-проекте</font>
 ### <font color="#FFD473">Пути и view-функции</font>
 #### <font color="#FFB100">Планирование адресов и конвертеры путей</font>
