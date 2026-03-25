@@ -635,6 +635,8 @@ class CatalogConfig(AppConfig):
 ```
 ### <font color="#FFD473">Пути и view-функции</font>
 #### <font color="#FFB100">Планирование адресов и конвертеры путей</font>
+
+
 #### <font color="#FFB100">Распределение адресов по приложениям</font>
 #### <font color="#FFB100">View-фуункции: от запроса до ответа</font>
 ### <font color="#FFD473">Вёрстка для бэкендера</font>
