@@ -1,7 +1,15 @@
 ## <font color="#9F3ED5">Основы веб-разработки</font>
 ### <font color="#FFD473">Протокол HTTP</font>
 #### <font color="#FFB100">Введение в спринт</font>
+- Спринт начинается с знакомства с Django, популярным фреймворком для веб-разработки на Python.
+- Обучение созданию проектов на Django, изучению HTTP и типичному проекту на Django.
+- Освоение верстки и подключение ее к проекту на Django.
+- Использование настольного учебного проекта для погружения в новые темы.
+- Важность знания HTML и работы с версткой для успешной карьеры в разработке.
+- Финальный проект: создание платформы для блогеров, продолжение работы над проектом в других спринтах курса.
+- Завершение вводного инструктажа, начало учебы и вера в успех.
 #### <font color="#FFB100">Что такое протокол</font>
+
 #### <font color="#FFB100">Подробнее об URL</font>
 #### <font color="#FFB100">Кириллица в адресной строке</font>
 #### <font color="#FFB100">Исходный код страницы</font>
@@ -67,22 +75,22 @@
 #### <font color="#FFB100">Описание связей между моделями</font>
 #### <font color="#FFB100">Наследование от абстрактных моделей</font>
 #### <font color="#FFB100">Миграции</font>
-		- [ ] <font color="#FFB100">Django shell. CRUD-операции в Django ORM</font>
-		- [ ] <font color="#FFB100">Заполнение БД и выгрузка информации из неё</font>
+#### <font color="#FFB100">Django shell. CRUD-операции в Django ORM</font>
+#### <font color="#FFB100">Заполнение БД и выгрузка информации из неё</font>
 ### <font color="#FFD473">Админ-зона Django</font>
-		- [ ] <font color="#FFB100">Создание суперпользователя. Регистрация моделей в админке</font>
-		- [ ] <font color="#FFB100">Локализация и перевод</font>
-		- [ ] <font color="#FFB100">Тонкая настройка админ-зоны</font>
+#### <font color="#FFB100">Создание суперпользователя. Регистрация моделей в админке</font>
+#### <font color="#FFB100">Локализация и перевод</font>
+#### <font color="#FFB100">Тонкая настройка админ-зоны</font>
 ### <font color="#FFD473">Django ORM. Получение информации из БД</font>
-		- [ ] <font color="#FFB100">Django Debug Toolbar</font>
-		- [ ] <font color="#FFB100">SELECT и FROM через ORM</font>
-		- [ ] <font color="#FFB100">Фильтрация WHERE: методы filter() и exclude</font>
-		- [ ] <font color="#FFB100">Условия AND, OR, NOT. Q-объекты</font>
-		- [ ] <font color="#FFB100">Сортировка ORDER BY, ограничение LIMIT и сдвиг OFFSET</font>
-		- [ ] <font color="#FFB100">Получение отдельных объектов модели</font>
-		- [ ] <font color="#FFB100">Запросы к связанным моделям</font>
+#### <font color="#FFB100">Django Debug Toolbar</font>
+#### <font color="#FFB100">SELECT и FROM через ORM</font>
+#### <font color="#FFB100">Фильтрация WHERE: методы filter() и exclude</font>
+#### <font color="#FFB100">Условия AND, OR, NOT. Q-объекты</font>
+#### <font color="#FFB100">Сортировка ORDER BY, ограничение LIMIT и сдвиг OFFSET</font>
+#### <font color="#FFB100">Получение отдельных объектов модели</font>
+#### <font color="#FFB100">Запросы к связанным моделям</font>
 ### <font color="#FFD473">Проект. Приложение «Блогикум». Часть 2. Публикации</font>
-		- [ ] <font color="#FFB100">Подготовка к работе над проектом</font>
-		- [ ] <font color="#FFB100">Проект. Приложение «Блогикум». Часть 2. Публикации</font>
-		- [ ] <font color="#FFB100">Чек-лист проекта «Блогикум». Часть 2</font>
-		- [ ] <font color="#FFB100">Обратная связь о курсе</font>
+#### <font color="#FFB100">Подготовка к работе над проектом</font>
+#### <font color="#FFB100">Проект. Приложение «Блогикум». Часть 2. Публикации</font>
+####  <font color="#FFB100">Чек-лист проекта «Блогикум». Часть 2</font>
+#### <font color="#FFB100">Обратная связь о курсе</font>
