@@ -63,6 +63,7 @@ Champs-Élysées - Champs-%C3%89lys%C3%A9es
 ```
 
 - Задача: расшифровать запрос пользователя и ответить на него.
+
 ```python
 import urllib.parse
 
