@@ -123,6 +123,32 @@ print(urllib.parse.unquote(question))
 - Пример использования библиотеки: отправка запроса и получение ответа в виде HTML-кода страницы.
 - Результат работы программного клиента совпадает с браузером.
 - Шпаргалка подготовлена для удобства решения задач по данной теме.
+
+```python
+# Импортируем библиотеку: 
+import requests 
+# Отправляем GET-запрос: 
+response = requests.get('<http://info.cern.ch/>') 
+
+print(response.text) # Печатаем код запрошенной страницы.
+```
+
+```
+<html><head></head><body><header>
+<title><http://info.cern.ch></title>
+</header>
+
+<h1><http://info.cern.ch> - home of the first website</h1>
+<p>From here you can:</p>
+<ul>
+<li><a href="<http://info.cern.ch/hypertext/WWW/TheProject.html>">Browse the first website</a></li>
+<li><a href="<http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html>">Browse the first website using the line-mode browser simulator</a></li>
+<li><a href="<http://home.web.cern.ch/topics/birth-web>">Learn about the birth of the web</a></li>
+<li><a href="<http://home.web.cern.ch/about>">Learn about CERN, the physics laboratory where the web was born</a></li>
+</ul>
+</body></html>
+```
+
 #### <font color="#FFB100">Передаём параметры в URL</font>
 #### <font color="#FFB100">Заголовки запросов и ответов</font>
 #### <font color="#FFB100">Обработка ошибок</font>
