@@ -13,3 +13,11 @@ drugs
 fight to rights
 master
 slave
+
+| ei     | ao             | other souns    |
+| ------ | -------------- | -------------- |
+| rasism | motivate       | protest (verb) |
+| brave  | protest (noun) | activist       |
+|        |                | organize       |
+|        |                | fair           |
+|        |                | arrest         |
