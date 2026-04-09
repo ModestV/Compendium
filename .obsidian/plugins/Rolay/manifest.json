@@ -1,0 +1,9 @@
+{
+  "id": "rolay",
+  "name": "Rolay",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Obsidian plugin for Rolay workspace sync, auth, tree snapshot streaming, and CRDT-backed markdown sessions.",
+  "author": "Rolay",
+  "isDesktopOnly": false
+}
