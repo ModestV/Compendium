@@ -257,3 +257,55 @@
 [2026-04-09T22:53:32.553Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-09T22:53:37.673Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-09T22:53:42.794Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:53:47.909Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:53:53.026Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:53:58.163Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:03.286Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:08.405Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:13.539Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:18.670Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:23.828Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:28.947Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:34.081Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:39.212Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:44.343Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:49.471Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:54.596Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:54:59.725Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:04.872Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:09.999Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:15.109Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:20.226Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:25.356Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:28.921Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 15: tree.entry.deleted
+[2026-04-09T22:55:29.089Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 16: tree.entry.deleted
+[2026-04-09T22:55:29.253Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 17: tree.entry.deleted
+[2026-04-09T22:55:29.437Z] tree/info: Fetched snapshot for main150911 with 7 entries (event-stream).
+[2026-04-09T22:55:29.437Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T22:55:29.470Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 18: tree.entry.deleted
+[2026-04-09T22:55:29.556Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 7.26 KB downloaded.
+[2026-04-09T22:55:29.666Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 19: tree.entry.deleted
+[2026-04-09T22:55:29.876Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 20: tree.entry.deleted
+[2026-04-09T22:55:30.078Z] tree/info: Fetched snapshot for main150911 with 7 entries (event-stream).
+[2026-04-09T22:55:30.078Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T22:55:30.191Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 7.26 KB downloaded.
+[2026-04-09T22:55:30.479Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:30.672Z] tree/info: Fetched snapshot for main150911 with 7 entries (event-stream).
+[2026-04-09T22:55:30.672Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T22:55:30.784Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 7.26 KB downloaded.
+[2026-04-09T22:55:35.608Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:40.740Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:45.871Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:51.012Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:55:56.160Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:01.284Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:06.400Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:11.536Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:16.658Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:21.778Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:26.913Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:32.056Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:37.181Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:42.314Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:47.441Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:56:52.572Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
