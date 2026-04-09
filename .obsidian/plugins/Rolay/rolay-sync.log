@@ -27,3 +27,53 @@
 [2026-04-09T13:11:28.160Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
 [2026-04-09T13:11:29.985Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
 [2026-04-09T13:11:30.158Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 68 B downloaded.
+[2026-04-09T13:11:33.280Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T13:11:38.443Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T13:11:43.599Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 1 state update(s)).
+[2026-04-09T13:11:48.729Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T13:11:53.848Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T13:11:54.189Z] crdt/info: Preparing live CRDT bootstrap for Rolay/ModestRolay/first note.md from persisted cache.
+[2026-04-09T13:11:54.190Z] crdt/info: Opening CRDT session for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:11:54.303Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:11:54.305Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:11:54.355Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:11:54.355Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:11:54.355Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:11:54.355Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:11:54.381Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:11:54.381Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:12:53.375Z] crdt/info: Preparing live CRDT bootstrap for Rolay/ModestRolay/first note.md from persisted cache.
+[2026-04-09T13:12:53.375Z] crdt/info: Opening CRDT session for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:12:53.494Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:12:53.495Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:12:53.550Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:12:53.550Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:12:53.550Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:12:53.550Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:12:53.576Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:12:53.577Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:13:10.666Z] ops/info: Sending create_folder (e78609f3-4c6f-4493-b79a-7b0c9c87ca12) for local folder create attachments.
+[2026-04-09T13:13:10.725Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Event 4: tree.entry.created
+[2026-04-09T13:13:10.781Z] ops/info: Operation e78609f3-4c6f-4493-b79a-7b0c9c87ca12 applied at event 4.
+[2026-04-09T13:13:10.781Z] ops/info: Sending create_binary_placeholder (727d617e-428a-4ece-a41b-cb13d2fdc4e6) for local binary placeholder attachments/Pasted image 20260409181310.png.
+[2026-04-09T13:13:10.837Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Event 5: tree.entry.created
+[2026-04-09T13:13:10.895Z] ops/info: Operation 727d617e-428a-4ece-a41b-cb13d2fdc4e6 applied at event 5.
+[2026-04-09T13:13:11.174Z] ops/info: Sending commit_blob_revision (bcc6f534-e59b-4844-b94a-98bf9ada2aa4) for commit blob revision attachments/Pasted image 20260409181310.png.
+[2026-04-09T13:13:11.195Z] tree/info: Fetched snapshot for 123 with 3 entries (event-stream).
+[2026-04-09T13:13:11.195Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T13:13:11.231Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Event 6: blob.revision.committed
+[2026-04-09T13:13:11.293Z] ops/info: Operation bcc6f534-e59b-4844-b94a-98bf9ada2aa4 applied at event 6.
+[2026-04-09T13:13:11.293Z] blob/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Uploaded attachments/Pasted image 20260409181310.png (14.1 KB, sha256:D8IK6Shh+HwZ...).
+[2026-04-09T13:13:11.312Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 920 B downloaded.
+[2026-04-09T13:13:11.772Z] tree/info: Fetched snapshot for 123 with 3 entries (local-op).
+[2026-04-09T13:13:11.772Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
+[2026-04-09T13:13:11.936Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 920 B downloaded.
+[2026-04-09T13:13:25.095Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Event 7: tree.entry.created
+[2026-04-09T13:13:25.567Z] tree/info: Fetched snapshot for 123 with 4 entries (event-stream).
+[2026-04-09T13:13:25.567Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T13:13:25.598Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Event 8: blob.revision.committed
+[2026-04-09T13:13:25.684Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 1.18 KB downloaded.
+[2026-04-09T13:13:26.189Z] tree/info: Fetched snapshot for 123 with 4 entries (event-stream).
+[2026-04-09T13:13:26.189Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T13:13:26.308Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 1.18 KB downloaded.
+[2026-04-09T13:13:26.636Z] blob/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Downloaded attachments/image.png (41.3 KB) from event-stream.
