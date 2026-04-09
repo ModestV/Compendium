@@ -101,3 +101,33 @@
 [2026-04-09T13:22:59.517Z] tree/info: Fetched snapshot for 123 with 4 entries (event-stream).
 [2026-04-09T13:22:59.517Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
 [2026-04-09T13:22:59.772Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 3.31 KB downloaded.
+[2026-04-09T13:25:19.706Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T13:25:19.707Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T13:25:19.707Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:25:19.708Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:25:19.717Z] error/error: Workspace event stream error (ws_03b50a8e-635d-4389-8a77-4ac9479201e1): aborted
+[2026-04-09T13:25:19.717Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-09T13:25:20.723Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:25:20.723Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:25:20.992Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:25:20.992Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:25:20.992Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:25:20.992Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:25:21.500Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:25:21.500Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:25:22.024Z] sse/info: Subscribed to room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 events.
+[2026-04-09T13:26:21.514Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T13:26:21.514Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T13:26:21.514Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:26:21.515Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:26:21.518Z] error/error: Workspace event stream error (ws_03b50a8e-635d-4389-8a77-4ac9479201e1): aborted
+[2026-04-09T13:26:21.518Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-09T13:26:22.529Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:26:22.530Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:26:23.020Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:26:23.020Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:26:23.020Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:26:23.020Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:26:23.578Z] sse/info: Subscribed to room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 events.
+[2026-04-09T13:26:23.707Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T13:26:23.707Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
