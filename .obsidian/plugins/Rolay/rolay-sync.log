@@ -143,3 +143,29 @@
 [2026-04-09T13:47:50.234Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
 [2026-04-09T13:47:50.234Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
 [2026-04-09T13:47:50.236Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:47:51.805Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:47:51.805Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T13:47:51.813Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T13:47:51.814Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T13:47:51.814Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T13:47:51.817Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T16:12:27.047Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T16:12:27.048Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T16:12:27.135Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T16:12:27.135Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T16:12:27.135Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T16:12:27.136Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T16:12:27.158Z] error/error: Workspace event stream error (ws_03b50a8e-635d-4389-8a77-4ac9479201e1): connect EHOSTUNREACH 46.16.36.87:3000
+[2026-04-09T16:12:27.159Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] SSE disconnected. Reconnecting in 4000ms.
+[2026-04-09T22:15:44.296Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T22:15:44.296Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T22:15:44.344Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:15:44.345Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:15:44.346Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:15:44.346Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:15:50.608Z] crdt/info: CRDT auth failed for Rolay/ModestRolay/first note.md: Failed to get token during sendToken(): RolayApiError: Refresh token is invalid or expired.
+[2026-04-09T22:15:50.634Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T22:15:50.635Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: disconnected.
+[2026-04-09T22:15:50.635Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:15:50.636Z] crdt/info: CRDT websocket disconnected for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:15:50.708Z] sse/info: Subscribed to room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 events.
