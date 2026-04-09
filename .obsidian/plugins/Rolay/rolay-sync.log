@@ -39,3 +39,62 @@
 [2026-04-09T22:42:48.850Z] settings-sse/info: Settings stream ready at event 22.
 [2026-04-09T22:43:10.818Z] settings-sse/info: Subscribed to settings events.
 [2026-04-09T22:43:10.818Z] settings-sse/info: Settings stream ready at event 22.
+[2026-04-09T22:45:18.247Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:45:18.248Z] settings-sse/info: Settings stream ready at event 24.
+[2026-04-09T22:45:19.665Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:45:19.665Z] settings-sse/info: Settings stream ready at event 24.
+[2026-04-09T22:45:20.233Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:45:20.233Z] settings-sse/info: Settings stream ready at event 24.
+[2026-04-09T22:45:20.747Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:45:20.747Z] settings-sse/info: Settings stream ready at event 24.
+[2026-04-09T22:45:21.239Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:45:21.240Z] settings-sse/info: Settings stream ready at event 24.
+[2026-04-09T22:45:45.952Z] tree/info: Fetched snapshot for 123 with 4 entries (download).
+[2026-04-09T22:45:46.000Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (download).
+[2026-04-09T22:45:46.179Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 2.20 KB downloaded.
+[2026-04-09T22:45:46.196Z] rooms/info: Installed room 123 into Rolay/ModestRolay.
+[2026-04-09T22:45:46.245Z] sse/info: Subscribed to room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 events.
+[2026-04-09T22:45:47.525Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-connect-background-refresh, 0 state update(s)).
+[2026-04-09T22:45:49.924Z] crdt/info: Preparing live CRDT bootstrap for Rolay/ModestRolay/first note.md from persisted cache.
+[2026-04-09T22:45:49.925Z] crdt/info: Opening CRDT session for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:45:50.043Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:45:50.044Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T22:45:50.108Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:45:50.108Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:45:50.108Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:45:50.108Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:45:50.136Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:45:50.136Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:46:24.669Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:46:24.669Z] settings-sse/info: Settings stream ready at event 24.
+[2026-04-09T22:46:27.913Z] rooms/info: Loaded 1 room(s).
+[2026-04-09T22:46:27.913Z] auth/info: Loaded current user vladp.
+[2026-04-09T22:46:27.913Z] auth/info: Session tokens refreshed.
+[2026-04-09T22:46:28.035Z] settings-sse/info: Event 25: room.membership.changed (rooms).
+[2026-04-09T22:46:28.036Z] settings-sse/info: Event 26: room.updated (rooms).
+[2026-04-09T22:46:28.081Z] rooms/info: Loaded 2 room(s).
+[2026-04-09T22:46:28.082Z] rooms/info: Joined room main150911 (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768).
+[2026-04-09T22:46:52.986Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:46:52.986Z] settings-sse/info: Settings stream ready at event 28.
+[2026-04-09T22:46:57.459Z] tree/info: Fetched snapshot for main150911 with 1 entries (download).
+[2026-04-09T22:46:57.460Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (download).
+[2026-04-09T22:46:57.570Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T22:46:57.592Z] rooms/info: Installed room main150911 into Rolay/main150911.
+[2026-04-09T22:46:57.674Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-09T22:46:58.922Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-connect-background-refresh, 1 state update(s)).
+[2026-04-09T22:47:01.832Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка.md from persisted cache.
+[2026-04-09T22:47:01.832Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка.md.
+[2026-04-09T22:47:01.999Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка.md.
+[2026-04-09T22:47:02.000Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка.md: connecting.
+[2026-04-09T22:47:02.052Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка.md.
+[2026-04-09T22:47:02.052Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка.md: connected.
+[2026-04-09T22:47:02.052Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка.md: connected.
+[2026-04-09T22:47:02.052Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка.md.
+[2026-04-09T22:47:02.075Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка.md: connected.
+[2026-04-09T22:47:02.076Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка.md: connected.
+[2026-04-09T22:47:02.777Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:47:07.924Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:47:13.041Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:47:18.181Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:47:23.299Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:47:28.421Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
