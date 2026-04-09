@@ -400,3 +400,195 @@
 [2026-04-09T23:02:56.975Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-09T23:03:02.129Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-09T23:03:07.242Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:12.380Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:17.493Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:22.609Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:27.740Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:32.871Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:37.992Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:43.138Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:48.257Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:53.021Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T23:03:53.022Z] settings-sse/info: Settings stream ready at event 28.
+[2026-04-09T23:03:53.376Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:03:58.500Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:03.615Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:08.741Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:13.850Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:18.966Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:24.091Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:29.205Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:34.333Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:35.439Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T23:04:35.439Z] settings-sse/info: Settings stream ready at event 28.
+[2026-04-09T23:04:39.468Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:44.581Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:49.713Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:54.855Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:04:59.985Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:05.102Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:10.230Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:15.373Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:20.492Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:22.048Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 26: tree.entry.created
+[2026-04-09T23:05:22.194Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 27: tree.entry.updated
+[2026-04-09T23:05:22.545Z] tree/info: Fetched snapshot for main150911 with 10 entries (event-stream).
+[2026-04-09T23:05:22.545Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T23:05:22.669Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:23.154Z] tree/info: Fetched snapshot for main150911 with 10 entries (event-stream).
+[2026-04-09T23:05:23.154Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T23:05:23.272Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:25.063Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 28: tree.entry.created
+[2026-04-09T23:05:25.559Z] tree/info: Fetched snapshot for main150911 with 11 entries (event-stream).
+[2026-04-09T23:05:25.559Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T23:05:25.632Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:25.700Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:26.626Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 29: tree.entry.updated
+[2026-04-09T23:05:26.702Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-09T23:05:26.818Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T23:05:27.034Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-09T23:05:27.096Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Reverted local move/rename for Rolay/main150911/первая заметочка/Untitled.md because Rolay/main150911/первая заметочка/Untitled.md is still loading and protected.
+[2026-04-09T23:05:27.305Z] tree/info: Fetched snapshot for main150911 with 11 entries (event-stream).
+[2026-04-09T23:05:27.313Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T23:05:27.432Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:27.908Z] tree/info: Fetched snapshot for main150911 with 11 entries (priority-open).
+[2026-04-09T23:05:27.910Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (priority-open).
+[2026-04-09T23:05:28.057Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:28.415Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/фыв.md from persisted cache.
+[2026-04-09T23:05:28.415Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:28.532Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:28.534Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connecting.
+[2026-04-09T23:05:28.588Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:28.588Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:28.588Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:28.589Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:28.612Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:28.612Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:28.821Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-09T23:05:28.946Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T23:05:29.001Z] tree/info: Fetched snapshot for main150911 with 11 entries (priority-open).
+[2026-04-09T23:05:29.003Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (priority-open).
+[2026-04-09T23:05:29.131Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:29.404Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/фыв.md from persisted cache.
+[2026-04-09T23:05:29.404Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:29.520Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:29.521Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connecting.
+[2026-04-09T23:05:29.579Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:29.579Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:29.579Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:29.579Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:29.603Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:29.603Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:29.781Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/первая заметочка.md from persisted cache.
+[2026-04-09T23:05:29.781Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:29.904Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:29.904Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connecting.
+[2026-04-09T23:05:29.953Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:29.953Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:29.953Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:29.953Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:29.976Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:29.976Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:29.992Z] tree/info: Fetched snapshot for main150911 with 11 entries (priority-open).
+[2026-04-09T23:05:29.992Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (priority-open).
+[2026-04-09T23:05:30.129Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:30.705Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/фыв.md from persisted cache.
+[2026-04-09T23:05:30.705Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:30.797Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:30.821Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:30.822Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connecting.
+[2026-04-09T23:05:30.872Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:30.873Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:30.873Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:30.873Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:30.896Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:30.896Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:31.292Z] tree/info: Fetched snapshot for main150911 with 11 entries (priority-open).
+[2026-04-09T23:05:31.294Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (priority-open).
+[2026-04-09T23:05:31.434Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:31.581Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/фыв.md from persisted cache.
+[2026-04-09T23:05:31.581Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:31.706Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:31.706Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connecting.
+[2026-04-09T23:05:31.771Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:31.771Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:31.771Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:31.771Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:31.800Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:31.800Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:32.035Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/первая заметочка.md from persisted cache.
+[2026-04-09T23:05:32.035Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:32.161Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:32.161Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connecting.
+[2026-04-09T23:05:32.210Z] tree/info: Fetched snapshot for main150911 with 11 entries (priority-open).
+[2026-04-09T23:05:32.212Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (priority-open).
+[2026-04-09T23:05:32.212Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:32.212Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:32.213Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:32.213Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:32.239Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:32.239Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:32.348Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:32.780Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/фыв.md from persisted cache.
+[2026-04-09T23:05:32.780Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:32.897Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:32.898Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connecting.
+[2026-04-09T23:05:32.952Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:32.952Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:32.952Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:32.952Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:32.954Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-09T23:05:32.975Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:32.975Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:33.075Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T23:05:33.365Z] tree/info: Fetched snapshot for main150911 with 11 entries (priority-open).
+[2026-04-09T23:05:33.367Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (priority-open).
+[2026-04-09T23:05:33.488Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/первая заметочка.md from persisted cache.
+[2026-04-09T23:05:33.488Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:33.620Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:33.621Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connecting.
+[2026-04-09T23:05:33.650Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 12.0 KB downloaded.
+[2026-04-09T23:05:33.670Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:33.670Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:33.670Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:33.670Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:33.692Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:33.692Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:34.295Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/фыв.md from persisted cache.
+[2026-04-09T23:05:34.295Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:34.412Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:34.413Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connecting.
+[2026-04-09T23:05:34.467Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:34.467Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:34.467Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:34.467Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/фыв.md.
+[2026-04-09T23:05:34.490Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:34.491Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/фыв.md: connected.
+[2026-04-09T23:05:34.963Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-09T23:05:35.920Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:40.085Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:41.032Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:45.204Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:46.150Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:50.639Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:51.498Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:55.774Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:56.670Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:05:57.085Z] crdt/info: Preparing live CRDT bootstrap for Rolay/main150911/первая заметочка/первая заметочка.md from persisted cache.
+[2026-04-09T23:05:57.085Z] crdt/info: Opening CRDT session for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:57.207Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:57.208Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connecting.
+[2026-04-09T23:05:57.256Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:57.257Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:57.257Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:57.257Z] crdt/info: CRDT websocket opened for Rolay/main150911/первая заметочка/первая заметочка.md.
+[2026-04-09T23:05:57.281Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:05:57.282Z] crdt/info: CRDT provider status for Rolay/main150911/первая заметочка/первая заметочка.md: connected.
+[2026-04-09T23:06:00.882Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:01.794Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:06.085Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:06.915Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:11.193Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:12.038Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:16.312Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T23:06:17.163Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
