@@ -171,3 +171,17 @@
 [2026-04-09T22:15:50.708Z] sse/info: Subscribed to room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 events.
 [2026-04-09T22:24:10.496Z] settings-sse/info: Subscribed to settings events.
 [2026-04-09T22:24:10.497Z] settings-sse/info: Settings stream ready at event 20.
+[2026-04-09T22:37:29.524Z] crdt/info: Preparing live CRDT bootstrap for Rolay/ModestRolay/first note.md from offline state.
+[2026-04-09T22:37:29.524Z] crdt/info: Opening CRDT session for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:37:29.875Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:37:29.876Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connecting.
+[2026-04-09T22:37:29.932Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:37:29.932Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:37:29.932Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:37:29.932Z] crdt/info: CRDT websocket opened for Rolay/ModestRolay/first note.md.
+[2026-04-09T22:37:29.957Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:37:29.957Z] crdt/info: CRDT provider status for Rolay/ModestRolay/first note.md: connected.
+[2026-04-09T22:37:33.831Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:37:38.957Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:37:44.105Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:37:49.217Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
