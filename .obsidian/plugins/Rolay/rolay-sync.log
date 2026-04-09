@@ -1,0 +1,29 @@
+[2026-04-09T13:08:41.853Z] plugin/info: Rolay plugin loaded.
+[2026-04-09T13:08:41.854Z] startup/info: Skipping startup sync bootstrap because auth settings are incomplete.
+[2026-04-09T13:10:08.621Z] rooms/info: Loaded 0 room(s).
+[2026-04-09T13:10:08.622Z] startup/info: No downloaded rooms to resume (login).
+[2026-04-09T13:10:08.622Z] auth/info: Logged in as vladp.
+[2026-04-09T13:10:08.834Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T13:10:08.836Z] settings-sse/info: Settings stream ready at event 13.
+[2026-04-09T13:10:37.109Z] rooms/info: Loaded 0 room(s).
+[2026-04-09T13:10:37.109Z] auth/info: Loaded current user vladp.
+[2026-04-09T13:10:37.109Z] auth/info: Session tokens refreshed.
+[2026-04-09T13:10:37.222Z] settings-sse/info: Event 14: room.created (rooms).
+[2026-04-09T13:10:37.276Z] rooms/info: Loaded 1 room(s).
+[2026-04-09T13:10:37.276Z] rooms/info: Created room 123 (ws_03b50a8e-635d-4389-8a77-4ac9479201e1).
+[2026-04-09T13:10:59.707Z] settings-sse/info: Event 18: room.updated (rooms).
+[2026-04-09T13:11:25.732Z] tree/info: Fetched snapshot for 123 with 1 entries (download).
+[2026-04-09T13:11:25.733Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (download).
+[2026-04-09T13:11:25.862Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T13:11:25.922Z] rooms/info: Installed room 123 into Rolay/ModestRolay.
+[2026-04-09T13:11:25.974Z] sse/info: Subscribed to room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 events.
+[2026-04-09T13:11:26.090Z] sse/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Event 3: tree.entry.updated
+[2026-04-09T13:11:26.574Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Reverted local move/rename for Rolay/ModestRolay/Без названия.md because Rolay/ModestRolay/Без названия.md is still loading and protected.
+[2026-04-09T13:11:26.653Z] tree/info: Fetched snapshot for 123 with 1 entries (event-stream).
+[2026-04-09T13:11:26.671Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-09T13:11:26.811Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T13:11:27.825Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-09T13:11:27.980Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 4 B downloaded.
+[2026-04-09T13:11:28.160Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-09T13:11:29.985Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-09T13:11:30.158Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] HTTP markdown bootstrap stored 1 markdown document(s) with 68 B downloaded.
