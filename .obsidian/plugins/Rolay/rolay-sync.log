@@ -8,3 +8,34 @@
 [2026-04-09T22:40:43.762Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-09T22:40:49.749Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-09T22:40:55.742Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:01.759Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:07.764Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:12.876Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:18.002Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:23.150Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:28.338Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:33.483Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:38.598Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:43.705Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:48.810Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:53.945Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:41:59.060Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:42:04.185Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:42:08.053Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:42:08.055Z] settings-sse/info: Settings stream ready at event 20.
+[2026-04-09T22:42:09.310Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:42:14.503Z] crdt/info: [ws_03b50a8e-635d-4389-8a77-4ac9479201e1] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-09T22:42:19.751Z] plugin/info: Rolay plugin loaded.
+[2026-04-09T22:42:20.008Z] rooms/info: Detached room ws_03b50a8e-635d-4389-8a77-4ac9479201e1 because the local folder Rolay/ModestRolay is missing. Remote room content was left untouched.
+[2026-04-09T22:42:20.008Z] rooms/info: Loaded 1 room(s).
+[2026-04-09T22:42:20.008Z] auth/info: Loaded current user vladp.
+[2026-04-09T22:42:20.009Z] auth/info: Session tokens refreshed.
+[2026-04-09T22:42:20.009Z] startup/info: No downloaded rooms to resume (startup).
+[2026-04-09T22:42:24.064Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:42:24.066Z] settings-sse/info: Settings stream ready at event 20.
+[2026-04-09T22:42:32.812Z] settings-sse/info: Event 21: auth.me.updated (auth.me).
+[2026-04-09T22:42:32.855Z] auth/info: Updated display name to Modest.
+[2026-04-09T22:42:48.849Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:42:48.850Z] settings-sse/info: Settings stream ready at event 22.
+[2026-04-09T22:43:10.818Z] settings-sse/info: Subscribed to settings events.
+[2026-04-09T22:43:10.818Z] settings-sse/info: Settings stream ready at event 22.
