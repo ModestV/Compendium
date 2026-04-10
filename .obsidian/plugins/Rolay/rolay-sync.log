@@ -2324,3 +2324,5 @@
 [2026-04-10T11:06:07.747Z] startup/info: No downloaded rooms to resume (startup).
 [2026-04-10T11:06:17.734Z] settings-sse/info: Subscribed to settings events.
 [2026-04-10T11:06:17.736Z] settings-sse/info: Settings stream ready at event 28.
+[2026-04-10T11:08:36.149Z] settings-sse/info: Subscribed to settings events.
+[2026-04-10T11:08:36.150Z] settings-sse/info: Settings stream ready at event 28.
