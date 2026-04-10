@@ -2313,3 +2313,14 @@
 [2026-04-10T11:04:58.165Z] auth/info: Loaded current user vladp.
 [2026-04-10T11:04:58.165Z] auth/info: Session tokens refreshed.
 [2026-04-10T11:04:58.166Z] startup/info: No downloaded rooms to resume (startup).
+[2026-04-10T11:05:14.258Z] settings-sse/info: Subscribed to settings events.
+[2026-04-10T11:05:14.261Z] settings-sse/info: Settings stream ready at event 28.
+[2026-04-10T11:05:29.800Z] settings-sse/info: Subscribed to settings events.
+[2026-04-10T11:05:29.800Z] settings-sse/info: Settings stream ready at event 28.
+[2026-04-10T11:06:07.535Z] plugin/info: Rolay plugin loaded.
+[2026-04-10T11:06:07.746Z] rooms/info: Loaded 2 room(s).
+[2026-04-10T11:06:07.747Z] auth/info: Loaded current user vladp.
+[2026-04-10T11:06:07.747Z] auth/info: Session tokens refreshed.
+[2026-04-10T11:06:07.747Z] startup/info: No downloaded rooms to resume (startup).
+[2026-04-10T11:06:17.734Z] settings-sse/info: Subscribed to settings events.
+[2026-04-10T11:06:17.736Z] settings-sse/info: Settings stream ready at event 28.

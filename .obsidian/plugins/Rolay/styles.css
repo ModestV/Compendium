@@ -487,6 +487,15 @@
   z-index: 6;
 }
 
+.rolay-shared-cursor__hitbox {
+  height: 1.6em;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+}
+
 .rolay-shared-cursor__caret {
   height: 1.35em;
   left: 0;
@@ -529,6 +538,20 @@
 .rolay-shared-cursor:hover .rolay-shared-cursor__label {
   opacity: 1;
   transform: translateY(calc(-100% - 0.85em)) scale(1);
+  visibility: visible;
+}
+
+.rolay-shared-cursor.rolay-shared-cursor--end .rolay-shared-cursor__label {
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.98);
+  transform-origin: left center;
+}
+
+.rolay-shared-cursor.rolay-shared-cursor--end:hover .rolay-shared-cursor__label,
+.rolay-shared-cursor.rolay-shared-cursor--end.rolay-shared-cursor--inline-visible .rolay-shared-cursor__label {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
   visibility: visible;
 }
 

@@ -12263,6 +12263,8 @@ var import_state = require("@codemirror/state");
 var import_view = require("@codemirror/view");
 var import_obsidian4 = require("obsidian");
 var setRemotePresenceEffect = import_state.StateEffect.define();
+var END_OF_LINE_LABEL_DELAY_MS = 1e3;
+var sharedCursorUiState = /* @__PURE__ */ new Map();
 var remotePresenceField = import_state.StateField.define({
   create() {
     return import_view.Decoration.none;
@@ -12313,6 +12315,7 @@ function setRemotePresenceDecorations(view, presences) {
   });
 }
 function buildRemotePresenceDecorations(documentLength, presences) {
+  cleanupSharedCursorUiState(presences);
   const builder = new import_state.RangeSetBuilder();
   const ranges = [];
   for (const presence of presences) {
@@ -12327,7 +12330,7 @@ function buildRemotePresenceDecorations(documentLength, presences) {
         decoration: import_view.Decoration.mark({
           class: "rolay-shared-selection",
           attributes: {
-            style: `background-color: ${withAlphaChannel(presence.color, 0.18)};`
+            style: `background-color: ${withAlphaChannel(presence.color, 0.2)};`
           }
         })
       });
@@ -12337,7 +12340,12 @@ function buildRemotePresenceDecorations(documentLength, presences) {
       to: head,
       decoration: import_view.Decoration.widget({
         side: 1,
-        widget: new SharedCursorWidget(presence.displayName, presence.color)
+        widget: new SharedCursorWidget(
+          getSharedCursorKey(presence),
+          presence.displayName,
+          presence.color,
+          from3 !== to
+        )
       })
     });
   }
@@ -12354,10 +12362,23 @@ function clampOffset(offset, documentLength) {
   return Math.max(0, Math.min(documentLength, Math.floor(offset)));
 }
 function withAlphaChannel(color, alpha) {
+  const normalizedColor = color.trim();
+  const hexMatch = normalizedColor.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+  if (hexMatch) {
+    const hex = hexMatch[1];
+    const expandedHex = hex.length === 3 ? hex.split("").map((char) => `${char}${char}`).join("") : hex;
+    const red = Number.parseInt(expandedHex.slice(0, 2), 16);
+    const green = Number.parseInt(expandedHex.slice(2, 4), 16);
+    const blue = Number.parseInt(expandedHex.slice(4, 6), 16);
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+  }
   if (color.startsWith("hsl(") && color.endsWith(")")) {
     return `${color.slice(0, -1)} / ${alpha})`;
   }
-  return color;
+  if (normalizedColor.startsWith("rgb(") && normalizedColor.endsWith(")")) {
+    return normalizedColor.replace(/^rgb\(/, "rgba(").replace(/\)$/, `, ${alpha})`);
+  }
+  return normalizedColor;
 }
 function isEditorView(value) {
   if (!value || typeof value !== "object") {
@@ -12366,13 +12387,15 @@ function isEditorView(value) {
   return "dispatch" in value && "state" in value && "dom" in value && "hasFocus" in value;
 }
 var SharedCursorWidget = class extends import_view.WidgetType {
-  constructor(displayName, color) {
+  constructor(cursorKey, displayName, color, hasSelection) {
     super();
+    this.cursorKey = cursorKey;
     this.displayName = displayName;
     this.color = color;
+    this.hasSelection = hasSelection;
   }
   eq(other) {
-    return this.displayName === other.displayName && this.color === other.color;
+    return this.cursorKey === other.cursorKey && this.displayName === other.displayName && this.color === other.color && this.hasSelection === other.hasSelection;
   }
   toDOM() {
     const wrapper = document.createElement("span");
@@ -12381,16 +12404,180 @@ var SharedCursorWidget = class extends import_view.WidgetType {
     wrapper.setAttribute("aria-hidden", "true");
     const caret = document.createElement("span");
     caret.className = "rolay-shared-cursor__caret";
+    const hitbox = document.createElement("span");
+    hitbox.className = "rolay-shared-cursor__hitbox";
     const label = document.createElement("span");
     label.className = "rolay-shared-cursor__label";
     label.textContent = this.displayName;
-    wrapper.append(caret, label);
+    const uiState = getSharedCursorUiState(this.cursorKey);
+    let autoRevealHandle = null;
+    let hovered = false;
+    const line = wrapper.closest(".cm-line");
+    const clearAutoReveal = () => {
+      if (autoRevealHandle !== null) {
+        window.clearTimeout(autoRevealHandle);
+        autoRevealHandle = null;
+      }
+    };
+    const updateInlineVisibility = (visible) => {
+      uiState.inlineVisible = visible;
+      wrapper.classList.toggle("rolay-shared-cursor--inline-visible", visible);
+    };
+    const scheduleAutoReveal = (delayMs) => {
+      clearAutoReveal();
+      autoRevealHandle = window.setTimeout(() => {
+        if (!wrapper.isConnected) {
+          return;
+        }
+        if (!wrapper.classList.contains("rolay-shared-cursor--end")) {
+          return;
+        }
+        updateInlineVisibility(true);
+        autoRevealHandle = null;
+      }, Math.max(0, delayMs));
+    };
+    const applyEndOfLineMode = () => {
+      const isEndOfLine = !this.hasSelection && isCursorAtVisualLineEnd(wrapper);
+      wrapper.classList.toggle("rolay-shared-cursor--end", isEndOfLine);
+      if (isEndOfLine) {
+        if (uiState.endOfLineSince === null) {
+          uiState.endOfLineSince = Date.now();
+        }
+        if (hovered) {
+          clearAutoReveal();
+          updateInlineVisibility(true);
+          return;
+        }
+        const elapsedMs = Date.now() - uiState.endOfLineSince;
+        if (uiState.inlineVisible || elapsedMs >= END_OF_LINE_LABEL_DELAY_MS) {
+          clearAutoReveal();
+          updateInlineVisibility(true);
+          return;
+        }
+        updateInlineVisibility(false);
+        scheduleAutoReveal(END_OF_LINE_LABEL_DELAY_MS - elapsedMs);
+        return;
+      }
+      uiState.endOfLineSince = null;
+      uiState.inlineVisible = false;
+      clearAutoReveal();
+      wrapper.classList.remove("rolay-shared-cursor--inline-visible");
+    };
+    wrapper.addEventListener("mouseenter", () => {
+      hovered = true;
+      if (wrapper.classList.contains("rolay-shared-cursor--end")) {
+        clearAutoReveal();
+        updateInlineVisibility(true);
+      }
+    });
+    wrapper.addEventListener("mouseleave", () => {
+      hovered = false;
+    });
+    let mutationObserver = null;
+    if (line instanceof HTMLElement) {
+      mutationObserver = new MutationObserver(() => {
+        if (!wrapper.isConnected) {
+          mutationObserver?.disconnect();
+          clearAutoReveal();
+          return;
+        }
+        applyEndOfLineMode();
+      });
+    }
+    if (mutationObserver && line instanceof HTMLElement) {
+      mutationObserver.observe(line, {
+        childList: true,
+        characterData: true,
+        subtree: true
+      });
+    }
+    const cleanup = () => {
+      mutationObserver?.disconnect();
+      clearAutoReveal();
+    };
+    Object.assign(wrapper, {
+      __rolayCursorCleanup: cleanup
+    });
+    requestAnimationFrame(() => {
+      if (!wrapper.isConnected) {
+        cleanup();
+        return;
+      }
+      applyEndOfLineMode();
+    });
+    wrapper.append(hitbox, caret, label);
     return wrapper;
+  }
+  destroy(dom) {
+    const cleanup = dom.__rolayCursorCleanup;
+    cleanup?.();
   }
   ignoreEvent() {
     return true;
   }
 };
+function getSharedCursorKey(presence) {
+  return `${presence.userId}:${presence.clientId}`;
+}
+function getSharedCursorUiState(cursorKey) {
+  const existing = sharedCursorUiState.get(cursorKey);
+  if (existing) {
+    return existing;
+  }
+  const created = {
+    endOfLineSince: null,
+    inlineVisible: false
+  };
+  sharedCursorUiState.set(cursorKey, created);
+  return created;
+}
+function cleanupSharedCursorUiState(presences) {
+  const activeKeys = new Set(presences.map((presence) => getSharedCursorKey(presence)));
+  for (const cursorKey of sharedCursorUiState.keys()) {
+    if (!activeKeys.has(cursorKey)) {
+      sharedCursorUiState.delete(cursorKey);
+    }
+  }
+}
+function isCursorAtVisualLineEnd(wrapper) {
+  const line = wrapper.closest(".cm-line");
+  if (!(line instanceof HTMLElement)) {
+    return false;
+  }
+  return !hasFollowingVisibleContent(wrapper, line);
+}
+function hasFollowingVisibleContent(startNode, line) {
+  let current = startNode;
+  while (current && current !== line) {
+    let sibling = current.nextSibling;
+    while (sibling) {
+      if (nodeContainsVisibleContent(sibling)) {
+        return true;
+      }
+      sibling = sibling.nextSibling;
+    }
+    current = current.parentNode;
+  }
+  return false;
+}
+function nodeContainsVisibleContent(node) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    return (node.textContent ?? "").length > 0;
+  }
+  if (!(node instanceof HTMLElement)) {
+    return false;
+  }
+  if (node.classList.contains("rolay-shared-cursor") || node.classList.contains("cm-widgetBuffer")) {
+    return false;
+  }
+  if (node.tagName === "BR") {
+    return false;
+  }
+  if ((node.textContent ?? "").length > 0) {
+    return true;
+  }
+  return Array.from(node.childNodes).some((child) => nodeContainsVisibleContent(child));
+}
 
 // src/utils/text-diff.ts
 function diffText(currentText, nextText) {
@@ -12451,6 +12638,7 @@ var CrdtSessionManager = class {
     this.app = config.app;
     this.apiClient = config.apiClient;
     this.getCurrentUser = config.getCurrentUser;
+    this.getPresenceColor = config.getPresenceColor;
     this.isLiveSyncEnabledForLocalPath = config.isLiveSyncEnabledForLocalPath;
     this.getPersistedCrdtState = config.getPersistedCrdtState;
     this.persistCrdtState = config.persistCrdtState;
@@ -12469,6 +12657,19 @@ var CrdtSessionManager = class {
       }
       const { file } = this.activeSession;
       await this.bindToFileNow(file);
+    });
+  }
+  async refreshPresencePreferences() {
+    return this.runSessionOperation(async () => {
+      if (!this.activeSession) {
+        return;
+      }
+      const currentUser = this.getCurrentUser();
+      if (!currentUser) {
+        this.activeSession.clearPresenceOnly();
+        return;
+      }
+      this.activeSession.updateAwarenessUser(currentUser, this.getPresenceColor());
     });
   }
   async disconnect() {
@@ -12598,6 +12799,7 @@ var CrdtSessionManager = class {
       file,
       entry,
       currentUser,
+      this.getPresenceColor(),
       bootstrap.docId,
       bootstrap.wsUrl,
       createCrdtTokenSupplier(this.apiClient, entry.id, bootstrap.token),
@@ -12619,6 +12821,7 @@ var CrdtSessionManager = class {
       file,
       entry,
       currentUser,
+      this.getPresenceColor(),
       entry.id,
       null,
       null,
@@ -12651,7 +12854,7 @@ var CrdtSessionManager = class {
   }
 };
 var BoundCrdtSession = class {
-  constructor(app, file, entry, currentUser, docId, wsUrl, token, log, persistCrdtState, initialState = null) {
+  constructor(app, file, entry, currentUser, presenceColor, docId, wsUrl, token, log, persistCrdtState, initialState = null) {
     this.yDocument = new Doc();
     this.provider = null;
     this.status = "idle";
@@ -12669,7 +12872,7 @@ var BoundCrdtSession = class {
     this.token = token;
     this.log = log;
     this.persistCrdtState = persistCrdtState;
-    this.awarenessUser = buildAwarenessUserPayload(currentUser);
+    this.awarenessUser = buildAwarenessUserPayload(currentUser, presenceColor);
     this.yText = this.yDocument.getText("content");
     if (initialState && initialState.byteLength > 0) {
       applyUpdate(this.yDocument, initialState, "rolay-local-bootstrap");
@@ -12735,6 +12938,15 @@ var BoundCrdtSession = class {
   }
   isOffline() {
     return this.status === "offline";
+  }
+  clearPresenceOnly() {
+    this.clearLocalPresence();
+    this.clearRemotePresence();
+  }
+  updateAwarenessUser(user, presenceColor) {
+    this.awarenessUser = buildAwarenessUserPayload(user, presenceColor);
+    this.publishLocalUserPresence();
+    this.renderRemotePresence();
   }
   syncEditorContext() {
     this.seedOrSyncEditor();
@@ -12940,11 +13152,11 @@ var BoundCrdtSession = class {
     return remotePresence;
   }
 };
-function buildAwarenessUserPayload(user) {
+function buildAwarenessUserPayload(user, presenceColor) {
   return {
     userId: user.id,
     displayName: user.displayName || user.username,
-    color: buildPresenceColor(user.id)
+    color: presenceColor || buildPresenceColor(user.id)
   };
 }
 function buildPresenceColor(seed) {
@@ -12953,7 +13165,42 @@ function buildPresenceColor(seed) {
     hash = (hash << 5) - hash + seed.charCodeAt(index) | 0;
   }
   const hue = Math.abs(hash) % 360;
-  return `hsl(${hue} 72% 56%)`;
+  return hslToHex(hue, 72, 56);
+}
+function hslToHex(hue, saturationPercent, lightnessPercent) {
+  const saturation = saturationPercent / 100;
+  const lightness = lightnessPercent / 100;
+  const chroma = (1 - Math.abs(2 * lightness - 1)) * saturation;
+  const scaledHue = hue / 60;
+  const x = chroma * (1 - Math.abs(scaledHue % 2 - 1));
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+  if (scaledHue >= 0 && scaledHue < 1) {
+    red = chroma;
+    green = x;
+  } else if (scaledHue < 2) {
+    red = x;
+    green = chroma;
+  } else if (scaledHue < 3) {
+    green = chroma;
+    blue = x;
+  } else if (scaledHue < 4) {
+    green = x;
+    blue = chroma;
+  } else if (scaledHue < 5) {
+    red = x;
+    blue = chroma;
+  } else {
+    red = chroma;
+    blue = x;
+  }
+  const match2 = lightness - chroma / 2;
+  const toHex = (value) => {
+    const normalized = Math.max(0, Math.min(255, Math.round((value + match2) * 255)));
+    return normalized.toString(16).padStart(2, "0");
+  };
+  return `#${toHex(red)}${toHex(green)}${toHex(blue)}`;
 }
 function getPrimaryEditorSelection(editor) {
   return {
@@ -13193,7 +13440,8 @@ var DEFAULT_SETTINGS = {
   serverUrl: ROLAY_SERVER_URL,
   username: "",
   password: "",
-  syncRoot: "Rolay",
+  presenceColor: "",
+  syncRoot: "",
   deviceName: ROLAY_DEVICE_NAME,
   autoConnect: ROLAY_AUTO_CONNECT,
   roomBindings: {}
@@ -13236,7 +13484,8 @@ function mergePluginData(rawData) {
     ...defaults.settings,
     ...rawSettings,
     serverUrl: ROLAY_SERVER_URL,
-    syncRoot: (rawSettings.syncRoot ?? defaults.settings.syncRoot).trim(),
+    presenceColor: normalizePresenceColor(rawSettings.presenceColor),
+    syncRoot: normalizeSyncRootSetting(rawSettings.syncRoot ?? defaults.settings.syncRoot),
     deviceName: ROLAY_DEVICE_NAME,
     autoConnect: ROLAY_AUTO_CONNECT,
     roomBindings: normalizeRoomBindings(rawSettings)
@@ -13496,6 +13745,23 @@ function createDeviceId() {
 }
 function normalizeStoredPath(path) {
   return path.trim().replace(/\\/g, "/");
+}
+function normalizePresenceColor(color) {
+  if (typeof color !== "string") {
+    return "";
+  }
+  const normalized = color.trim();
+  return /^#[0-9a-fA-F]{6}$/.test(normalized) ? normalized.toLowerCase() : "";
+}
+function normalizeSyncRootSetting(syncRoot) {
+  if (typeof syncRoot !== "string") {
+    return "";
+  }
+  const normalized = syncRoot.trim().replace(/\\/g, "/");
+  if (!normalized || normalized === "/") {
+    return "";
+  }
+  return normalized.replace(/^\/+|\/+$/g, "");
 }
 
 // src/settings/tab.ts
@@ -13763,6 +14029,15 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       await this.rolay.updateOwnDisplayName();
       this.requestRender();
     });
+    const presenceCard = this.createCard(grid, "Cursor Color", "Used for your shared cursor and selection in markdown collaboration.");
+    this.createInputField(presenceCard.body, {
+      label: "Cursor color",
+      type: "color",
+      value: this.rolay.getPresenceColor() ?? "#4f8cff",
+      onChange: async (value) => {
+        await this.rolay.updatePresenceColor(value);
+      }
+    });
     const passwordDraft = this.rolay.getPasswordChangeDraft();
     const securityCard = this.createCard(grid, "Change Password");
     this.createInputField(securityCard.body, {
@@ -13809,10 +14084,10 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
     const rootCard = this.createCard(grid, "Root Folder", "Base vault folder under which installed room folders are created.");
     this.createInputField(rootCard.body, {
       value: settings.syncRoot,
-      placeholder: "Rolay",
+      placeholder: "/",
       onChange: async (value) => {
         await this.rolay.updateSettings({
-          syncRoot: value.trim()
+          syncRoot: value.trim() === "/" ? "" : value.trim()
         });
       }
     });
@@ -15285,6 +15560,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       app: this.app,
       apiClient: this.apiClient,
       getCurrentUser: () => this.getCurrentUser(),
+      getPresenceColor: () => this.getPresenceColor(),
       isLiveSyncEnabledForLocalPath: (localPath) => this.isLiveSyncEnabledForLocalPath(localPath),
       getPersistedCrdtState: (entryId) => this.getPersistedCrdtState(entryId),
       persistCrdtState: (entryId, filePath, state) => this.persistCrdtState(entryId, filePath, state),
@@ -15467,6 +15743,22 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   getProfileDraftDisplayName() {
     return this.profileDraftDisplayName || this.data.session?.user?.displayName || "";
+  }
+  getPresenceColor() {
+    const configured = this.data.settings.presenceColor.trim();
+    if (configured) {
+      return configured;
+    }
+    const currentUser = this.getCurrentUser();
+    return currentUser ? buildPresenceColor(currentUser.id) : null;
+  }
+  async updatePresenceColor(color) {
+    const normalizedColor = /^#[0-9a-fA-F]{6}$/.test(color.trim()) ? color.trim().toLowerCase() : "";
+    await this.updateSettings({
+      presenceColor: normalizedColor
+    });
+    await this.crdtManager.refreshPresencePreferences();
+    this.requestSettingsRender();
   }
   setProfileDraftDisplayName(displayName) {
     this.profileDraftDisplayName = displayName;
@@ -15697,6 +15989,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     try {
       const response = await this.apiClient.updateCurrentUserProfile({ displayName });
       await this.applySessionUser(response.user);
+      await this.crdtManager.refreshPresencePreferences();
       this.recordLog("auth", `Updated display name to ${response.user.displayName}.`);
       new import_obsidian9.Notice(`Rolay display name updated to ${response.user.displayName}.`);
     } catch (error) {
@@ -17632,15 +17925,8 @@ ${keptTail}`;
     if (!this.statusBarEl) {
       return;
     }
-    const currentUser = this.data.session?.user ?? null;
-    const downloadedRoomCount = this.getDownloadedRooms().length;
-    const activeStreamCount = [...this.roomRuntime.values()].filter((runtime) => runtime.streamStatus === "open").length;
-    const crdt = this.crdtManager?.getState();
-    const authLabel = currentUser ? `${currentUser.username} (${currentUser.globalRole}${currentUser.isAdmin ? ", admin" : ""})` : "signed-out";
-    const crdtLabel = crdt ? crdt.status : "idle";
-    this.statusBarEl.setText(
-      `Rolay: ${authLabel} | rooms ${downloadedRoomCount} downloaded | SSE ${activeStreamCount} open | CRDT ${crdtLabel}`
-    );
+    this.statusBarEl.empty();
+    this.statusBarEl.hide();
     this.requestSettingsRender();
   }
   async refreshOwnerRoomInvites(logActivity = true) {
