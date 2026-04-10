@@ -2308,3 +2308,8 @@
 [2026-04-10T00:43:52.298Z] auth/info: Loaded current user vladp.
 [2026-04-10T00:43:52.298Z] auth/info: Session tokens refreshed.
 [2026-04-10T00:43:52.298Z] startup/info: No downloaded rooms to resume (startup).
+[2026-04-10T11:04:57.320Z] plugin/info: Rolay plugin loaded.
+[2026-04-10T11:04:58.165Z] rooms/info: Loaded 2 room(s).
+[2026-04-10T11:04:58.165Z] auth/info: Loaded current user vladp.
+[2026-04-10T11:04:58.165Z] auth/info: Session tokens refreshed.
+[2026-04-10T11:04:58.166Z] startup/info: No downloaded rooms to resume (startup).
