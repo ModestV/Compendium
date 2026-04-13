@@ -8579,6 +8579,12 @@ var RolayApiClient = class {
       `/v1/admin/workspaces/${encodeURIComponent(workspaceId)}/members`
     );
   }
+  async listRoomMembers(workspaceId) {
+    return this.requestJson(
+      "GET",
+      `/v1/rooms/${encodeURIComponent(workspaceId)}/members`
+    );
+  }
   async addRoomMemberAsAdmin(workspaceId, body) {
     return this.requestJson(
       "POST",
@@ -10093,7 +10099,7 @@ var _FileBridge = class _FileBridge {
   }
   async ensureLocalEntry(workspaceId, folderName, entry) {
     const localPath = toLocalPathForRoom(this.getSyncRoot(), folderName, entry.path);
-    const existing = this.app.vault.getAbstractFileByPath(localPath);
+    const existing = await this.getExistingPath(localPath);
     if (entry.kind === "folder") {
       await this.ensureFolderExists(localPath);
       return;
@@ -10139,8 +10145,8 @@ var _FileBridge = class _FileBridge {
     let currentPath = "";
     for (const segment of segments) {
       currentPath = currentPath ? `${currentPath}/${segment}` : segment;
-      const existing = this.app.vault.getAbstractFileByPath(currentPath);
-      if (existing instanceof import_obsidian3.TFolder) {
+      const existing = await this.getExistingPath(currentPath);
+      if (existing instanceof import_obsidian3.TFolder || existing === "exists-on-disk") {
         continue;
       }
       if (existing) {
@@ -10150,6 +10156,17 @@ var _FileBridge = class _FileBridge {
       await this.withSuppressedPaths([currentPath], async () => {
         await this.app.vault.createFolder(currentPath);
       });
+    }
+  }
+  async getExistingPath(path) {
+    const existing = this.app.vault.getAbstractFileByPath(path);
+    if (existing) {
+      return existing;
+    }
+    try {
+      return await this.app.vault.adapter.exists((0, import_obsidian3.normalizePath)(path)) ? "exists-on-disk" : null;
+    } catch {
+      return null;
     }
   }
   getRoomRoot(folderName) {
@@ -12263,8 +12280,9 @@ var import_state = require("@codemirror/state");
 var import_view = require("@codemirror/view");
 var import_obsidian4 = require("obsidian");
 var setRemotePresenceEffect = import_state.StateEffect.define();
-var END_OF_LINE_LABEL_DELAY_MS = 1e3;
+var END_OF_LINE_LABEL_DELAY_MS = 700;
 var sharedCursorUiState = /* @__PURE__ */ new Map();
+var lastPresenceSignatureByView = /* @__PURE__ */ new WeakMap();
 var remotePresenceField = import_state.StateField.define({
   create() {
     return import_view.Decoration.none;
@@ -12310,9 +12328,26 @@ function getMarkdownViewsForFile(app, filePath) {
   return app.workspace.getLeavesOfType("markdown").map((leaf) => leaf.view).filter((view) => view instanceof import_obsidian4.MarkdownView).filter((view) => view.file?.path === filePath);
 }
 function setRemotePresenceDecorations(view, presences) {
+  const nextSignature = getPresenceSignature(presences);
+  if (lastPresenceSignatureByView.get(view) === nextSignature) {
+    return;
+  }
+  lastPresenceSignatureByView.set(view, nextSignature);
   view.dispatch({
     effects: setRemotePresenceEffect.of(presences)
   });
+}
+function getPresenceSignature(presences) {
+  return presences.map((presence) => {
+    return [
+      presence.clientId,
+      presence.userId,
+      presence.displayName,
+      presence.color,
+      presence.selection.anchor,
+      presence.selection.head
+    ].join(":");
+  }).sort().join("|");
 }
 function buildRemotePresenceDecorations(documentLength, presences) {
   cleanupSharedCursorUiState(presences);
@@ -13751,7 +13786,35 @@ function normalizePresenceColor(color) {
     return "";
   }
   const normalized = color.trim();
-  return /^#[0-9a-fA-F]{6}$/.test(normalized) ? normalized.toLowerCase() : "";
+  const hexMatch = normalized.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
+  if (hexMatch) {
+    const hex = hexMatch[1];
+    if (hex.length === 3) {
+      return `#${hex.split("").map((part) => `${part}${part}`).join("").toLowerCase()}`;
+    }
+    return normalized.toLowerCase();
+  }
+  const rgbMatch = normalized.match(
+    /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/i
+  );
+  if (rgbMatch) {
+    const channels = rgbMatch.slice(1).map((value) => Number.parseInt(value, 10));
+    if (channels.every((channel) => channel >= 0 && channel <= 255)) {
+      return `#${channels.map((channel) => channel.toString(16).padStart(2, "0")).join("")}`;
+    }
+  }
+  const hslMatch = normalized.match(
+    /^hsl\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(\d{1,3})%\s*,\s*(\d{1,3})%\s*\)$/i
+  );
+  if (hslMatch) {
+    const hue = Number.parseFloat(hslMatch[1]);
+    const saturation = Number.parseInt(hslMatch[2], 10);
+    const lightness = Number.parseInt(hslMatch[3], 10);
+    if (saturation >= 0 && saturation <= 100 && lightness >= 0 && lightness <= 100) {
+      return hslToHex2(hue, saturation, lightness);
+    }
+  }
+  return "";
 }
 function normalizeSyncRootSetting(syncRoot) {
   if (typeof syncRoot !== "string") {
@@ -13762,6 +13825,38 @@ function normalizeSyncRootSetting(syncRoot) {
     return "";
   }
   return normalized.replace(/^\/+|\/+$/g, "");
+}
+function hslToHex2(hue, saturationPercent, lightnessPercent) {
+  const h = (hue % 360 + 360) % 360;
+  const s = saturationPercent / 100;
+  const l = lightnessPercent / 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const x = c * (1 - Math.abs(h / 60 % 2 - 1));
+  const m = l - c / 2;
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  if (h < 60) {
+    r = c;
+    g = x;
+  } else if (h < 120) {
+    r = x;
+    g = c;
+  } else if (h < 180) {
+    g = c;
+    b = x;
+  } else if (h < 240) {
+    g = x;
+    b = c;
+  } else if (h < 300) {
+    r = x;
+    b = c;
+  } else {
+    r = c;
+    b = x;
+  }
+  const toHex = (channel) => Math.round((channel + m) * 255).toString(16).padStart(2, "0");
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 
 // src/settings/tab.ts
@@ -13827,15 +13922,18 @@ function openTextInputModal(app, options) {
 }
 
 // src/settings/tab.ts
+var PAGE_SIZE = 3;
 var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.activeView = "rooms";
-    this.activeRoomId = null;
+    this.activeDetail = null;
     this.isVisible = false;
     this.renderHandle = null;
     this.lastRenderKey = null;
     this.resetScrollOnNextRender = false;
+    this.listQueries = /* @__PURE__ */ new Map();
+    this.listPages = /* @__PURE__ */ new Map();
     this.rolay = plugin;
   }
   display() {
@@ -13885,18 +13983,26 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
     if (!isAdmin && this.activeView === "admin") {
       this.activeView = currentUser ? "rooms" : "account";
     }
+    if (this.activeDetail && !roomCards.some((room) => room.room.workspace.id === this.activeDetail?.roomId)) {
+      this.activeDetail = null;
+      this.activeView = currentUser ? "rooms" : "account";
+    }
     let renderKey = this.getRenderKey();
     const shouldRestoreScroll = !this.resetScrollOnNextRender && this.lastRenderKey === renderKey;
     const preservedScrollTop = shouldRestoreScroll ? scrollHost?.scrollTop ?? 0 : 0;
     containerEl.empty();
     const shell = containerEl.createDiv({ cls: "rolay-settings-shell" });
     this.renderHero(shell, currentUser);
-    if (this.activeRoomId) {
-      const activeRoom = roomCards.find((room) => room.room.workspace.id === this.activeRoomId) ?? null;
+    if (this.activeDetail) {
+      const activeRoom = roomCards.find((room) => room.room.workspace.id === this.activeDetail?.roomId) ?? null;
       if (!activeRoom) {
-        this.activeRoomId = null;
+        this.activeDetail = null;
         this.activeView = "rooms";
         renderKey = this.getRenderKey();
+      } else if (this.activeDetail.mode === "admin-room") {
+        this.renderAdminRoomDetailView(shell, activeRoom, currentUser);
+        this.finishRender(scrollHost, renderKey, preservedScrollTop);
+        return;
       } else {
         this.renderRoomDetailView(shell, activeRoom);
         this.finishRender(scrollHost, renderKey, preservedScrollTop);
@@ -13953,11 +14059,11 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       button.classList.add("mod-cta");
     }
     button.addEventListener("click", () => {
-      if (this.activeView === view && this.activeRoomId === null) {
+      if (this.activeView === view && this.activeDetail === null) {
         return;
       }
       this.resetScrollOnNextRender = true;
-      this.activeRoomId = null;
+      this.activeDetail = null;
       this.activeView = view;
       this.render();
     });
@@ -14010,7 +14116,7 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
     this.createActionButton(overviewActions, "Logout", "mod-warning", async () => {
       await this.rolay.logout();
       new import_obsidian8.Notice("Rolay session cleared.");
-      this.activeRoomId = null;
+      this.activeDetail = null;
       this.activeView = "account";
       this.resetScrollOnNextRender = true;
       this.rolay.deactivateSettingsPanelRealtime();
@@ -14030,14 +14136,7 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       this.requestRender();
     });
     const presenceCard = this.createCard(grid, "Cursor Color", "Used for your shared cursor and selection in markdown collaboration.");
-    this.createInputField(presenceCard.body, {
-      label: "Cursor color",
-      type: "color",
-      value: this.rolay.getPresenceColor() ?? "#4f8cff",
-      onChange: async (value) => {
-        await this.rolay.updatePresenceColor(value);
-      }
-    });
+    this.renderPresenceColorControls(presenceCard.body);
     const passwordDraft = this.rolay.getPasswordChangeDraft();
     const securityCard = this.createCard(grid, "Change Password");
     this.createInputField(securityCard.body, {
@@ -14127,6 +14226,24 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       });
       return;
     }
+    const roomsCard = this.createCard(topGrid, "Rooms");
+    this.renderRoomList(roomsCard.body, rooms);
+    const joinRoomDraft = this.rolay.getJoinRoomDraft();
+    const joinCard = this.createCard(topGrid, "Join by Invite");
+    this.createInputField(joinCard.body, {
+      value: joinRoomDraft.code,
+      placeholder: "paste invite key",
+      onChange: (value) => {
+        this.rolay.updateJoinRoomDraft({
+          code: value
+        });
+      }
+    });
+    const joinActions = this.createActionRow(joinCard.body);
+    this.createActionButton(joinActions, "Join room", "", async () => {
+      await this.rolay.joinRoomFromDraft();
+      this.requestRender();
+    });
     if (this.rolay.canCurrentUserCreateRooms()) {
       const createRoomDraft = this.rolay.getCreateRoomDraft();
       const createCard = this.createCard(topGrid, "Create Room");
@@ -14145,24 +14262,6 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         this.requestRender();
       });
     }
-    const joinRoomDraft = this.rolay.getJoinRoomDraft();
-    const joinCard = this.createCard(topGrid, "Join by Invite");
-    this.createInputField(joinCard.body, {
-      value: joinRoomDraft.code,
-      placeholder: "paste invite key",
-      onChange: (value) => {
-        this.rolay.updateJoinRoomDraft({
-          code: value
-        });
-      }
-    });
-    const joinActions = this.createActionRow(joinCard.body);
-    this.createActionButton(joinActions, "Join room", "", async () => {
-      await this.rolay.joinRoomFromDraft();
-      this.requestRender();
-    });
-    const roomsCard = this.createCard(topGrid, "Rooms");
-    this.renderRoomList(roomsCard.body, rooms);
   }
   renderRoomList(containerEl, rooms) {
     if (rooms.length === 0) {
@@ -14180,7 +14279,26 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         cls: "rolay-settings-list-title",
         text: room.room.workspace.name
       });
-      const actionButton = itemEl.createEl("button", {
+      const actionsEl = itemEl.createDiv({ cls: "rolay-settings-list-actions" });
+      if (room.downloaded) {
+        const indicator = actionsEl.createSpan({
+          cls: `rolay-settings-room-indicator ${room.streamStatus === "open" ? "rolay-settings-room-indicator-connected" : "rolay-settings-room-indicator-disconnected"}`
+        });
+        indicator.setAttribute("title", room.streamStatus === "open" ? "Connected" : "Disconnected");
+      } else {
+        const installButton = actionsEl.createEl("button", {
+          cls: "rolay-settings-icon-button rolay-settings-install-button",
+          attr: {
+            "aria-label": `Install ${room.room.workspace.name}`,
+            title: "Install folder"
+          }
+        });
+        (0, import_obsidian8.setIcon)(installButton, "download");
+        installButton.addEventListener("click", () => {
+          void this.promptInstallOrRenameRoom(room);
+        });
+      }
+      const actionButton = actionsEl.createEl("button", {
         cls: "rolay-settings-icon-button",
         attr: {
           "aria-label": `Open settings for ${room.room.workspace.name}`,
@@ -14189,10 +14307,7 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       });
       (0, import_obsidian8.setIcon)(actionButton, "settings");
       actionButton.addEventListener("click", () => {
-        this.resetScrollOnNextRender = true;
-        this.activeView = "rooms";
-        this.activeRoomId = room.room.workspace.id;
-        this.render();
+        this.openDetail("room", room.room.workspace.id);
       });
     }
   }
@@ -14209,7 +14324,7 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
     (0, import_obsidian8.setIcon)(backButton, "arrow-left");
     backButton.addEventListener("click", () => {
       this.resetScrollOnNextRender = true;
-      this.activeRoomId = null;
+      this.activeDetail = null;
       this.activeView = "rooms";
       this.render();
     });
@@ -14239,15 +14354,15 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       room.room.membershipRole === "owner" ? "accent" : "muted"
     );
     const grid = this.createGrid(containerEl);
-    const infoCard = this.createCard(grid, "Room Info", "Stable room identity is always based on the room ID, not on the display name.");
-    this.createInfoBlock(infoCard.body, [
-      ["Name", room.room.workspace.name],
-      ["Membership", room.room.membershipRole],
-      ["Members", String(room.room.memberCount)],
-      ["Connection", room.downloaded ? room.streamStatus : "not available"],
-      ["Markdown preload", room.crdtCacheLabel]
-    ]);
-    this.addCopyableInfoLine(infoCard.body, "Room ID", room.room.workspace.id);
+    const membersCard = this.createCard(grid, "Members");
+    this.renderMembersPanel(membersCard.body, this.rolay.getRoomMembers(room.room.workspace.id), {
+      listKey: `room-members:${room.room.workspace.id}`,
+      searchEnabled: false,
+      emptyState: "No members yet.",
+      noResultsState: "No members on this page.",
+      showGlobalRole: false,
+      showUserId: false
+    });
     const folderCard = this.createCard(
       grid,
       "Local Folder",
@@ -14282,28 +14397,18 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         this.requestRender();
       }
     );
-    const syncCard = this.createCard(
-      grid,
-      "Sync",
-      room.downloaded ? "Connect or disconnect live sync for this local room folder." : "Install the folder first before live room sync can be enabled."
-    );
-    this.createInfoBlock(syncCard.body, [
-      ["Status", room.downloaded ? room.streamStatus : "not installed"],
-      ["Last snapshot", room.lastSnapshotLabel],
-      ["Last cursor", room.lastCursorLabel],
-      ["File transfers", room.binaryTransferLabel]
-    ]);
     if (room.downloaded) {
-      const syncActions = this.createActionRow(syncCard.body);
-      const isConnected = room.streamStatus !== "stopped";
-      this.createActionButton(syncActions, isConnected ? "Disconnect" : "Connect", isConnected ? "" : "mod-cta", async () => {
-        if (isConnected) {
+      if (room.streamStatus === "stopped") {
+        this.createActionButton(folderActions, "Connect", "mod-cta", async () => {
+          await this.rolay.connectRoom(room.room.workspace.id);
+          this.requestRender();
+        });
+      } else {
+        this.createActionButton(folderActions, "Disconnect", "", async () => {
           await this.rolay.disconnectRoom(room.room.workspace.id);
-        } else {
-          await this.rolay.connectRoom(room.room.workspace.id, true, "settings-connect");
-        }
-        this.requestRender();
-      });
+          this.requestRender();
+        });
+      }
     }
     if (room.room.membershipRole === "owner") {
       const inviteCard = this.createCard(grid, "Invites", "Owner-only controls for the current invite key.");
@@ -14328,15 +14433,30 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         this.requestRender();
       });
     }
+    const debugCard = this.createCard(grid, "Debug");
+    const debugDetails = debugCard.body.createEl("details", { cls: "rolay-settings-details" });
+    debugDetails.createEl("summary", {
+      cls: "rolay-settings-details-summary",
+      text: "Show room details"
+    });
+    const debugBody = debugDetails.createDiv({ cls: "rolay-settings-details-body" });
+    this.createInfoBlock(debugBody, [
+      ["Room ID", room.room.workspace.id],
+      ["Membership", room.room.membershipRole],
+      ["Members", String(room.room.memberCount)],
+      ["Connection", room.downloaded ? room.streamStatus : "not installed"],
+      ["Markdown preload", room.crdtCacheLabel],
+      ["File transfers", room.binaryTransferLabel],
+      ["Last snapshot", room.lastSnapshotLabel],
+      ["Last cursor", room.lastCursorLabel]
+    ]);
   }
   renderAdminView(containerEl, currentUser) {
     const managedUserDraft = this.rolay.getManagedUserDraft();
-    const adminRoomDraft = this.rolay.getAdminRoomMemberDraft();
     const adminRooms = this.rolay.getAdminRooms();
-    const adminRoomMembers = this.rolay.getAdminRoomMembers();
-    const adminSelectedRoomId = this.rolay.getAdminSelectedRoomId();
-    const selectedAdminRoom = adminRooms.find((room) => room.workspace.id === adminSelectedRoomId) ?? null;
     const grid = this.createGrid(containerEl);
+    const usersCard = this.createCard(grid, "Users");
+    this.renderAdminUsersPanel(usersCard.body, this.rolay.getManagedUsers(), currentUser?.id ?? null);
     const createUserCard = this.createCard(grid, "Create User");
     this.createInputField(createUserCard.body, {
       label: "Username",
@@ -14387,82 +14507,30 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       await this.rolay.createManagedUserFromDraft();
       this.requestRender();
     });
-    const usersCard = this.createCard(grid, "Users");
-    this.renderManagedUsers(usersCard.body, this.rolay.getManagedUsers(), currentUser?.id ?? null);
     const roomsCard = this.createCard(grid, "Rooms");
-    this.renderAdminRooms(roomsCard.body, adminRooms, adminSelectedRoomId);
-    const selectedRoomCard = this.createCard(grid, selectedAdminRoom ? "Selected Room" : "Room Members");
-    if (!selectedAdminRoom) {
-      selectedRoomCard.body.createEl("div", {
-        cls: "rolay-settings-empty-state",
-        text: "Select a room from the list to view members and add users."
-      });
-      return;
-    }
-    const selectedRoomBadges = selectedRoomCard.body.createDiv({ cls: "rolay-settings-badges" });
-    this.createBadge(selectedRoomBadges, `${selectedAdminRoom.memberCount} members`, "ready");
-    this.createBadge(selectedRoomBadges, `${selectedAdminRoom.ownerCount} owners`, "accent");
-    this.createBadge(
-      selectedRoomBadges,
-      selectedAdminRoom.inviteEnabled ? "Invite on" : "Invite off",
-      selectedAdminRoom.inviteEnabled ? "ready" : "muted"
-    );
-    this.createInfoBlock(selectedRoomCard.body, [
-      ["Name", selectedAdminRoom.workspace.name],
-      ["Room ID", selectedAdminRoom.workspace.id]
-    ]);
-    const selectedRoomActions = this.createActionRow(selectedRoomCard.body);
-    this.createActionButton(selectedRoomActions, "Delete room", "mod-warning", async () => {
-      if (!window.confirm(
-        `Delete room ${selectedAdminRoom.workspace.name} (${selectedAdminRoom.workspace.id})? Local folder will not be deleted automatically.`
-      )) {
-        return;
-      }
-      await this.rolay.deleteAdminRoom(selectedAdminRoom.workspace.id);
-      this.requestRender();
-    });
-    const memberFormCard = this.createCard(grid, "Add Member");
-    this.createInputField(memberFormCard.body, {
-      label: "Username",
-      value: adminRoomDraft.username,
-      placeholder: "student1",
-      onChange: (value) => {
-        this.rolay.updateAdminRoomMemberDraft({
-          username: value.trim()
-        });
-      }
-    });
-    this.createSelectField(memberFormCard.body, {
-      label: "Membership role",
-      value: adminRoomDraft.role ?? "member",
-      options: [
-        ["member", "member"],
-        ["owner", "owner"]
-      ],
-      onChange: (value) => {
-        this.rolay.updateAdminRoomMemberDraft({
-          role: value
-        });
-      }
-    });
-    const memberActions = this.createActionRow(memberFormCard.body);
-    this.createActionButton(memberActions, "Add to room", "", async () => {
-      await this.rolay.addUserToSelectedAdminRoom();
-      this.requestRender();
-    });
-    const membersCard = this.createCard(grid, "Members");
-    this.renderRoomMembers(membersCard.body, adminRoomMembers);
+    this.renderAdminRoomsPanel(roomsCard.body, adminRooms);
   }
-  renderManagedUsers(containerEl, users, currentUserId) {
-    if (users.length === 0) {
+  renderAdminUsersPanel(containerEl, users, currentUserId) {
+    const query = this.getListQuery("admin-users");
+    const filteredUsers = users.filter((user) => {
+      if (!query) {
+        return true;
+      }
+      const haystack = `${user.username} ${user.displayName} ${user.globalRole}`.toLowerCase();
+      return haystack.includes(query.toLowerCase());
+    });
+    this.renderSearchBar(containerEl, "admin-users", "Search users");
+    const pagination = this.paginate(filteredUsers, this.getListPage("admin-users"));
+    this.setListPage("admin-users", pagination.page);
+    if (pagination.items.length === 0) {
       containerEl.createEl("div", {
         cls: "rolay-settings-empty-state",
-        text: "No managed users available."
+        text: filteredUsers.length === 0 ? "No users match the current search." : "No managed users available."
       });
       return;
     }
     const listEl = containerEl.createDiv({ cls: "rolay-settings-list" });
-    for (const user of users) {
+    for (const user of pagination.items) {
       const itemEl = listEl.createDiv({ cls: "rolay-settings-list-item rolay-settings-list-item-stack" });
       const topRow = itemEl.createDiv({ cls: "rolay-settings-list-item-top" });
       topRow.createDiv({
@@ -14492,20 +14560,30 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         });
       }
     }
+    this.renderPaginationControls(containerEl, "admin-users", pagination, filteredUsers.length);
   }
-  renderAdminRooms(containerEl, rooms, selectedRoomId) {
-    if (rooms.length === 0) {
+  renderAdminRoomsPanel(containerEl, rooms) {
+    const query = this.getListQuery("admin-rooms");
+    const filteredRooms = rooms.filter((room) => {
+      if (!query) {
+        return true;
+      }
+      const haystack = `${room.workspace.name} ${room.workspace.id}`.toLowerCase();
+      return haystack.includes(query.toLowerCase());
+    });
+    this.renderSearchBar(containerEl, "admin-rooms", "Search rooms");
+    const pagination = this.paginate(filteredRooms, this.getListPage("admin-rooms"));
+    this.setListPage("admin-rooms", pagination.page);
+    if (pagination.items.length === 0) {
       containerEl.createEl("div", {
         cls: "rolay-settings-empty-state",
-        text: "No admin rooms available."
+        text: filteredRooms.length === 0 ? "No rooms match the current search." : "No admin rooms available."
       });
       return;
     }
     const listEl = containerEl.createDiv({ cls: "rolay-settings-list" });
-    for (const room of rooms) {
-      const itemEl = listEl.createDiv({
-        cls: `rolay-settings-list-item${room.workspace.id === selectedRoomId ? " rolay-settings-list-item-active" : ""}`
-      });
+    for (const room of pagination.items) {
+      const itemEl = listEl.createDiv({ cls: "rolay-settings-list-item" });
       const titleWrap = itemEl.createDiv({ cls: "rolay-settings-list-title-wrap" });
       titleWrap.createDiv({
         cls: "rolay-settings-list-title",
@@ -14517,28 +14595,37 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       });
       const actionButton = itemEl.createEl("button", {
         cls: "rolay-settings-secondary-button",
-        text: room.workspace.id === selectedRoomId ? "Selected" : "Inspect"
+        text: "Inspect"
       });
-      if (room.workspace.id === selectedRoomId) {
-        actionButton.disabled = true;
-      }
-      actionButton.addEventListener("click", async () => {
-        this.rolay.setAdminSelectedRoomId(room.workspace.id);
-        await this.rolay.refreshAdminRoomMembers(false, room.workspace.id, false);
-        this.requestRender();
+      actionButton.addEventListener("click", () => {
+        this.openDetail("admin-room", room.workspace.id);
       });
     }
+    this.renderPaginationControls(containerEl, "admin-rooms", pagination, filteredRooms.length);
   }
-  renderRoomMembers(containerEl, members) {
-    if (members.length === 0) {
+  renderMembersPanel(containerEl, members, options) {
+    if (options.searchEnabled !== false && members.length > 0) {
+      this.renderSearchBar(containerEl, options.listKey, "Search people");
+    }
+    const query = options.searchEnabled === false ? "" : this.getListQuery(options.listKey);
+    const filteredMembers = members.filter((member) => {
+      if (!query) {
+        return true;
+      }
+      const haystack = `${member.user.username} ${member.user.displayName} ${member.user.globalRole} ${member.role}`.toLowerCase();
+      return haystack.includes(query.toLowerCase());
+    });
+    const pagination = this.paginate(filteredMembers, this.getListPage(options.listKey));
+    this.setListPage(options.listKey, pagination.page);
+    if (pagination.items.length === 0) {
       containerEl.createEl("div", {
         cls: "rolay-settings-empty-state",
-        text: "No members yet."
+        text: members.length === 0 ? options.emptyState ?? "No members yet." : options.noResultsState ?? "No people match the current search."
       });
       return;
     }
     const listEl = containerEl.createDiv({ cls: "rolay-settings-list" });
-    for (const member of members) {
+    for (const member of pagination.items) {
       const itemEl = listEl.createDiv({ cls: "rolay-settings-list-item rolay-settings-list-item-stack" });
       const topRow = itemEl.createDiv({ cls: "rolay-settings-list-item-top" });
       topRow.createDiv({
@@ -14547,12 +14634,127 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       });
       const badges = topRow.createDiv({ cls: "rolay-settings-badges" });
       this.createBadge(badges, member.role, member.role === "owner" ? "accent" : "muted");
-      this.createBadge(badges, member.user.globalRole, "ready");
-      this.createInfoBlock(itemEl, [
-        ["User ID", member.user.id],
+      if (options.showGlobalRole !== false) {
+        this.createBadge(badges, member.user.globalRole, "ready");
+      }
+      const rows = [
         ["Joined", this.formatDateTime(member.joinedAt) ?? member.joinedAt]
-      ]);
+      ];
+      if (options.showUserId !== false) {
+        rows.unshift(["User ID", member.user.id]);
+      }
+      this.createInfoBlock(itemEl, rows);
     }
+    this.renderPaginationControls(containerEl, options.listKey, pagination, filteredMembers.length);
+  }
+  renderAdminRoomDetailView(containerEl, room, currentUser) {
+    const adminRoom = this.rolay.getAdminRooms().find((entry) => entry.workspace.id === room.room.workspace.id) ?? null;
+    const pageTop = containerEl.createDiv({ cls: "rolay-settings-page-top" });
+    const navRow = pageTop.createDiv({ cls: "rolay-settings-page-nav" });
+    const backButton = navRow.createEl("button", {
+      cls: "rolay-settings-icon-button rolay-settings-back-button",
+      attr: {
+        "aria-label": "Back to admin",
+        title: "Back to admin"
+      }
+    });
+    (0, import_obsidian8.setIcon)(backButton, "arrow-left");
+    backButton.addEventListener("click", () => {
+      this.resetScrollOnNextRender = true;
+      this.activeDetail = null;
+      this.activeView = "admin";
+      this.render();
+    });
+    const breadcrumb = navRow.createDiv({ cls: "rolay-settings-breadcrumb" });
+    breadcrumb.createSpan({
+      cls: "rolay-settings-page-nav-label",
+      text: "Admin"
+    });
+    breadcrumb.createSpan({
+      cls: "rolay-settings-breadcrumb-separator",
+      text: ">"
+    });
+    breadcrumb.createSpan({
+      cls: "rolay-settings-breadcrumb-current",
+      text: room.room.workspace.name
+    });
+    const badges = pageTop.createDiv({ cls: "rolay-settings-badges" });
+    this.createBadge(badges, `${adminRoom?.memberCount ?? room.room.memberCount} members`, "ready");
+    if (adminRoom) {
+      this.createBadge(badges, `${adminRoom.ownerCount} owners`, "accent");
+    }
+    this.createBadge(
+      badges,
+      adminRoom?.inviteEnabled ?? room.room.inviteEnabled ? "Invite on" : "Invite off",
+      adminRoom?.inviteEnabled ?? room.room.inviteEnabled ? "ready" : "muted"
+    );
+    const grid = this.createGrid(containerEl);
+    const membersCard = this.createCard(grid, "People");
+    this.renderMembersPanel(membersCard.body, this.rolay.getRoomMembers(room.room.workspace.id), {
+      listKey: `admin-members:${room.room.workspace.id}`
+    });
+    const memberFormCard = this.createCard(grid, "Add Member");
+    const adminRoomDraft = this.rolay.getAdminRoomMemberDraft();
+    this.createInputField(memberFormCard.body, {
+      label: "Username",
+      value: adminRoomDraft.username,
+      placeholder: "student1",
+      onChange: (value) => {
+        this.rolay.updateAdminRoomMemberDraft({
+          username: value.trim()
+        });
+      }
+    });
+    this.createSelectField(memberFormCard.body, {
+      label: "Membership role",
+      value: adminRoomDraft.role ?? "member",
+      options: [
+        ["member", "member"],
+        ["owner", "owner"]
+      ],
+      onChange: (value) => {
+        this.rolay.updateAdminRoomMemberDraft({
+          role: value
+        });
+      }
+    });
+    const memberActions = this.createActionRow(memberFormCard.body);
+    this.createActionButton(memberActions, "Add to room", "", async () => {
+      this.rolay.setAdminSelectedRoomId(room.room.workspace.id);
+      await this.rolay.addUserToSelectedAdminRoom();
+      await this.rolay.loadRoomMembersForUi(room.room.workspace.id);
+      this.requestRender();
+    });
+    const dangerCard = this.createCard(grid, "Danger Zone");
+    dangerCard.body.createEl("div", {
+      cls: "rolay-settings-empty-state",
+      text: "Deleting the room does not delete local folders automatically."
+    });
+    const dangerActions = this.createActionRow(dangerCard.body);
+    this.createActionButton(dangerActions, "Delete room", "mod-warning", async () => {
+      if (!window.confirm(`Delete room ${room.room.workspace.name} (${room.room.workspace.id})?`)) {
+        return;
+      }
+      await this.rolay.deleteAdminRoom(room.room.workspace.id);
+      this.activeDetail = null;
+      this.activeView = "admin";
+      this.requestRender();
+    });
+    const debugCard = this.createCard(grid, "Debug");
+    const debugDetails = debugCard.body.createEl("details", { cls: "rolay-settings-details" });
+    debugDetails.createEl("summary", {
+      cls: "rolay-settings-details-summary",
+      text: "Show room details"
+    });
+    const debugBody = debugDetails.createDiv({ cls: "rolay-settings-details-body" });
+    this.createInfoBlock(debugBody, [
+      ["Room ID", room.room.workspace.id],
+      ["Name", room.room.workspace.name],
+      ["Invite", adminRoom?.inviteEnabled ?? room.room.inviteEnabled ? "enabled" : "disabled"],
+      ["Members", String(adminRoom?.memberCount ?? room.room.memberCount)],
+      ["Owners", String(adminRoom?.ownerCount ?? 0)],
+      ["Viewer account", currentUser?.username ?? "unknown"]
+    ]);
   }
   createGrid(containerEl, twoColumns = false) {
     const grid = containerEl.createDiv({
@@ -14606,6 +14808,31 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       return column.offsetHeight < shortest.offsetHeight ? column : shortest;
     }, columns[0]);
   }
+  renderPresenceColorControls(containerEl) {
+    const row = containerEl.createDiv({ cls: "rolay-settings-color-row" });
+    const pickerField = row.createDiv({ cls: "rolay-settings-color-picker-wrap" });
+    const picker = pickerField.createEl("input", {
+      cls: "rolay-settings-color-picker",
+      type: "color"
+    });
+    const currentColor = this.rolay.getPresenceColor() ?? "#4f8cff";
+    picker.value = currentColor;
+    picker.addEventListener("input", () => {
+      void this.rolay.updatePresenceColor(picker.value);
+    });
+    const textInput = row.createEl("input", {
+      cls: "rolay-settings-input",
+      type: "text"
+    });
+    textInput.placeholder = "#4f8cff / rgb(79, 140, 255) / hsl(217, 100%, 66%)";
+    textInput.value = currentColor;
+    textInput.addEventListener("change", () => {
+      void this.rolay.updatePresenceColor(textInput.value).then(() => {
+        textInput.value = this.rolay.getPresenceColor() ?? textInput.value;
+        picker.value = this.rolay.getPresenceColor() ?? picker.value;
+      });
+    });
+  }
   createInputField(containerEl, options) {
     const fieldEl = containerEl.createDiv({ cls: "rolay-settings-field" });
     if (options.label) {
@@ -14648,6 +14875,101 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
     });
     return select;
   }
+  renderSearchBar(containerEl, key, placeholder) {
+    const fieldEl = containerEl.createDiv({ cls: "rolay-settings-search-row" });
+    const input = fieldEl.createEl("input", {
+      cls: "rolay-settings-input",
+      type: "search"
+    });
+    input.placeholder = placeholder;
+    input.value = this.getListQuery(key);
+    input.addEventListener("input", () => {
+      this.setListQuery(key, input.value);
+      this.requestRender();
+    });
+  }
+  renderPaginationControls(containerEl, key, pagination, totalItems) {
+    const footer = containerEl.createDiv({ cls: "rolay-settings-pagination" });
+    footer.createDiv({
+      cls: "rolay-settings-pagination-summary",
+      text: `${pagination.page + 1}/${pagination.totalPages} \xB7 ${totalItems} total`
+    });
+    const actions = footer.createDiv({ cls: "rolay-settings-pagination-actions" });
+    const prevButton = actions.createEl("button", {
+      cls: "rolay-settings-icon-button",
+      attr: {
+        "aria-label": "Previous page",
+        title: "Previous page"
+      }
+    });
+    (0, import_obsidian8.setIcon)(prevButton, "chevron-left");
+    prevButton.disabled = pagination.page <= 0;
+    prevButton.addEventListener("click", () => {
+      this.setListPage(key, pagination.page - 1);
+      this.requestRender();
+    });
+    const nextButton = actions.createEl("button", {
+      cls: "rolay-settings-icon-button",
+      attr: {
+        "aria-label": "Next page",
+        title: "Next page"
+      }
+    });
+    (0, import_obsidian8.setIcon)(nextButton, "chevron-right");
+    nextButton.disabled = pagination.page >= pagination.totalPages - 1;
+    nextButton.addEventListener("click", () => {
+      this.setListPage(key, pagination.page + 1);
+      this.requestRender();
+    });
+  }
+  paginate(items, requestedPage) {
+    const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+    const page = Math.max(0, Math.min(requestedPage, totalPages - 1));
+    const start = page * PAGE_SIZE;
+    return {
+      items: items.slice(start, start + PAGE_SIZE),
+      page,
+      totalPages
+    };
+  }
+  getListQuery(key) {
+    return this.listQueries.get(key) ?? "";
+  }
+  setListQuery(key, value) {
+    this.listQueries.set(key, value);
+    this.listPages.set(key, 0);
+  }
+  getListPage(key) {
+    return this.listPages.get(key) ?? 0;
+  }
+  setListPage(key, page) {
+    this.listPages.set(key, Math.max(0, page));
+  }
+  async promptInstallOrRenameRoom(room) {
+    const nextFolderName = await openTextInputModal(this.app, {
+      title: room.downloaded ? "Rename Rolay Room Folder" : "Install Rolay Room",
+      label: "Local folder name",
+      placeholder: room.room.workspace.name,
+      initialValue: room.folderName || room.room.workspace.name,
+      submitText: room.downloaded ? "Save" : "Install",
+      description: room.downloaded ? "This only changes the local vault folder binding." : "Installation is blocked if the target folder already exists."
+    });
+    if (!nextFolderName) {
+      return;
+    }
+    if (room.downloaded) {
+      await this.rolay.renameInstalledRoomFolder(room.room.workspace.id, nextFolderName);
+    } else {
+      await this.rolay.installRoom(room.room.workspace.id, nextFolderName);
+    }
+    this.requestRender();
+  }
+  openDetail(mode, roomId) {
+    this.resetScrollOnNextRender = true;
+    this.activeDetail = { mode, roomId };
+    void this.rolay.loadRoomMembersForUi(roomId).then(() => this.requestRender());
+    this.render();
+  }
   formatDateTime(value) {
     if (!value) {
       return null;
@@ -14662,7 +14984,10 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
     }).format(parsed);
   }
   getRenderKey() {
-    return this.activeRoomId ? `room:${this.activeRoomId}` : `view:${this.activeView}`;
+    if (this.activeDetail) {
+      return `detail:${this.activeDetail.mode}:${this.activeDetail.roomId}`;
+    }
+    return `view:${this.activeView}`;
   }
   getScrollHost() {
     let current = this.containerEl;
@@ -15510,6 +15835,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     this.managedUsers = [];
     this.adminSelectedRoomId = "";
     this.adminRoomMembers = [];
+    this.roomMembersCache = /* @__PURE__ */ new Map();
     this.logFlushHandle = null;
     this.logFileWrite = Promise.resolve();
     this.pendingLogLines = [];
@@ -15696,7 +16022,22 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     return [...this.roomList];
   }
   getRoomCardStates() {
-    return this.roomList.map((room) => {
+    const roomsById = new Map(this.roomList.map((room) => [room.workspace.id, room]));
+    const orderedRoomIds = [
+      ...this.roomList.map((room) => room.workspace.id),
+      ...Object.entries(this.data.settings.roomBindings).filter(([roomId, binding]) => binding.downloaded && !roomsById.has(roomId)).map(([roomId]) => roomId)
+    ];
+    return orderedRoomIds.map((roomId) => {
+      const room = roomsById.get(roomId) ?? {
+        workspace: {
+          id: roomId,
+          name: this.getStoredRoomBinding(roomId)?.folderName || roomId
+        },
+        membershipRole: "member",
+        createdAt: "",
+        memberCount: 0,
+        inviteEnabled: false
+      };
       const folderName = this.getResolvedRoomFolderName(room.workspace.id, room.workspace.name);
       const binding = this.getStoredRoomBinding(room.workspace.id);
       const localRoot = getRoomRoot(this.data.settings.syncRoot, folderName);
@@ -15741,6 +16082,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   getAdminRoomMembers() {
     return [...this.adminRoomMembers];
   }
+  getRoomMembers(workspaceId) {
+    return [...this.roomMembersCache.get(workspaceId) ?? []];
+  }
   getProfileDraftDisplayName() {
     return this.profileDraftDisplayName || this.data.session?.user?.displayName || "";
   }
@@ -15753,7 +16097,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     return currentUser ? buildPresenceColor(currentUser.id) : null;
   }
   async updatePresenceColor(color) {
-    const normalizedColor = /^#[0-9a-fA-F]{6}$/.test(color.trim()) ? color.trim().toLowerCase() : "";
+    const normalizedColor = normalizePresenceColor(color);
     await this.updateSettings({
       presenceColor: normalizedColor
     });
@@ -16045,7 +16389,6 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   async refreshRooms(showNotice = false, logActivity = true) {
     const response = await this.apiClient.listRooms();
     this.roomList = [...response.workspaces].sort(compareRoomsByName);
-    await this.reconcileDownloadedRooms();
     await this.reconcileLocalRoomFolders();
     this.reconcileInviteCache();
     if (logActivity) {
@@ -16149,6 +16492,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     const room = this.requireDownloadedRoom(workspaceId);
     await this.refreshRoomSnapshot(room.workspace.id, reason);
     await this.startRoomEventStream(room.workspace.id);
+    this.scheduleSnapshotRefresh(room.workspace.id, "post-connect-binary-followup");
     this.scheduleBackgroundMarkdownRefresh(
       room.workspace.id,
       "post-connect-background-refresh",
@@ -16343,9 +16687,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     if (!targetRoomId) {
       throw this.notifyError("Select an admin room first.");
     }
-    const response = await this.apiClient.listRoomMembersAsAdmin(targetRoomId);
+    const members = await this.loadRoomMembersForUi(targetRoomId, logActivity);
     this.adminSelectedRoomId = targetRoomId;
-    this.adminRoomMembers = [...response.members].sort(compareRoomMembers);
+    this.adminRoomMembers = [...members];
     if (logActivity) {
       this.recordLog("admin", `Loaded ${this.adminRoomMembers.length} member(s) for room ${targetRoomId}.`);
     }
@@ -16353,6 +16697,28 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       new import_obsidian9.Notice(`Loaded ${this.adminRoomMembers.length} room member(s).`);
     }
     return this.getAdminRoomMembers();
+  }
+  async loadRoomMembersForUi(workspaceId, logActivity = false) {
+    try {
+      const response = this.data.session?.user?.isAdmin ? await this.apiClient.listRoomMembersAsAdmin(workspaceId) : await this.apiClient.listRoomMembers(workspaceId);
+      const members = [...response.members].sort(compareRoomMembers);
+      this.roomMembersCache.set(workspaceId, members);
+      if (this.adminSelectedRoomId === workspaceId) {
+        this.adminRoomMembers = [...members];
+      }
+      if (logActivity) {
+        this.recordLog("rooms", `Loaded ${members.length} member(s) for room ${workspaceId}.`);
+      }
+      this.requestSettingsRender();
+      return [...members];
+    } catch (error) {
+      this.recordLog(
+        "rooms",
+        `Failed to load members for room ${workspaceId}: ${error instanceof Error ? error.message : String(error)}`,
+        "error"
+      );
+      return this.getRoomMembers(workspaceId);
+    }
   }
   async addUserToSelectedAdminRoom() {
     this.requireAdmin();
@@ -16888,8 +17254,11 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       if (!binding.downloaded || availableRoomIds.has(roomId)) {
         continue;
       }
-      await this.deactivateRoomDownload(roomId);
-      this.recordLog("rooms", `Room ${roomId} is no longer available to the current user. Sync was stopped and the download flag was cleared.`);
+      this.stopRoomEventStream(roomId);
+      this.recordLog(
+        "rooms",
+        `Room ${roomId} is not present in the current room list. Keeping the local folder binding and downloaded flag intact.`
+      );
     }
   }
   reconcileInviteCache() {
@@ -17118,21 +17487,21 @@ ${keptTail}`;
     return normalizeRoomFolderName(binding?.folderName || fallbackRoomName);
   }
   getDownloadedFolderName(workspaceId) {
-    const room = this.roomList.find((item) => item.workspace.id === workspaceId);
-    if (!room) {
-      return null;
-    }
     const binding = this.getStoredRoomBinding(workspaceId);
     if (!binding?.downloaded) {
       return null;
     }
-    return this.getResolvedRoomFolderName(workspaceId, room.workspace.name);
+    const room = this.roomList.find((item) => item.workspace.id === workspaceId);
+    return normalizeRoomFolderName(binding.folderName || room?.workspace.name || workspaceId);
   }
   getDownloadedRooms() {
-    return this.roomList.filter((room) => Boolean(this.getStoredRoomBinding(room.workspace.id)?.downloaded)).map((room) => ({
-      workspaceId: room.workspace.id,
-      folderName: this.getResolvedRoomFolderName(room.workspace.id, room.workspace.name)
-    }));
+    return Object.entries(this.data.settings.roomBindings).filter(([, binding]) => Boolean(binding.downloaded)).map(([workspaceId, binding]) => {
+      const room = this.roomList.find((item) => item.workspace.id === workspaceId);
+      return {
+        workspaceId,
+        folderName: normalizeRoomFolderName(binding.folderName || room?.workspace.name || workspaceId)
+      };
+    });
   }
   ensureRoomRuntime(workspaceId) {
     const existing = this.roomRuntime.get(workspaceId);
@@ -19087,7 +19456,7 @@ ${keptTail}`;
   async reconcileLocalRoomFolders() {
     for (const room of this.getDownloadedRooms()) {
       const roomRoot = getRoomRoot(this.data.settings.syncRoot, room.folderName);
-      if (this.app.vault.getAbstractFileByPath(roomRoot)) {
+      if (await this.localPathExists(roomRoot)) {
         continue;
       }
       await this.deactivateRoomDownload(room.workspaceId, false);
@@ -19095,6 +19464,16 @@ ${keptTail}`;
         "rooms",
         `Detached room ${room.workspaceId} because the local folder ${roomRoot} is missing. Remote room content was left untouched.`
       );
+    }
+  }
+  async localPathExists(path) {
+    if (this.app.vault.getAbstractFileByPath(path)) {
+      return true;
+    }
+    try {
+      return await this.app.vault.adapter.exists((0, import_obsidian9.normalizePath)(path));
+    } catch {
+      return false;
     }
   }
   patchInviteEnabled(workspaceId, enabled) {

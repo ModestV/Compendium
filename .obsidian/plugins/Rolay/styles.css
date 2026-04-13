@@ -8,6 +8,7 @@
 .rolay-settings-shell {
   display: grid;
   gap: 0.85rem;
+  overflow-x: clip;
   padding-bottom: 0.75rem;
 }
 
@@ -157,17 +158,19 @@
   color: var(--text-normal);
   content: attr(data-tooltip);
   font-size: var(--font-ui-smaller);
-  left: 50%;
+  left: auto;
   line-height: 1.4;
-  max-width: 220px;
+  max-width: min(220px, calc(100vw - 2rem));
   opacity: 0;
   padding: 0.5rem 0.6rem;
   pointer-events: none;
   position: absolute;
-  transform: translate(-50%, 0);
+  right: 0;
+  transform: none;
   visibility: hidden;
   white-space: normal;
-  width: max-content;
+  width: min(220px, calc(100vw - 2rem));
+  overflow-wrap: anywhere;
   z-index: 30;
 }
 
@@ -177,11 +180,12 @@
   border-top: 6px solid var(--background-modifier-border);
   bottom: calc(100% + 2px);
   content: "";
-  left: 50%;
+  left: auto;
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-50%);
+  right: 2px;
+  transform: none;
   visibility: hidden;
   z-index: 29;
 }
@@ -214,6 +218,40 @@
   width: 100%;
 }
 
+.rolay-settings-color-row {
+  align-items: center;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.rolay-settings-color-picker-wrap {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.rolay-settings-color-picker {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 2rem;
+  padding: 0;
+  width: 2rem;
+}
+
+.rolay-settings-color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.rolay-settings-color-picker::-webkit-color-swatch,
+.rolay-settings-color-picker::-moz-color-swatch {
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  border-radius: 999px;
+}
+
 .rolay-settings-action-row {
   display: flex;
   flex-wrap: wrap;
@@ -241,6 +279,19 @@
   min-width: 34px;
   padding: 0;
   width: 34px;
+}
+
+.rolay-settings-install-button {
+  background: color-mix(in srgb, var(--interactive-accent, #7a5cff) 88%, white 12%);
+  border-color: color-mix(in srgb, var(--interactive-accent, #7a5cff) 70%, black 14%);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--interactive-accent, #7a5cff) 24%, transparent);
+  color: white;
+}
+
+.rolay-settings-install-button:hover,
+.rolay-settings-install-button:focus-visible {
+  background: color-mix(in srgb, var(--interactive-accent, #7a5cff) 94%, white 6%);
+  color: white;
 }
 
 .rolay-settings-page-top {
@@ -386,6 +437,29 @@
   padding: 0.7rem 0.8rem;
 }
 
+.rolay-settings-list-actions {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.rolay-settings-room-indicator {
+  border-radius: 999px;
+  display: inline-block;
+  height: 0.85rem;
+  width: 0.85rem;
+}
+
+.rolay-settings-room-indicator-connected {
+  background: var(--color-green, #3ea66b);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-green, #3ea66b) 35%, transparent);
+}
+
+.rolay-settings-room-indicator-disconnected {
+  background: var(--text-muted);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--text-muted) 35%, transparent);
+}
+
 .rolay-settings-list-item-stack {
   align-items: stretch;
   grid-template-columns: 1fr;
@@ -427,6 +501,27 @@
   line-height: 1.5;
 }
 
+.rolay-settings-search-row {
+  display: grid;
+}
+
+.rolay-settings-pagination {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.rolay-settings-pagination-summary {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.rolay-settings-pagination-actions {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
 .rolay-settings-log {
   background: var(--background-primary);
   border: 1px solid var(--background-modifier-border);
@@ -464,6 +559,11 @@
 
   .rolay-settings-list-item {
     grid-template-columns: 1fr;
+  }
+
+  .rolay-settings-list-actions,
+  .rolay-settings-pagination {
+    justify-content: flex-start;
   }
 
   .rolay-settings-info-row,
