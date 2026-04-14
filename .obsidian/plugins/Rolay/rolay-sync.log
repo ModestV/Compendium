@@ -1583,3 +1583,66 @@
 [2026-04-14T19:52:19.532Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-14T19:52:25.519Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-14T19:52:31.508Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:52:37.655Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:52:43.609Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:52:49.795Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:52:55.504Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:01.518Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:07.504Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:12.654Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:16.492Z] crdt/info: Preparing live CRDT bootstrap for Rolay/150911/note321.md from persisted cache.
+[2026-04-14T19:53:16.492Z] crdt/info: Opening CRDT session for Rolay/150911/note321.md.
+[2026-04-14T19:53:16.649Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/150911/note321.md.
+[2026-04-14T19:53:16.658Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connecting.
+[2026-04-14T19:53:16.720Z] crdt/info: CRDT websocket opened for Rolay/150911/note321.md.
+[2026-04-14T19:53:16.721Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:16.721Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:16.721Z] crdt/info: CRDT websocket opened for Rolay/150911/note321.md.
+[2026-04-14T19:53:16.753Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:16.753Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:16.919Z] crdt/info: Preparing live CRDT bootstrap for Rolay/150911/note123.md from persisted cache.
+[2026-04-14T19:53:16.920Z] crdt/info: Opening CRDT session for Rolay/150911/note123.md.
+[2026-04-14T19:53:17.079Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/150911/note123.md.
+[2026-04-14T19:53:17.079Z] crdt/info: CRDT provider status for Rolay/150911/note123.md: connecting.
+[2026-04-14T19:53:17.141Z] crdt/info: CRDT websocket opened for Rolay/150911/note123.md.
+[2026-04-14T19:53:17.142Z] crdt/info: CRDT provider status for Rolay/150911/note123.md: connected.
+[2026-04-14T19:53:17.142Z] crdt/info: CRDT provider status for Rolay/150911/note123.md: connected.
+[2026-04-14T19:53:17.142Z] crdt/info: CRDT websocket opened for Rolay/150911/note123.md.
+[2026-04-14T19:53:17.167Z] crdt/info: CRDT provider status for Rolay/150911/note123.md: connected.
+[2026-04-14T19:53:17.167Z] crdt/info: CRDT provider status for Rolay/150911/note123.md: connected.
+[2026-04-14T19:53:17.810Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:22.938Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:24.421Z] crdt/info: Preparing live CRDT bootstrap for Rolay/150911/note321.md from persisted cache.
+[2026-04-14T19:53:24.421Z] crdt/info: Opening CRDT session for Rolay/150911/note321.md.
+[2026-04-14T19:53:24.570Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/150911/note321.md.
+[2026-04-14T19:53:24.571Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connecting.
+[2026-04-14T19:53:24.624Z] crdt/info: CRDT websocket opened for Rolay/150911/note321.md.
+[2026-04-14T19:53:24.624Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:24.624Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:24.624Z] crdt/info: CRDT websocket opened for Rolay/150911/note321.md.
+[2026-04-14T19:53:24.654Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:24.654Z] crdt/info: CRDT provider status for Rolay/150911/note321.md: connected.
+[2026-04-14T19:53:28.084Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:33.490Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:39.482Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:45.486Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:51.489Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:53:57.533Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:03.688Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:09.486Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:15.499Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:21.501Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:27.510Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:33.496Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:39.497Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:45.492Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:51.502Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:54:57.492Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:03.496Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:09.933Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:15.522Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:21.501Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:27.513Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:33.566Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:39.705Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-14T19:55:45.556Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
