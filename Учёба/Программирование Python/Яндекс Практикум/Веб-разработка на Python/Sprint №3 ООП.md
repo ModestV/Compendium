@@ -197,4 +197,4 @@ rotary_phone = Phone(dial_type_value='дисковый')
 
 print(rotary_phone)
 ```
-### <font color="#FFB100">Практика по теме</font>
+
