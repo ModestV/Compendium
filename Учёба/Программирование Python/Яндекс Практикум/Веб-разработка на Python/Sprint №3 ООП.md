@@ -198,3 +198,9 @@ rotary_phone = Phone(dial_type_value='дисковый')
 print(rotary_phone)
 ```
 
+<font color="#FFD473">Знакомство с ООП</font>
+ <font color="#FFB100">Принципы ООП</font>
+ <font color="#FFB100">Наследование</font>
+ <font color="#FFB100">Полиморфизм</font>
+ <font color="#FFB100">Инкапсуляция</font>
+ 
