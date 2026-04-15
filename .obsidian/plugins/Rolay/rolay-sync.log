@@ -2382,3 +2382,107 @@ document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-15T08:49:17.276Z] tree/info: Fetched snapshot for main150911 with 43 entries (local-op).
 [2026-04-15T08:49:17.277Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
 [2026-04-15T08:49:17.410Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:18.744Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-15T08:49:19.087Z] ops/info: Sending rename_entry (aa193aa2-33a1-4aa9-9db9-7567a75d50fd) for rename_entry Физика/Без названия -> Физика/Лекция.
+[2026-04-15T08:49:19.150Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 119: tree.entry.updated
+[2026-04-15T08:49:19.228Z] ops/info: Operation aa193aa2-33a1-4aa9-9db9-7567a75d50fd applied at event 119.
+[2026-04-15T08:49:19.608Z] tree/info: Fetched snapshot for main150911 with 43 entries (event-stream).
+[2026-04-15T08:49:19.609Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-15T08:49:19.751Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:20.240Z] tree/info: Fetched snapshot for main150911 with 43 entries (local-op).
+[2026-04-15T08:49:20.241Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
+[2026-04-15T08:49:20.385Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:21.723Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-15T08:49:22.529Z] ops/info: Sending create_folder (c1f3114b-73aa-4f71-bdfa-f5832ad7cc20) for local folder create Физика/Без названия.
+[2026-04-15T08:49:22.598Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 120: tree.entry.created
+[2026-04-15T08:49:22.665Z] ops/info: Operation c1f3114b-73aa-4f71-bdfa-f5832ad7cc20 applied at event 120.
+[2026-04-15T08:49:23.110Z] tree/info: Fetched snapshot for main150911 with 44 entries (event-stream).
+[2026-04-15T08:49:23.110Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-15T08:49:23.227Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:23.710Z] tree/info: Fetched snapshot for main150911 with 44 entries (local-op).
+[2026-04-15T08:49:23.710Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
+[2026-04-15T08:49:23.823Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:24.029Z] ops/info: Sending rename_entry (f6903592-fa38-42ae-be31-97c91c114b4a) for rename_entry Физика/Без названия -> Физика/Практика.
+[2026-04-15T08:49:24.111Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 121: tree.entry.updated
+[2026-04-15T08:49:24.164Z] ops/info: Operation f6903592-fa38-42ae-be31-97c91c114b4a applied at event 121.
+[2026-04-15T08:49:24.580Z] tree/info: Fetched snapshot for main150911 with 44 entries (event-stream).
+[2026-04-15T08:49:24.580Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-15T08:49:24.708Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:25.205Z] tree/info: Fetched snapshot for main150911 with 44 entries (local-op).
+[2026-04-15T08:49:25.206Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 2 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
+[2026-04-15T08:49:25.326Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 2 markdown document(s) with 592 B downloaded.
+[2026-04-15T08:49:26.654Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-15T08:49:31.770Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:49:36.899Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:49:42.012Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:49:47.126Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 1/1 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:49:52.273Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:49:57.401Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:02.532Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:07.710Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:12.845Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:17.969Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:23.115Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:28.248Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:33.381Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:33.558Z] ops/info: Sending create_markdown (c7ec5e1c-04e9-4d77-8648-4ea17a693ab2) for local markdown create АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:33.623Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 122: tree.entry.created
+[2026-04-15T08:50:33.695Z] ops/info: Operation c7ec5e1c-04e9-4d77-8648-4ea17a693ab2 applied at event 122.
+[2026-04-15T08:50:33.695Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for АГиТДУ/Практика/АГиТДУ Практика.md. Existing local text will be pushed into the remote CRDT doc when possible.
+[2026-04-15T08:50:33.696Z] crdt/info: Merging local markdown state into remote CRDT doc for АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:34.120Z] tree/info: Fetched snapshot for main150911 with 45 entries (event-stream).
+[2026-04-15T08:50:34.121Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 3 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-15T08:50:34.246Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/АГиТДУ Практика.md because a local markdown merge is pending.
+[2026-04-15T08:50:34.249Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 3 markdown document(s) with 596 B downloaded.
+[2026-04-15T08:50:34.249Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Replaying 1 pending markdown CRDT merge(s) after event-stream.
+[2026-04-15T08:50:34.250Z] crdt/info: Merging local markdown state into remote CRDT doc for АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:34.483Z] crdt/info: Merged local markdown state into remote CRDT doc for АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:34.971Z] crdt/info: Merged local markdown state into remote CRDT doc for АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:35.470Z] tree/info: Fetched snapshot for main150911 with 45 entries (local-op).
+[2026-04-15T08:50:35.472Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 3 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
+[2026-04-15T08:50:35.571Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 1 state update(s)).
+[2026-04-15T08:50:35.677Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 3 markdown document(s) with 5.88 KB downloaded.
+[2026-04-15T08:50:37.005Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-15T08:50:37.337Z] crdt/info: Preparing live CRDT bootstrap for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md from persisted cache.
+[2026-04-15T08:50:37.337Z] crdt/info: Opening CRDT session for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:37.488Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:37.489Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md: connecting.
+[2026-04-15T08:50:37.554Z] crdt/info: CRDT websocket opened for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:37.554Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md: connected.
+[2026-04-15T08:50:37.554Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md: connected.
+[2026-04-15T08:50:37.554Z] crdt/info: CRDT websocket opened for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md.
+[2026-04-15T08:50:37.576Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md: connected.
+[2026-04-15T08:50:37.576Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/АГиТДУ Практика.md: connected.
+[2026-04-15T08:50:42.124Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:42.692Z] ops/info: Sending rename_entry (dc6a323b-fa22-4301-aa9c-448d8b569a25) for rename_entry АГиТДУ/Практика/АГиТДУ Практика.md -> АГиТДУ/Практика/10.04.2025.md.
+[2026-04-15T08:50:42.754Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 123: tree.entry.updated
+[2026-04-15T08:50:42.842Z] ops/info: Operation dc6a323b-fa22-4301-aa9c-448d8b569a25 applied at event 123.
+[2026-04-15T08:50:43.228Z] tree/info: Fetched snapshot for main150911 with 45 entries (event-stream).
+[2026-04-15T08:50:43.229Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 3 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-15T08:50:43.346Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 3 markdown document(s) with 5.88 KB downloaded.
+[2026-04-15T08:50:43.841Z] tree/info: Fetched snapshot for main150911 with 45 entries (local-op).
+[2026-04-15T08:50:43.842Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 3 markdown document(s) via HTTP bootstrap metadata + state batches (local-op).
+[2026-04-15T08:50:43.969Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 3 markdown document(s) with 5.88 KB downloaded.
+[2026-04-15T08:50:45.284Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-15T08:50:50.419Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:50:55.542Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 2/2 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:00.683Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:05.804Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:10.941Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:16.067Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:21.188Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:26.319Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:31.452Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:36.581Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:41.703Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:46.844Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:51.977Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:51:57.234Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:02.356Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:07.486Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:12.621Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:17.755Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:22.890Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:28.016Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:33.144Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T08:52:38.260Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 3/3 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
