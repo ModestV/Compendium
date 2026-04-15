@@ -170,5 +170,31 @@ class ИмяКласса:
 
 ### <font color="#FFB100">Магический метод  __ str __</font>
 
-Магический метод `__str__` встроен во все классы
+Магический метод `__str__` встроен во все классы и позволяет задать пользовательское описание вывода объекта, при применении к объекту функции `print()`. Объекты классов, в которых такого метода нет, буду возвращать при принте адрес в памяти.
+```Python
+class Phone:
+
+    line_type = 'проводной'
+
+    def __init__(self, dial_type_value):
+        self.dial_type = dial_type_value
+
+    def ring(self):
+        print('Дзззззыыыыыыыынь!')
+
+    def call(self, phone_number):
+        print(f'Звоню по номеру {phone_number}! Тип связи - {self.line_type}.')
+
+    def dial_type_upgrade(self, new_dial_type):
+        self.dial_type = new_dial_type
+
+    # Вот он - магический метод __str__ с пользовательским описанием.
+    def __str__(self):
+        return f'Это {self.line_type} телефон. Набор - {self.dial_type}.'
+
+
+rotary_phone = Phone(dial_type_value='дисковый')
+
+print(rotary_phone)
+```
 ### <font color="#FFB100">Практика по теме</font>
