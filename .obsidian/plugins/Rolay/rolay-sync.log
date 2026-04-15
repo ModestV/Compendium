@@ -2454,3 +2454,48 @@ last known cached content.
 [2026-04-15T17:51:42.186Z] crdt/info: CRDT provider status for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: connected.
 [2026-04-15T17:51:42.864Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-15T17:52:02.189Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:52:18.294Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:52:27.817Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:52:41.564Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:53:03.430Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:54:05.571Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:54:11.138Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T17:54:16.709Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 12/12 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-15T21:09:08.201Z] plugin/info: Rolay plugin loaded.
+[2026-04-15T21:09:08.424Z] rooms/info: Loaded 2 room(s).
+[2026-04-15T21:09:08.424Z] auth/info: Loaded current user vladp.
+[2026-04-15T21:09:08.424Z] auth/info: Session tokens refreshed.
+[2026-04-15T21:09:08.503Z] tree/info: Fetched snapshot for main150911 with 94 entries (startup).
+[2026-04-15T21:09:08.504Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 13 markdown document(s) via HTTP bootstrap metadata + state batches (startup).
+[2026-04-15T21:09:08.775Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 13 markdown document(s) with 884 KB downloaded.
+[2026-04-15T21:09:09.060Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: File already exists.
+[2026-04-15T21:09:09.102Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/attachments.zip: File already exists.
+[2026-04-15T21:09:09.231Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: File already exists.
+[2026-04-15T21:09:09.304Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png: File already exists.
+[2026-04-15T21:09:09.410Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png: File already exists.
+[2026-04-15T21:09:09.460Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png: File already exists.
+[2026-04-15T21:09:09.566Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png: File already exists.
+[2026-04-15T21:09:09.642Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png: File already exists.
+[2026-04-15T21:09:09.716Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png: File already exists.
+[2026-04-15T21:09:09.749Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-15T21:09:09.859Z] ops/info: Sending create_folder (424fec21-7d2e-4c3f-9354-e9df86691c4a) for local folder create .
+[2026-04-15T21:09:09.894Z] error/error: Local create sync failed for Rolay/150911: Create operation requires path.
+[2026-04-15T21:09:09.954Z] bridge/info: Ignored create echo for remotely materialized path Rolay/150911/Физика/Лекции/attachments.zip.
+[2026-04-15T21:09:09.965Z] bridge/info: Ignored create echo for remotely materialized path Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png.
+[2026-04-15T21:09:09.990Z] ops/info: Sending create_markdown (714ac86d-2223-4087-9853-ecc69dcbcc93) for local markdown create Misc/Untitled.md.
+[2026-04-15T21:09:10.047Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 253: tree.entry.created
+[2026-04-15T21:09:10.305Z] ops/info: Operation 714ac86d-2223-4087-9853-ecc69dcbcc93 applied at event 253.
+[2026-04-15T21:09:10.305Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for Misc/Untitled.md. Existing local text will be pushed into the remote CRDT doc when possible.
+[2026-04-15T21:09:10.327Z] crdt/info: Preparing live CRDT bootstrap for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md from persisted cache.
+[2026-04-15T21:09:10.327Z] crdt/info: Opening CRDT session for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
+[2026-04-15T21:09:10.434Z] tree/info: Fetched snapshot for main150911 with 95 entries (post-connect-binary-followup).
+[2026-04-15T21:09:10.492Z] crdt/info: Loaded local CRDT bootstrap state for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
+[2026-04-15T21:09:10.496Z] crdt/info: CRDT provider status for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: connecting.
+[2026-04-15T21:09:10.549Z] crdt/info: CRDT websocket opened for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
+[2026-04-15T21:09:10.550Z] crdt/info: CRDT provider status for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: connected.
+[2026-04-15T21:09:10.550Z] crdt/info: CRDT provider status for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: connected.
+[2026-04-15T21:09:10.551Z] crdt/info: CRDT websocket opened for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
+[2026-04-15T21:09:10.591Z] crdt/info: CRDT provider status for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: connected.
+[2026-04-15T21:09:10.591Z] crdt/info: CRDT provider status for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: connected.
+[2026-04-15T21:09:11.119Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 14 markdown document(s) via HTTP bootstrap metadata + state batches (post-connect-binary-followup).
+[2026-04-15T21:09:12.062Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 14 markdown document(s) with 884 KB downloaded.
