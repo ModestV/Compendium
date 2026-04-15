@@ -1,1 +1,13 @@
 #Python
+
+## <font color="#FFD473">Объекты и классы</font>
+### <font color="#FFB100">Введение. ООП</font>
+
+
+
+### <font color="#FFB100">Классы и объекты в Python</font>
+### <font color="#FFB100">Собственные классы и объекты</font>
+### <font color="#FFB100">Атрибуты класса и объекта</font>
+### <font color="#FFB100">Методы объекта</font>
+### <font color="#FFB100">Магический метод  __ str __</font>
+### <font color="#FFB100">Практика по теме</font>
