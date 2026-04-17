@@ -2043,3 +2043,38 @@
 [2026-04-17T07:41:37.046Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-17T07:41:43.963Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-17T07:41:51.236Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:41:58.141Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:06.569Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:13.175Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:20.143Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:27.018Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:33.707Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:40.883Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:48.045Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:42:55.418Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:02.909Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:10.519Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:17.366Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:24.870Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:32.475Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:39.887Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 16/16 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:43:43.697Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: disconnected.
+[2026-04-17T07:43:43.697Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: disconnected.
+[2026-04-17T07:43:43.698Z] crdt/info: CRDT websocket disconnected for Rolay/150911/Физика/lab 28.md.
+[2026-04-17T07:43:43.699Z] crdt/info: CRDT websocket disconnected for Rolay/150911/Физика/lab 28.md.
+[2026-04-17T08:25:09.356Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-17T08:25:09.356Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-17T08:25:09.359Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: connecting.
+[2026-04-17T08:25:09.359Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: connecting.
+[2026-04-17T08:25:10.282Z] crdt/info: CRDT websocket opened for Rolay/150911/Физика/lab 28.md.
+[2026-04-17T08:25:10.283Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: connected.
+[2026-04-17T08:25:10.283Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: connected.
+[2026-04-17T08:25:10.283Z] crdt/info: CRDT websocket opened for Rolay/150911/Физика/lab 28.md.
+[2026-04-17T08:25:11.496Z] crdt/info: CRDT auth failed for Rolay/150911/Физика/lab 28.md: Failed to get token during sendToken(): RolayApiError: Refresh token is invalid or expired.
+[2026-04-17T08:25:11.513Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-17T08:25:12.199Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: disconnected.
+[2026-04-17T08:25:12.200Z] crdt/info: CRDT provider status for Rolay/150911/Физика/lab 28.md: disconnected.
+[2026-04-17T08:25:12.200Z] crdt/info: CRDT websocket disconnected for Rolay/150911/Физика/lab 28.md.
+[2026-04-17T08:25:12.200Z] crdt/info: CRDT websocket disconnected for Rolay/150911/Физика/lab 28.md.
+[2026-04-17T08:25:12.201Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:25:17.209Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
