@@ -2206,3 +2206,12 @@
 [2026-04-17T08:57:15.711Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
 [2026-04-17T08:57:15.712Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
 [2026-04-17T08:57:15.712Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T08:58:15.711Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:58:15.712Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T08:58:15.712Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T08:59:15.699Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:59:15.700Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T08:59:15.700Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T09:05:26.833Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T09:05:26.834Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T09:05:26.834Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
