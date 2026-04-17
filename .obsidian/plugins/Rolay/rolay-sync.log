@@ -2811,3 +2811,34 @@
 [2026-04-17T10:31:28.255Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-17T10:31:37.779Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-17T10:31:45.923Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:31:54.130Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:32:01.816Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:32:10.583Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:32:19.597Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:32:28.845Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:32:39.720Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:32:50.701Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:33:05.215Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:33:15.726Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:33:26.692Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:33:29.577Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-17T10:33:29.577Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-17T10:33:37.699Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:34:00.118Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:34:10.705Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: HTTP 502
+[2026-04-17T10:34:11.538Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): read ECONNRESET
+[2026-04-17T10:34:11.538Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 4000ms.
+[2026-04-17T10:34:19.702Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-17T10:34:24.562Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:34:37.860Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: disconnected.
+[2026-04-17T10:34:37.861Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: disconnected.
+[2026-04-17T10:34:37.862Z] crdt/info: CRDT websocket disconnected for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-17T10:34:37.862Z] crdt/info: CRDT websocket disconnected for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-17T10:34:39.677Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connecting.
+[2026-04-17T10:34:39.677Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connecting.
+[2026-04-17T10:34:40.663Z] crdt/info: CRDT websocket opened for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-17T10:34:40.664Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connected.
+[2026-04-17T10:34:40.668Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connected.
+[2026-04-17T10:34:40.668Z] crdt/info: CRDT websocket opened for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-17T10:34:50.766Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connected.
+[2026-04-17T10:34:50.766Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connected.
