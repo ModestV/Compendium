@@ -1721,3 +1721,41 @@
 [2026-04-16T00:23:51.408Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-16T00:23:57.358Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-16T00:24:03.296Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:09.123Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:15.054Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:21.143Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:27.337Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:33.428Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:40.550Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:47.378Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:53.310Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:24:59.388Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:05.566Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:12.306Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:18.500Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:25.374Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:31.387Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:37.421Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:44.419Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:51.337Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-16T00:25:57.506Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 13/13 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T07:12:38.442Z] plugin/info: Rolay plugin loaded.
+[2026-04-17T07:12:39.633Z] rooms/info: Loaded 2 room(s).
+[2026-04-17T07:12:39.633Z] auth/info: Loaded current user vladp.
+[2026-04-17T07:12:39.633Z] auth/info: Session tokens refreshed.
+[2026-04-17T07:12:40.070Z] tree/info: Fetched snapshot for main150911 with 102 entries (startup).
+[2026-04-17T07:12:40.071Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 17 markdown document(s) via HTTP bootstrap metadata + state batches (startup).
+[2026-04-17T07:12:47.266Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 17 markdown document(s) with 907 KB downloaded.
+[2026-04-17T07:12:47.545Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: File already exists.
+[2026-04-17T07:12:48.270Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 17 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-17T07:12:48.543Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: File already exists.
+[2026-04-17T07:12:48.732Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/attachments.zip: File already exists.
+[2026-04-17T07:12:48.859Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png: File already exists.
+[2026-04-17T07:12:48.983Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png: File already exists.
+[2026-04-17T07:12:49.042Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png: File already exists.
+[2026-04-17T07:12:49.223Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png: File already exists.
+[2026-04-17T07:12:49.269Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png: File already exists.
+[2026-04-17T07:12:49.419Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary download failed for Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png: File already exists.
+[2026-04-17T07:12:49.479Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-17T07:12:49.616Z] ops/info: Sending create_folder (7fb687d0-41fd-4df5-8aad-dfa123bbf06c) for local folder create .
+[2026-04-17T07:12:49.681Z] error/error: Local create sync failed for Rolay/150911: Create operation requires path.
