@@ -2163,3 +2163,15 @@
 [2026-04-17T08:47:15.697Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
 [2026-04-17T08:47:15.698Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
 [2026-04-17T08:47:15.698Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T08:48:15.700Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:48:15.701Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T08:48:15.701Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T08:49:15.691Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:49:15.692Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T08:49:15.692Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T08:50:15.695Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:50:15.696Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T08:50:15.696Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-17T08:51:15.688Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-17T08:51:15.689Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-17T08:51:15.689Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
