@@ -2670,3 +2670,72 @@
 [2026-04-17T10:18:30.754Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-17T10:18:38.949Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-17T10:18:46.623Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:18:53.852Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:01.911Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:09.604Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:16.681Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:24.494Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:31.787Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:39.523Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:46.627Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:19:53.659Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:20:00.741Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:20:08.917Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:20:17.103Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:20:26.774Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:20:34.726Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:20:37.821Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 276: tree.entry.created
+[2026-04-17T10:20:39.025Z] tree/info: Fetched snapshot for main150911 with 105 entries (event-stream).
+[2026-04-17T10:20:39.052Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:20:41.525Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:20:42.589Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 277: blob.revision.committed
+[2026-04-17T10:20:43.012Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 278: blob.revision.committed
+[2026-04-17T10:20:43.949Z] tree/info: Fetched snapshot for main150911 with 105 entries (event-stream).
+[2026-04-17T10:20:43.971Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:20:46.390Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-17T10:20:46.489Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:20:46.494Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_6fa24c5f-c71f-4948-a559-55925f41f176 localPath=Rolay/150911/АГиТДУ/Практика/image.png serverPath=АГиТДУ/Практика/image.png expectedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= expectedSizeBytes=1201265
+[2026-04-17T10:20:46.757Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_6fa24c5f-c71f-4948-a559-55925f41f176 localPath=Rolay/150911/АГиТДУ/Практика/image.png serverPath=АГиТДУ/Практика/image.png status=200 requestId=req-648y hash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= sizeBytes=1201265 contentUrl=http://46.16.36.87:3000/v1/files/fil_6fa24c5f-c71f-4948-a559-55925f41f176/blob/content rangeSupported=true
+[2026-04-17T10:20:46.760Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_6fa24c5f-c71f-4948-a559-55925f41f176 localPath=Rolay/150911/АГиТДУ/Практика/image.png expectedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= expectedSizeBytes=1201265 partialOffset=0 range=-
+[2026-04-17T10:20:47.564Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_6fa24c5f-c71f-4948-a559-55925f41f176 localPath=Rolay/150911/АГиТДУ/Практика/image.png transport=node status=200 requestId=req-6490 contentLength=1201265 contentRange=- acceptRanges=bytes blobHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw=
+[2026-04-17T10:20:47.575Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_6fa24c5f-c71f-4948-a559-55925f41f176 localPath=Rolay/150911/АГиТДУ/Практика/image.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_6fa24c5f-c71f-4948-a559-55925f41f176-sha256-gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxR.part computedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= expectedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= sizeBytes=1201265
+[2026-04-17T10:20:47.594Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded АГиТДУ/Практика/image.png (1.15 MB) from event-stream.
+[2026-04-17T10:20:48.928Z] tree/info: Fetched snapshot for main150911 with 105 entries (event-stream).
+[2026-04-17T10:20:48.952Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:20:50.791Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:20:55.157Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-17T10:20:59.942Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 279: tree.entry.created
+[2026-04-17T10:21:00.296Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 280: tree.entry.updated
+[2026-04-17T10:21:01.025Z] tree/info: Fetched snapshot for main150911 with 106 entries (event-stream).
+[2026-04-17T10:21:01.106Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:21:01.480Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 281: tree.entry.updated
+[2026-04-17T10:21:05.242Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:21:05.886Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:21:06.923Z] tree/info: Fetched snapshot for main150911 with 106 entries (event-stream).
+[2026-04-17T10:21:06.960Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:21:09.198Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:21:12.553Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 282: tree.entry.created
+[2026-04-17T10:21:12.895Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-17T10:21:13.935Z] tree/info: Fetched snapshot for main150911 with 107 entries (event-stream).
+[2026-04-17T10:21:13.973Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:21:16.280Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:21:16.998Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 283: blob.revision.committed
+[2026-04-17T10:21:17.616Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 284: blob.revision.committed
+[2026-04-17T10:21:18.003Z] tree/info: Fetched snapshot for main150911 with 107 entries (event-stream).
+[2026-04-17T10:21:18.029Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:21:20.633Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-17T10:21:20.971Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:21:20.977Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d localPath=Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png serverPath=АГиТДУ/Практика/17.04.2026/image-1.png expectedHash=sha256:tsMUMhCm7589u8TiCw0sEOidz+fmsWPKPxuWUIxzk4w= expectedSizeBytes=1406706
+[2026-04-17T10:21:21.211Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d localPath=Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png serverPath=АГиТДУ/Практика/17.04.2026/image-1.png status=200 requestId=req-64cv hash=sha256:tsMUMhCm7589u8TiCw0sEOidz+fmsWPKPxuWUIxzk4w= sizeBytes=1406706 contentUrl=http://46.16.36.87:3000/v1/files/fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d/blob/content rangeSupported=true
+[2026-04-17T10:21:21.214Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d localPath=Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png expectedHash=sha256:tsMUMhCm7589u8TiCw0sEOidz+fmsWPKPxuWUIxzk4w= expectedSizeBytes=1406706 partialOffset=0 range=-
+[2026-04-17T10:21:23.008Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d localPath=Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png transport=node status=200 requestId=req-64cx contentLength=1406706 contentRange=- acceptRanges=bytes blobHash=sha256:tsMUMhCm7589u8TiCw0sEOidz+fmsWPKPxuWUIxzk4w=
+[2026-04-17T10:21:23.016Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d localPath=Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_5981b951-3d9b-49ed-9e5b-ae73fc35204d-sha256-tsMUMhCm7589u8TiCw0sEOidz-fmsWPKPxuWUIxzk.part computedHash=sha256:tsMUMhCm7589u8TiCw0sEOidz+fmsWPKPxuWUIxzk4w= expectedHash=sha256:tsMUMhCm7589u8TiCw0sEOidz+fmsWPKPxuWUIxzk4w= sizeBytes=1406706
+[2026-04-17T10:21:23.032Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded АГиТДУ/Практика/17.04.2026/image-1.png (1.34 MB) from event-stream.
+[2026-04-17T10:21:23.935Z] tree/info: Fetched snapshot for main150911 with 107 entries (event-stream).
+[2026-04-17T10:21:23.965Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 18 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-04-17T10:21:26.208Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 18 markdown document(s) with 928 KB downloaded.
+[2026-04-17T10:21:31.253Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-04-17T10:21:38.793Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:21:47.032Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:21:54.888Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-17T10:22:02.980Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
