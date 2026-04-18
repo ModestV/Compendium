@@ -1694,3 +1694,29 @@ shed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 
 [2026-04-18T10:37:31.703Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-18T10:37:37.759Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-18T10:37:43.656Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-18T10:37:49.668Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-18T10:37:55.954Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 17/17 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-18T14:43:32.174Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: disconnected.
+[2026-04-18T14:43:32.174Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: disconnected.
+[2026-04-18T14:43:32.175Z] crdt/info: CRDT websocket disconnected for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-18T14:43:32.175Z] crdt/info: CRDT websocket disconnected for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-18T14:43:32.275Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-18T14:43:32.275Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-18T14:43:32.275Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-18T14:43:32.276Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 2000ms.
+[2026-04-18T14:43:34.219Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connecting.
+[2026-04-18T14:43:34.219Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connecting.
+[2026-04-18T14:43:34.387Z] crdt/info: CRDT websocket opened for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-18T14:43:34.387Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connected.
+[2026-04-18T14:43:34.387Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: connected.
+[2026-04-18T14:43:34.387Z] crdt/info: CRDT websocket opened for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-18T14:43:34.490Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): Refresh token is invalid or expired.
+[2026-04-18T14:43:34.490Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 4000ms.
+[2026-04-18T14:43:34.532Z] crdt/info: CRDT auth failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: Failed to get token during sendToken(): Error: No refresh token is stored yet.
+[2026-04-18T14:43:34.604Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: disconnected.
+[2026-04-18T14:43:34.604Z] crdt/info: CRDT provider status for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: disconnected.
+[2026-04-18T14:43:34.604Z] crdt/info: CRDT websocket disconnected for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-18T14:43:34.604Z] crdt/info: CRDT websocket disconnected for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-18T14:43:34.619Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): Refresh token is invalid or expired.
+[2026-04-18T14:43:34.619Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 4000ms.
+[2026-04-18T14:43:34.619Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
