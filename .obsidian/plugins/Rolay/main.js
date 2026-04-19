@@ -12797,8 +12797,9 @@ var import_view = require("@codemirror/view");
 var import_obsidian4 = require("obsidian");
 var setRemotePresenceEffect = import_state.StateEffect.define();
 var END_OF_LINE_LABEL_DELAY_MS = 700;
+var STALE_REMOTE_CURSOR_REJECT_WINDOW_MS = 500;
 var sharedCursorUiState = /* @__PURE__ */ new Map();
-var lastPresenceSignatureByView = /* @__PURE__ */ new WeakMap();
+var sharedPresenceViewState = /* @__PURE__ */ new WeakMap();
 var remotePresenceField = import_state.StateField.define({
   create() {
     return import_view.Decoration.none;
@@ -12818,6 +12819,9 @@ function createSharedPresenceExtension(onSelectionChange) {
   return [
     remotePresenceField,
     import_view.EditorView.updateListener.of((update) => {
+      if (update.docChanged) {
+        recordMappedRemotePresence(update.view, update.changes);
+      }
       if (!update.selectionSet && !update.docChanged && !update.focusChanged) {
         return;
       }
@@ -12844,13 +12848,18 @@ function getMarkdownViewsForFile(app, filePath) {
   return app.workspace.getLeavesOfType("markdown").map((leaf) => leaf.view).filter((view) => view instanceof import_obsidian4.MarkdownView).filter((view) => view.file?.path === filePath);
 }
 function setRemotePresenceDecorations(view, presences) {
-  const nextSignature = getPresenceSignature(presences);
-  if (lastPresenceSignatureByView.get(view) === nextSignature) {
+  const stabilizedPresences = stabilizeIncomingPresences(view, presences);
+  const nextSignature = getPresenceSignature(stabilizedPresences);
+  const viewState = getSharedPresenceViewState(view);
+  if (viewState.lastSignature === nextSignature) {
     return;
   }
-  lastPresenceSignatureByView.set(view, nextSignature);
+  viewState.lastSignature = nextSignature;
+  viewState.renderedPresences = new Map(
+    stabilizedPresences.map((presence) => [getSharedCursorKey(presence), cloneSharedCursorPresence(presence)])
+  );
   view.dispatch({
-    effects: setRemotePresenceEffect.of(presences)
+    effects: setRemotePresenceEffect.of(stabilizedPresences)
   });
 }
 function getPresenceSignature(presences) {
@@ -12936,6 +12945,79 @@ function isEditorView(value) {
     return false;
   }
   return "dispatch" in value && "state" in value && "dom" in value && "hasFocus" in value;
+}
+function getSharedPresenceViewState(view) {
+  const existing = sharedPresenceViewState.get(view);
+  if (existing) {
+    return existing;
+  }
+  const created = {
+    lastSignature: null,
+    lastDocChangeAt: 0,
+    renderedPresences: /* @__PURE__ */ new Map()
+  };
+  sharedPresenceViewState.set(view, created);
+  return created;
+}
+function recordMappedRemotePresence(view, changes) {
+  const viewState = getSharedPresenceViewState(view);
+  viewState.lastDocChangeAt = Date.now();
+  if (viewState.renderedPresences.size === 0) {
+    return;
+  }
+  const remappedPresences = /* @__PURE__ */ new Map();
+  for (const [cursorKey, presence] of viewState.renderedPresences) {
+    remappedPresences.set(cursorKey, {
+      ...presence,
+      selection: {
+        anchor: clampOffset(changes.mapPos(presence.selection.anchor, 1), view.state.doc.length),
+        head: clampOffset(changes.mapPos(presence.selection.head, 1), view.state.doc.length)
+      }
+    });
+  }
+  viewState.renderedPresences = remappedPresences;
+  viewState.lastSignature = getPresenceSignature([...remappedPresences.values()]);
+}
+function stabilizeIncomingPresences(view, presences) {
+  const viewState = getSharedPresenceViewState(view);
+  if (Date.now() - viewState.lastDocChangeAt > STALE_REMOTE_CURSOR_REJECT_WINDOW_MS) {
+    return presences;
+  }
+  return presences.map((presence) => {
+    const current = viewState.renderedPresences.get(getSharedCursorKey(presence));
+    if (!current) {
+      return presence;
+    }
+    const incomingHasSelection = presence.selection.anchor !== presence.selection.head;
+    const currentHasSelection = current.selection.anchor !== current.selection.head;
+    if (incomingHasSelection !== currentHasSelection) {
+      return presence;
+    }
+    const incomingStart = Math.min(presence.selection.anchor, presence.selection.head);
+    const incomingEnd = Math.max(presence.selection.anchor, presence.selection.head);
+    const currentStart = Math.min(current.selection.anchor, current.selection.head);
+    const currentEnd = Math.max(current.selection.anchor, current.selection.head);
+    const movesBackwards = incomingStart < currentStart || incomingEnd < currentEnd;
+    if (!movesBackwards) {
+      return presence;
+    }
+    return {
+      ...presence,
+      selection: {
+        anchor: current.selection.anchor,
+        head: current.selection.head
+      }
+    };
+  });
+}
+function cloneSharedCursorPresence(presence) {
+  return {
+    ...presence,
+    selection: {
+      anchor: presence.selection.anchor,
+      head: presence.selection.head
+    }
+  };
 }
 var SharedCursorWidget = class extends import_view.WidgetType {
   constructor(cursorKey, displayName, color, hasSelection) {
@@ -13156,9 +13238,30 @@ function diffText(currentText, nextText) {
     insertText: nextText.slice(start, nextEnd)
   };
 }
-function applyTextPatchToEditor(editor, currentText, nextText) {
+function applyTextPatchToEditor(editor, currentText, nextText, editorView) {
   const patch = diffText(currentText, nextText);
   if (patch.deleteCount === 0 && patch.insertText.length === 0) {
+    return;
+  }
+  if (editorView) {
+    const preservedScrollTop = editorView.scrollDOM.scrollTop;
+    const preservedScrollLeft = editorView.scrollDOM.scrollLeft;
+    editorView.dispatch({
+      changes: {
+        from: patch.start,
+        to: patch.start + patch.deleteCount,
+        insert: patch.insertText
+      }
+    });
+    editorView.scrollDOM.scrollTop = preservedScrollTop;
+    editorView.scrollDOM.scrollLeft = preservedScrollLeft;
+    window.requestAnimationFrame(() => {
+      if (!editorView.dom.isConnected) {
+        return;
+      }
+      editorView.scrollDOM.scrollTop = preservedScrollTop;
+      editorView.scrollDOM.scrollLeft = preservedScrollLeft;
+    });
     return;
   }
   const from3 = offsetToEditorPosition(currentText, patch.start);
@@ -13625,7 +13728,12 @@ var BoundCrdtSession = class {
         if (currentText === remoteText) {
           continue;
         }
-        applyTextPatchToEditor(view.editor, currentText, remoteText);
+        applyTextPatchToEditor(
+          view.editor,
+          currentText,
+          remoteText,
+          getCodeMirrorEditorView(view.editor)
+        );
       }
     } finally {
       this.applyingRemoteText = false;
