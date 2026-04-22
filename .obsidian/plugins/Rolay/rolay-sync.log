@@ -2331,3 +2331,23 @@
 [2026-04-22T09:06:23.831Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-22T09:06:29.750Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-22T09:06:35.781Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:06:42.066Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:06:48.112Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:06:54.786Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:01.088Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:07.834Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:13.813Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:19.797Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:25.811Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:31.891Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:37.842Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:43.770Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:07:49.805Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-22T09:20:29.493Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: net::ERR_NETWORK_IO_SUSPENDED
+[2026-04-22T09:20:29.512Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-22T09:20:29.513Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-22T09:20:29.513Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-22T09:20:29.513Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 2000ms.
+[2026-04-22T09:20:39.475Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: Access token is invalid or expired.
+[2026-04-22T09:20:39.551Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): Refresh token is invalid or expired.
+[2026-04-22T09:20:39.551Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 4000ms.
