@@ -1947,3 +1947,42 @@
 [2026-04-23T11:12:14.567Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): Refresh token is invalid or expired.
 [2026-04-23T11:12:14.568Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 8000ms.
 [2026-04-23T11:12:14.664Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-23T11:12:27.969Z] presence/info: Subscribed to note presence for room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768.
+[2026-04-23T11:12:28.407Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:13:37.855Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:13:37.855Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:13:37.886Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:13:37.886Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:17:24.456Z] presence/info: Subscribed to note presence for room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768.
+[2026-04-23T11:17:24.457Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-23T11:17:37.184Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:17:45.434Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:17:58.818Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:18:26.325Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:18:33.852Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:18:49.070Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:19:16.184Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:19:16.185Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:19:16.185Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:19:16.185Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:19:30.247Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:19:30.290Z] presence/info: Subscribed to note presence for room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768.
+[2026-04-23T11:19:30.293Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-23T11:19:41.386Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:19:54.763Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:20:13.261Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:20:13.262Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:20:13.262Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:20:13.262Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:20:18.208Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:20:18.212Z] sse/info: Subscribed to room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768 events.
+[2026-04-23T11:20:18.213Z] presence/info: Subscribed to note presence for room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768.
+[2026-04-23T11:20:35.943Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:20:35.943Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:20:35.944Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): aborted
+[2026-04-23T11:20:35.944Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 2000ms.
+[2026-04-23T11:20:43.020Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T11:47:46.038Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: Refresh token is invalid or expired.
+[2026-04-23T11:47:46.124Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): Refresh token is invalid or expired.
+[2026-04-23T11:47:46.124Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 4000ms.
+[2026-04-23T11:47:46.277Z] presence/info: Subscribed to note presence for room ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768.
