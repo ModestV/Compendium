@@ -2074,3 +2074,11 @@
 [2026-04-23T14:47:51.494Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-23T14:47:57.094Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-04-23T14:48:02.745Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T14:48:08.373Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T14:48:13.984Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T14:48:19.662Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T14:48:25.437Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 18/18 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-23T14:59:20.733Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 304: tree.entry.created
+[2026-04-23T14:59:20.907Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 305: tree.entry.created
+[2026-04-23T15:00:03.452Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 306: tree.entry.created
+[2026-04-23T18:45:47.744Z] error/error: Tree snapshot failed: Refresh token is invalid or expired.
