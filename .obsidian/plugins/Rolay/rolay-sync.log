@@ -2480,3 +2480,9 @@
 [2026-04-24T14:05:30.007Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
 [2026-04-24T14:05:30.007Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
 [2026-04-24T14:05:30.007Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 30000ms.
+[2026-04-24T14:05:35.568Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-24T14:37:59.411Z] crdt/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Background markdown refresh failed: You are not authenticated yet.
+[2026-04-24T14:37:59.597Z] error/error: Workspace event stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-24T14:37:59.597Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] SSE disconnected. Reconnecting in 30000ms.
+[2026-04-24T14:37:59.597Z] error/error: Note presence stream error (ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768): You are not authenticated yet.
+[2026-04-24T14:37:59.597Z] presence/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Note presence SSE disconnected. Reconnecting in 30000ms.
