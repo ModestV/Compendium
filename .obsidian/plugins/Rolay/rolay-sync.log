@@ -1598,3 +1598,108 @@ local markdown Физика/18б лаба.md untouched during preload because it
 [2026-04-25T09:57:11.278Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
 [2026-04-25T09:57:11.331Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
 [2026-04-25T09:57:12.170Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:57:28.693Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:57:29.332Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:57:29.586Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:57:29.756Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:57:29.760Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:57:42.110Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:57:42.264Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:57:42.350Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:57:42.410Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:57:43.717Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:57:51.706Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:57:52.681Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:57:54.181Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:57:54.327Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:57:54.435Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:58:07.586Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:08.854Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:58:12.148Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:58:12.328Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:12.427Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:58:27.166Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:58:27.384Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:27.545Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:58:27.574Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:29.160Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:58:39.477Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:58:39.586Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:39.637Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:39.734Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:58:41.189Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:58:48.315Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:49.101Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:58:49.392Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:58:49.756Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:50.820Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:58:57.990Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:58.876Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:58:59.070Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:58:59.247Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:58:59.395Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:59:04.950Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:05.791Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:59:08.105Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:59:08.259Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:08.544Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:59:19.531Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:59:19.726Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:19.799Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:19.833Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:59:21.093Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:59:28.292Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:29.135Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:59:29.180Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:59:29.299Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:29.347Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:59:39.731Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:40.097Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:59:40.510Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:40.595Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:59:40.788Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:59:50.520Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:51.204Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T09:59:51.434Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T09:59:51.496Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T09:59:51.552Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T09:59:59.498Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:00.530Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:00:00.792Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:00.951Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:00:01.022Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:00:09.918Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:10.098Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:00:10.409Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:10.833Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:00:11.200Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:00:23.017Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:00:23.247Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:23.315Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:00:23.502Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:24.491Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:00:34.563Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:00:34.721Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:34.798Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:34.838Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:00:35.772Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:00:44.605Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:00:44.717Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:44.759Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:44.843Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:00:45.948Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:00:55.154Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:00:55.425Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:55.517Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:00:55.691Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:00:56.835Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:01:08.804Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:01:09.008Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:01:09.084Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:01:09.133Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:01:10.431Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-04-25T10:01:24.717Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:01:25.213Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 1 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-04-25T10:01:25.360Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
+[2026-04-25T10:01:25.485Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 1 markdown document(s) with 13.6 KB downloaded.
+[2026-04-25T10:01:25.518Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 27/28 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
