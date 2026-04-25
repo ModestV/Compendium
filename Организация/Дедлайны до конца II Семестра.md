@@ -42,7 +42,7 @@
 - [ ] Конспект: Матан
 
 ### Стажировки:
-- [ ] Контур: Data Science:
+- [x] Контур: Data Science:
 	- [ ] SQL
 	- [ ] Git
 	- [ ] Python
