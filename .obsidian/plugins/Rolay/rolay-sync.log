@@ -2040,3 +2040,157 @@ local markdown Физика/18б лаба.md untouched during preload because it
 [2026-04-26T18:03:12.104Z] error/error: Local create sync failed for Rolay/150911: net::ERR_PROXY_CONNECTION_FAILED
 [2026-04-26T18:03:12.265Z] ops/info: Sending create_folder (56552323-1607-40fc-b57a-1b6730043143) for local folder create АГиТДУ.
 [2026-04-26T18:03:12.266Z] error/error: Local create sync failed for Rolay/150911/Misc: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:14.147Z] ops/info: Sending create_folder (7bf469e0-d501-412b-ade6-ca7e47f0ad18) for local folder create Физика.
+[2026-04-26T18:03:14.147Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:14.320Z] ops/info: Sending create_folder (1adea653-d882-45ce-aa50-f34a68acbf2e) for local folder create Матан.
+[2026-04-26T18:03:14.321Z] error/error: Local create sync failed for Rolay/150911/Физика: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:16.192Z] ops/info: Sending create_folder (e20f737a-ab89-4c6d-8d7f-de55ece36870) for local folder create АГиТДУ/Лекция.
+[2026-04-26T18:03:16.193Z] error/error: Local create sync failed for Rolay/150911/Матан: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:16.362Z] ops/info: Sending create_folder (c36f4501-378a-4dfc-9b8e-c770ac228458) for local folder create АГиТДУ/Практика.
+[2026-04-26T18:03:16.363Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:18.244Z] ops/info: Sending create_folder (91fa8f9a-c9cb-44c4-9055-25aa2d51f3f6) for local folder create Матан/Лекция.
+[2026-04-26T18:03:18.244Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:18.414Z] ops/info: Sending create_folder (e59a7fa6-29ad-42fc-9875-87e79e16f76c) for local folder create Матан/Практика.
+[2026-04-26T18:03:18.415Z] error/error: Local create sync failed for Rolay/150911/Матан/Лекция: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:20.282Z] ops/info: Sending create_folder (bd3efe82-50b5-44c7-ab20-92506ad3c7e7) for local folder create Физика/Лекции.
+[2026-04-26T18:03:20.282Z] error/error: Local create sync failed for Rolay/150911/Матан/Практика: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:20.454Z] ops/info: Sending create_folder (d13571a8-b220-42f4-bec2-ed47514fa991) for local folder create АГиТДУ/Практика/17.04.2026.
+[2026-04-26T18:03:20.454Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:22.335Z] ops/info: Sending create_folder (733207c8-19c3-4b90-8363-1d291d183d71) for local folder create Физика/Лекции/Лекция 13.03.
+[2026-04-26T18:03:22.336Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:22.507Z] ops/info: Sending create_folder (325e4ba6-a293-47b2-8634-fba330118b67) for local folder create Физика/Лекции/Лекция 03.04.
+[2026-04-26T18:03:22.508Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:24.386Z] ops/info: Sending create_folder (cfdf9809-713b-4f0b-ae3c-989f1ddf6a8e) for local folder create Физика/Лекции/Лекция 27.03.
+[2026-04-26T18:03:24.386Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:24.558Z] ops/info: Sending create_folder (b1ea2404-f635-4697-b8e9-100bbdffed6d) for local folder create Физика/Лекции/Лекция 20.03.
+[2026-04-26T18:03:24.558Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:26.438Z] ops/info: Sending create_markdown (01e0965f-41e3-4306-8515-a75f8f66cc16) for local markdown create Лаба №28.md.
+[2026-04-26T18:03:26.439Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:26.609Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Лаба №28.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:26.609Z] ops/info: Sending create_markdown (6e77fa31-a253-4e94-8c42-a6aa4c6cdf6e) for local markdown create Misc/test.md.
+[2026-04-26T18:03:26.609Z] error/error: Local create sync failed for Rolay/150911/Лаба №28.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:28.493Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/test.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:28.493Z] ops/info: Sending create_markdown (a6807baf-729d-4703-a1c9-1b3525e6ba83) for local markdown create Misc/Плагины к установке.md.
+[2026-04-26T18:03:28.493Z] error/error: Local create sync failed for Rolay/150911/Misc/test.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:28.664Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/Плагины к установке.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:28.664Z] ops/info: Sending create_markdown (e33673ff-c4e9-4795-b263-d4b96d201bce) for local markdown create Misc/Untitled.md.
+[2026-04-26T18:03:28.665Z] error/error: Local create sync failed for Rolay/150911/Misc/Плагины к установке.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:30.536Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/Untitled.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:30.536Z] ops/info: Sending create_markdown (0a5e46b2-1de7-4ef2-8cb9-66e53cb5de74) for local markdown create Физика/18б-2.md.
+[2026-04-26T18:03:30.537Z] error/error: Local create sync failed for Rolay/150911/Misc/Untitled.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:30.709Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/18б-2.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:30.709Z] ops/info: Sending create_markdown (9cc8d00e-1861-481b-8201-2888478a436b) for local markdown create Физика/18б лаба.md.
+[2026-04-26T18:03:30.710Z] error/error: Local create sync failed for Rolay/150911/Физика/18б-2.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:32.590Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/18б лаба.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:32.590Z] ops/info: Sending create_markdown (af9ded2f-f049-4388-a1fa-f571ce25af97) for local markdown create Физика/28 labaaa.md.
+[2026-04-26T18:03:32.591Z] error/error: Local create sync failed for Rolay/150911/Физика/18б лаба.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:32.761Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/28 labaaa.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:32.761Z] ops/info: Sending create_markdown (7f980a05-b5b2-496f-8f3e-27156ea83647) for local markdown create Физика/lab 28.md.
+[2026-04-26T18:03:32.761Z] error/error: Local create sync failed for Rolay/150911/Физика/28 labaaa.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:34.642Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/lab 28.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:34.642Z] ops/info: Sending create_markdown (46ab78f0-418a-493a-970f-4c5510002b3e) for local markdown create АГиТДУ/Лекция/17.04.md.
+[2026-04-26T18:03:34.643Z] error/error: Local create sync failed for Rolay/150911/Физика/lab 28.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:34.813Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/17.04.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:34.813Z] ops/info: Sending create_markdown (feece051-a349-423a-89ee-80af14664fd6) for local markdown create АГиТДУ/Лекция/24.04.md.
+[2026-04-26T18:03:34.813Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/17.04.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:36.700Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/24.04.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:36.700Z] ops/info: Sending create_markdown (e5773c95-b4e9-42fb-8bc3-2a68bb9a5b8c) for local markdown create АГиТДУ/Лекция/Лекция 17.04.md.
+[2026-04-26T18:03:36.701Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/24.04.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:36.868Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/Лекция 17.04.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:36.869Z] ops/info: Sending create_binary_placeholder (24e3ed28-4d05-4cea-b3db-e34592f81d48) for local binary placeholder Матан/Практика/image.png.
+[2026-04-26T18:03:36.869Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/Лекция 17.04.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:38.742Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Матан/Практика/image.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:38.742Z] error/error: Binary sync failed for Rolay/150911/Матан/Практика/image.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:38.743Z] ops/info: Sending create_markdown (aae33b53-eb85-4307-981d-b3245107c2e4) for local markdown create Матан/Практика/20.04.2026.md.
+[2026-04-26T18:03:38.912Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Матан/Практика/20.04.2026.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:38.912Z] ops/info: Sending create_markdown (2b497e3a-4c7f-422c-a9fa-d2ca471359ba) for local markdown create АГиТДУ/Практика/10.04.2025.md.
+[2026-04-26T18:03:38.913Z] error/error: Local create sync failed for Rolay/150911/Матан/Практика/20.04.2026.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:40.771Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/10.04.2025.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:40.771Z] ops/info: Sending create_binary_placeholder (392185fe-7921-4052-bae0-f727fb246091) for local binary placeholder Матан/Практика/image-1.png.
+[2026-04-26T18:03:40.772Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/10.04.2025.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:40.957Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Матан/Практика/image-1.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:40.958Z] error/error: Binary sync failed for Rolay/150911/Матан/Практика/image-1.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:40.958Z] ops/info: Sending create_markdown (aec6273d-5784-4a8f-b5bf-ce93762bc61a) for local markdown create АГиТДУ/Практика/10.04.2026.md.
+[2026-04-26T18:03:42.830Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/10.04.2026.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:42.831Z] ops/info: Sending create_binary_placeholder (6b47b21b-3e9e-46a9-a27d-522a18a636bf) for local binary placeholder Физика/Лекции/attachments.zip.
+[2026-04-26T18:03:42.831Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/10.04.2026.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:43.000Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/attachments.zip: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:43.000Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/attachments.zip: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:43.001Z] ops/info: Sending create_markdown (0f20e3a1-a3eb-4c4a-b893-07f7019053b1) for local markdown create АГиТДУ/Практика/24.04.md.
+[2026-04-26T18:03:44.882Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/24.04.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:44.882Z] ops/info: Sending create_markdown (66b450e4-35a5-42d9-9a5f-18648cc57caf) for local markdown create Физика/Лекции/Лекция 24.04.md.
+[2026-04-26T18:03:44.882Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/24.04.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:45.051Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 24.04.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:45.051Z] ops/info: Sending create_binary_placeholder (464a8fca-2560-44f2-b02a-99453d75c01b) for local binary placeholder АГиТДУ/Практика/image.png.
+[2026-04-26T18:03:45.051Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 24.04.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:46.936Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/image.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:46.936Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/image.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:46.936Z] ops/info: Sending create_binary_placeholder (a2a3dd21-bb7c-472a-8b8b-b5afe7071932) for local binary placeholder АГиТДУ/Практика/17.04.2026/image-1.png.
+[2026-04-26T18:03:47.079Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:47.079Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:47.080Z] ops/info: Sending create_markdown (e745bb5e-1111-4aa9-8eab-c9e7033e58ff) for local markdown create АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-04-26T18:03:48.991Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/17.04.2026/17.04.2026.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:48.991Z] ops/info: Sending create_binary_placeholder (9bf4b597-105e-4230-841a-438cc2895add) for local binary placeholder АГиТДУ/Практика/17.04.2026/image-2.png.
+[2026-04-26T18:03:48.992Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:49.129Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-2.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:49.130Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-2.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:49.130Z] ops/info: Sending create_markdown (ef074170-10c3-47b6-82b9-3c14d871a621) for local markdown create Физика/Лекции/Лекция 13.03/рис. 16.md.
+[2026-04-26T18:03:51.043Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/рис. 16.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:51.043Z] ops/info: Sending create_markdown (0429f21c-dd1d-4cb8-9d80-7e56221b7ecd) for local markdown create Физика/Лекции/Лекция 13.03/Лекция 13.03.md.
+[2026-04-26T18:03:51.044Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/рис. 16.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:51.167Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/Лекция 13.03.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:51.167Z] ops/info: Sending create_binary_placeholder (a40ae5f0-1500-4272-8bd5-e7918677df98) for local binary placeholder АГиТДУ/Практика/17.04.2026/image.png.
+[2026-04-26T18:03:51.167Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/Лекция 13.03.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:53.092Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:53.093Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:53.094Z] ops/info: Sending create_binary_placeholder (6dc48072-7d3e-4a5b-975b-546cce3cad8b) for local binary placeholder Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png.
+[2026-04-26T18:03:53.213Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:53.213Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:53.214Z] ops/info: Sending create_markdown (2a76526d-52c1-4ab0-807d-0af38463a38b) for local markdown create Физика/Лекции/Лекция 13.03/рис. 17.md.
+[2026-04-26T18:03:55.144Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/рис. 17.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:55.144Z] ops/info: Sending create_markdown (ff32dfb1-5b33-4d4f-b4a1-28e42d469c60) for local markdown create Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
+[2026-04-26T18:03:55.144Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/рис. 17.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:55.265Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 03.04/Лекция 03.04.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:55.266Z] ops/info: Sending create_binary_placeholder (f8da4b83-4e54-4fad-88e7-321b6bd33710) for local binary placeholder Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png.
+[2026-04-26T18:03:55.266Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:57.186Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:57.186Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:57.186Z] ops/info: Sending create_binary_placeholder (6ac0d862-4a39-4a7e-aa3b-744840ba86e3) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png.
+[2026-04-26T18:03:57.311Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:57.311Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:57.311Z] ops/info: Sending create_binary_placeholder (e9823f1a-b6c6-4f6a-9d34-fe8ec9a3bab8) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png.
+[2026-04-26T18:03:59.229Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:59.229Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:59.230Z] ops/info: Sending create_binary_placeholder (c1299bd3-09fb-4505-a485-48a652754ba7) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png.
+[2026-04-26T18:03:59.353Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:59.353Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:03:59.354Z] ops/info: Sending create_binary_placeholder (0c54789e-4149-46fd-961a-9588dd391f14) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png.
+[2026-04-26T18:04:01.282Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:01.283Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:01.283Z] ops/info: Sending create_binary_placeholder (5b36abe3-1c5d-4d24-8142-1d3f83f28208) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png.
+[2026-04-26T18:04:01.394Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:01.394Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:01.394Z] ops/info: Sending create_binary_placeholder (b4fab255-9f25-4642-a2e4-5016f95a6aa1) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png.
+[2026-04-26T18:04:03.335Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:03.335Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:03.336Z] ops/info: Sending create_markdown (a4502fb7-b8dd-4be0-911c-943d24d6f7b3) for local markdown create Физика/Лекции/Лекция 27.03/график p-v.md.
+[2026-04-26T18:04:03.443Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/график p-v.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:03.444Z] ops/info: Sending create_markdown (d4018871-2941-417a-9068-ad2609b65b92) for local markdown create Физика/Лекции/Лекция 20.03/Лекция 20.03.md.
+[2026-04-26T18:04:03.444Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/график p-v.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:05.388Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 20.03/Лекция 20.03.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:05.388Z] ops/info: Sending create_markdown (1896b852-c801-413a-9e5e-d557e52c1f7f) for local markdown create Физика/Лекции/Лекция 20.03/лекция от никитки.md.
+[2026-04-26T18:04:05.388Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Лекция 20.03.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:05.481Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 20.03/лекция от никитки.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:05.482Z] ops/info: Sending create_markdown (a6531334-6ab5-480d-89dc-f4a91850a3be) for local markdown create Физика/Лекции/Лекция 27.03/Лекция 27.03.md.
+[2026-04-26T18:04:05.482Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/лекция от никитки.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:07.436Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/Лекция 27.03.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:07.436Z] ops/info: Sending create_markdown (5e5d0cc9-cf37-4681-a8f8-ff58d5299810) for local markdown create Физика/Лекции/Лекция 27.03/Трёхатомный.md.
+[2026-04-26T18:04:07.437Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/Лекция 27.03.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:07.530Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/Трёхатомный.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:07.531Z] ops/info: Sending create_markdown (19277323-85f9-4d84-9a60-ae91f51d8b8c) for local markdown create Физика/Лекции/Лекция 27.03/двухатомный.md.
+[2026-04-26T18:04:07.531Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/Трёхатомный.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:09.490Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/двухатомный.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:09.490Z] ops/info: Sending create_markdown (1521463c-4faa-4db2-8203-09a2131b6b01) for local markdown create Физика/Лекции/Лекция 27.03/задача про газ.md.
+[2026-04-26T18:04:09.490Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/двухатомный.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:09.582Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/задача про газ.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T18:04:09.583Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/задача про газ.md: net::ERR_PROXY_CONNECTION_FAILED
