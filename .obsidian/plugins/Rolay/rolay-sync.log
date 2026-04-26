@@ -2194,3 +2194,4 @@ local markdown Физика/18б лаба.md untouched during preload because it
 [2026-04-26T18:04:09.490Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/двухатомный.md: net::ERR_PROXY_CONNECTION_FAILED
 [2026-04-26T18:04:09.582Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/задача про газ.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
 [2026-04-26T18:04:09.583Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/задача про газ.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-04-26T21:57:13.477Z] error/error: Settings initial load failed: HTTP 502
