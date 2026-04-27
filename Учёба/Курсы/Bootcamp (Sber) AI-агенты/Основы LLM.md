@@ -23,8 +23,8 @@
 - компьютерного зрения
 
 Факты:
-- идея предложена :contentReference[oaicite:0]{index=0} в 1988 году
-- широкая известность после победы :contentReference[oaicite:1]{index=1} на :contentReference[oaicite:2]{index=2} в 2012 году
+- идея предложена Яном Лекуном в 1988 году
+- широкая известность после победы AlexNet на ImageNet  в 2012 году
 
 ---
 
@@ -192,9 +192,8 @@ Transformer:
 Хорошо обучается на огромных данных.
 
 Примеры моделей:
-
-- :contentReference[oaicite:3]{index=3}
-- :contentReference[oaicite:4]{index=4}
+- GPT-3
+- GPT-4
 
 ## 4. Интерпретируемость
 
