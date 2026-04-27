@@ -233,3 +233,120 @@ RNN читали текст **слово за словом**.
 Transformer анализирует **весь текст сразу**.
 
 Именно переход к Transformer стал основой современной революции в искусственном интеллекте.
+
+
+
+# Архитектура Transformer
+
+## Общая идея
+
+Архитектура **Transformer** произвела революцию в обработке последовательностей, заменив рекуррентные и свёрточные слои механизмами внимания и позиционного кодирования.
+
+Ключевые особенности:
+
+- параллельная обработка данных;
+- эффективное моделирование контекста;
+- работа с последовательностями без RNN и CNN.
+
+---
+
+## Упрощённая схема Transformer
+
+```mermaid
+flowchart LR
+    A["INPUT<br/>Je suis étudiant"] --> B
+
+    subgraph T["Transformer"]
+        direction LR
+        B["ENCODERS"]
+        C["DECODERS"]
+        B --> C
+    end
+
+    C --> D["OUTPUT<br/>I am a student"]
+
+    style T fill:#f5f5f5,stroke:#2f6df6,stroke-width:3px,color:#000
+    style B fill:#dfe9da,stroke:#666,stroke-width:2px
+    style C fill:#eadbe5,stroke:#666,stroke-width:2px
+    style A fill:#eef8ea,stroke:#7abf6a,stroke-width:2px
+    style D fill:#f4e8ff,stroke:#b88be0,stroke-width:2px
+````
+
+---
+
+## Более детальная структура
+
+```mermaid
+flowchart LR
+
+subgraph E["ENCODER"]
+direction TB
+E1["Self-Attention"]
+E2["Add & Normalize"]
+E3["Feed Forward"]
+E4["Add & Normalize"]
+E1 --> E2 --> E3 --> E4
+end
+
+subgraph D["DECODER"]
+direction TB
+D1["Self-Attention"]
+D2["Add & Normalize"]
+D3["Encoder-Decoder Attention"]
+D4["Add & Normalize"]
+D5["Feed Forward"]
+D6["Add & Normalize"]
+D7["Linear"]
+D8["Softmax"]
+
+D1 --> D2 --> D3 --> D4 --> D5 --> D6 --> D7 --> D8
+end
+
+E --> D3
+
+style E fill:#eef7ea,stroke:#7aa86d,stroke-width:2px
+style D fill:#fff1f7,stroke:#e59ac0,stroke-width:2px
+
+style E1 fill:#f5e7d7,stroke:#777
+style E2 fill:#e5f0c8,stroke:#777
+style E3 fill:#e9f1ff,stroke:#777
+style E4 fill:#e5f0c8,stroke:#777
+
+style D1 fill:#f5e7d7,stroke:#777
+style D2 fill:#e5f0c8,stroke:#777
+style D3 fill:#f5e7d7,stroke:#777
+style D4 fill:#e5f0c8,stroke:#777
+style D5 fill:#e9f1ff,stroke:#777
+style D6 fill:#e5f0c8,stroke:#777
+style D7 fill:#efe7ff,stroke:#777
+style D8 fill:#f8d8d8,stroke:#777
+```
+
+---
+
+## Аналогия с анализом документа
+
+1. **Эмбеддинги** — превращаем слова в числа.
+2. **Self-Attention** — находим связи между частями документа.
+3. **Add & Normalize** — стабилизируем обучение.
+4. **Feed Forward** — дополнительная обработка каждого слова.
+5. **Add & Normalize** — финальная стабилизация.
+
+---
+
+## Как понимать Transformer
+
+Transformer можно представить как универсальный «мозг» для работы с языком:
+
+- **Attention** — способность фокусироваться на важном;
+- **Позиционное кодирование** — понимание порядка слов;
+- **Многослойность** — глубина понимания;
+- **Остаточные связи** — стабильность обучения.
+
+---
+
+## Вывод
+
+Архитектура Transformer сложнее, чем упрощённые схемы, но её ключевая сила — эффективная работа с контекстом и последовательностями.
+
+Даже с возможными ошибками модель Transformer показывает результаты лучше RNN.
