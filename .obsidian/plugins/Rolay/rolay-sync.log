@@ -2357,3 +2357,126 @@ local markdown Физика/18б лаба.md untouched during preload because it
 [2026-04-27T19:39:38.382Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/Трёхатомный.md: net::ERR_PROXY_CONNECTION_FAILED
 [2026-04-27T19:39:40.104Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/задача про газ.md pending until the next successful room refresh/connect: net::ERR_PROXY_CONNECTION_FAILED
 [2026-04-27T19:39:40.104Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/задача про газ.md: net::ERR_PROXY_CONNECTION_FAILED
+[2026-05-05T00:12:12.009Z] plugin/info: Rolay plugin loaded.
+[2026-05-05T00:12:12.136Z] error/error: Refresh failed: Refresh token is invalid or expired.
+[2026-05-05T00:12:12.136Z] error/error: Startup sync failed: Refresh token is invalid or expired.
+[2026-05-05T00:12:12.671Z] ops/info: Sending create_folder (2b3ed6ed-a4f3-4ce4-bb27-b96615ea10a8) for local folder create .
+[2026-05-05T00:12:12.672Z] error/error: Local create sync failed for Rolay/150911: You are not authenticated yet.
+[2026-05-05T00:12:12.726Z] ops/info: Sending create_folder (9cdf63ef-b7a4-49c5-8ab2-6979e4c4b598) for local folder create Misc.
+[2026-05-05T00:12:12.726Z] error/error: Local create sync failed for Rolay/150911/Misc: You are not authenticated yet.
+[2026-05-05T00:12:12.726Z] ops/info: Sending create_folder (38c65de6-7eee-4120-a005-08620572bb07) for local folder create АГиТДУ.
+[2026-05-05T00:12:12.727Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ: You are not authenticated yet.
+[2026-05-05T00:12:12.727Z] ops/info: Sending create_folder (d05b5265-c0b1-4642-a5fb-5920e60a5a1b) for local folder create Матан.
+[2026-05-05T00:12:12.727Z] error/error: Local create sync failed for Rolay/150911/Матан: You are not authenticated yet.
+[2026-05-05T00:12:12.727Z] ops/info: Sending create_folder (4b5b88c9-ec0b-4b3e-861a-660e2c21670a) for local folder create Физика.
+[2026-05-05T00:12:12.727Z] error/error: Local create sync failed for Rolay/150911/Физика: You are not authenticated yet.
+[2026-05-05T00:12:12.761Z] ops/info: Sending create_folder (6a216b74-bd8f-4025-8a0c-8271a1db5536) for local folder create АГиТДУ/Практика.
+[2026-05-05T00:12:12.761Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика: You are not authenticated yet.
+[2026-05-05T00:12:12.761Z] ops/info: Sending create_folder (de356f00-c45e-480a-b123-193d397c84a6) for local folder create АГиТДУ/Лекция.
+[2026-05-05T00:12:12.761Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция: You are not authenticated yet.
+[2026-05-05T00:12:12.762Z] ops/info: Sending create_folder (015fcd48-acf7-4419-82dc-34f13bd8ca22) for local folder create Матан/Лекция.
+[2026-05-05T00:12:12.762Z] error/error: Local create sync failed for Rolay/150911/Матан/Лекция: You are not authenticated yet.
+[2026-05-05T00:12:12.762Z] ops/info: Sending create_folder (65bbc786-0367-46d0-b950-5baec76ca14e) for local folder create Матан/Практика.
+[2026-05-05T00:12:12.762Z] error/error: Local create sync failed for Rolay/150911/Матан/Практика: You are not authenticated yet.
+[2026-05-05T00:12:12.762Z] ops/info: Sending create_folder (cc0e7476-8b32-44ec-913d-da2a5fab371e) for local folder create Физика/Лекции.
+[2026-05-05T00:12:12.762Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции: You are not authenticated yet.
+[2026-05-05T00:12:12.799Z] ops/info: Sending create_folder (57c2ec5a-3f09-4cee-bfef-5599c3710edc) for local folder create АГиТДУ/Практика/17.04.2026.
+[2026-05-05T00:12:12.799Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026: You are not authenticated yet.
+[2026-05-05T00:12:12.803Z] ops/info: Sending create_folder (9525dda3-fc3f-4e1c-818b-799d4b54d011) for local folder create Физика/Лекции/Лекция 13.03.
+[2026-05-05T00:12:12.803Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03: You are not authenticated yet.
+[2026-05-05T00:12:12.804Z] ops/info: Sending create_folder (48cf9e35-b331-4d6c-ad21-f19e36c81dda) for local folder create Физика/Лекции/Лекция 03.04.
+[2026-05-05T00:12:12.804Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04: You are not authenticated yet.
+[2026-05-05T00:12:12.804Z] ops/info: Sending create_folder (0fb4d72d-0980-4116-9e70-541e8ee28cd5) for local folder create Физика/Лекции/Лекция 20.03.
+[2026-05-05T00:12:12.805Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03: You are not authenticated yet.
+[2026-05-05T00:12:12.805Z] ops/info: Sending create_folder (7a6f9471-de13-4c71-be62-f76894b145fb) for local folder create Физика/Лекции/Лекция 27.03.
+[2026-05-05T00:12:12.805Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03: You are not authenticated yet.
+[2026-05-05T00:12:12.839Z] ops/info: Sending create_markdown (f8a6e5be-a88d-4b01-9c9c-339212899a92) for local markdown create Лаба №28.md.
+[2026-05-05T00:12:12.840Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Лаба №28.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.840Z] error/error: Local create sync failed for Rolay/150911/Лаба №28.md: You are not authenticated yet.
+[2026-05-05T00:12:12.861Z] ops/info: Sending create_markdown (8f5652e2-077f-455e-9fb1-9dea60339961) for local markdown create Misc/Плагины к установке.md.
+[2026-05-05T00:12:12.862Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/Плагины к установке.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.862Z] error/error: Local create sync failed for Rolay/150911/Misc/Плагины к установке.md: You are not authenticated yet.
+[2026-05-05T00:12:12.864Z] ops/info: Sending create_markdown (6e11aa95-53dd-4ae6-b22d-b9c5fe3d5f5c) for local markdown create Misc/Untitled.md.
+[2026-05-05T00:12:12.865Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/Untitled.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.865Z] error/error: Local create sync failed for Rolay/150911/Misc/Untitled.md: You are not authenticated yet.
+[2026-05-05T00:12:12.871Z] ops/info: Sending create_markdown (46100864-0655-4d14-8cf5-0cd1a85a5b4c) for local markdown create Misc/test.md.
+[2026-05-05T00:12:12.871Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/test.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.871Z] error/error: Local create sync failed for Rolay/150911/Misc/test.md: You are not authenticated yet.
+[2026-05-05T00:12:12.880Z] ops/info: Sending create_markdown (fcaf1796-34e0-44f4-a4dd-3b4edab16d6e) for local markdown create Физика/28 labaaa.md.
+[2026-05-05T00:12:12.881Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/28 labaaa.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.881Z] error/error: Local create sync failed for Rolay/150911/Физика/28 labaaa.md: You are not authenticated yet.
+[2026-05-05T00:12:12.893Z] ops/info: Sending create_markdown (6c5ccc7a-4429-4410-ba6b-e4814eaf069e) for local markdown create Физика/18б лаба.md.
+[2026-05-05T00:12:12.893Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/18б лаба.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.893Z] error/error: Local create sync failed for Rolay/150911/Физика/18б лаба.md: You are not authenticated yet.
+[2026-05-05T00:12:12.904Z] ops/info: Sending create_markdown (f7bea7e1-e48a-4802-9e40-a82b506fb96b) for local markdown create Физика/18б-2.md.
+[2026-05-05T00:12:12.904Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/18б-2.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.904Z] error/error: Local create sync failed for Rolay/150911/Физика/18б-2.md: You are not authenticated yet.
+[2026-05-05T00:12:12.915Z] ops/info: Sending create_markdown (5ba53eed-b3be-484b-8056-55766c631a02) for local markdown create Физика/lab 28.md.
+[2026-05-05T00:12:12.916Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/lab 28.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.916Z] error/error: Local create sync failed for Rolay/150911/Физика/lab 28.md: You are not authenticated yet.
+[2026-05-05T00:12:12.938Z] ops/info: Sending create_markdown (749e2bea-7cfe-4536-8657-694aae96221c) for local markdown create АГиТДУ/Практика/10.04.2025.md.
+[2026-05-05T00:12:12.938Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/10.04.2025.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.938Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/10.04.2025.md: You are not authenticated yet.
+[2026-05-05T00:12:12.951Z] ops/info: Sending create_markdown (7f66e2d2-1392-494e-b34c-8637a2c6590f) for local markdown create АГиТДУ/Практика/24.04.md.
+[2026-05-05T00:12:12.951Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/24.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.951Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/24.04.md: You are not authenticated yet.
+[2026-05-05T00:12:12.961Z] ops/info: Sending create_markdown (c4564a0b-2480-4729-b9a8-bf70492a5557) for local markdown create АГиТДУ/Практика/10.04.2026.md.
+[2026-05-05T00:12:12.961Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/10.04.2026.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:12.961Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/10.04.2026.md: You are not authenticated yet.
+[2026-05-05T00:12:12.983Z] ops/info: Sending create_binary_placeholder (6a6f00da-5f84-48b5-af4a-a6762149e885) for local binary placeholder АГиТДУ/Практика/image.png.
+[2026-05-05T00:12:12.984Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/image.png: You are not authenticated yet.
+[2026-05-05T00:12:12.984Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/image.png: You are not authenticated yet.
+[2026-05-05T00:12:13.026Z] ops/info: Sending create_markdown (5f8ad56f-5cfd-46a6-bea2-e34ca3dda973) for local markdown create АГиТДУ/Лекция/24.04.md.
+[2026-05-05T00:12:13.027Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/24.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.027Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/24.04.md: You are not authenticated yet.
+[2026-05-05T00:12:13.037Z] ops/info: Sending create_markdown (0e50fab8-f304-443d-a07c-c00bbeb15d7e) for local markdown create АГиТДУ/Лекция/17.04.md.
+[2026-05-05T00:12:13.037Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/17.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.037Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/17.04.md: You are not authenticated yet.
+[2026-05-05T00:12:13.046Z] ops/info: Sending create_markdown (05681aa9-bf6b-4448-aced-61a41b102886) for local markdown create Матан/Практика/20.04.2026.md.
+[2026-05-05T00:12:13.046Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Матан/Практика/20.04.2026.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.046Z] error/error: Local create sync failed for Rolay/150911/Матан/Практика/20.04.2026.md: You are not authenticated yet.
+[2026-05-05T00:12:13.057Z] ops/info: Sending create_binary_placeholder (c9d9a5c7-aabd-4d13-9b19-57bdfc274b07) for local binary placeholder Матан/Практика/image.png.
+[2026-05-05T00:12:13.057Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Матан/Практика/image.png: You are not authenticated yet.
+[2026-05-05T00:12:13.057Z] error/error: Binary sync failed for Rolay/150911/Матан/Практика/image.png: You are not authenticated yet.
+[2026-05-05T00:12:13.066Z] ops/info: Sending create_markdown (e2083e5e-d430-4aaf-9fa6-b1fe22bfcd75) for local markdown create АГиТДУ/Лекция/Лекция 17.04.md.
+[2026-05-05T00:12:13.066Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/Лекция 17.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.066Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/Лекция 17.04.md: You are not authenticated yet.
+[2026-05-05T00:12:13.083Z] ops/info: Sending create_binary_placeholder (46e3a1c0-e6c9-4367-86eb-192206338125) for local binary placeholder Матан/Практика/image-1.png.
+[2026-05-05T00:12:13.084Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Матан/Практика/image-1.png: You are not authenticated yet.
+[2026-05-05T00:12:13.084Z] error/error: Binary sync failed for Rolay/150911/Матан/Практика/image-1.png: You are not authenticated yet.
+[2026-05-05T00:12:13.097Z] ops/info: Sending create_binary_placeholder (b6d89a78-4030-4a2a-b9ba-3765865639f3) for local binary placeholder Физика/Лекции/attachments.zip.
+[2026-05-05T00:12:13.097Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/attachments.zip: You are not authenticated yet.
+[2026-05-05T00:12:13.097Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/attachments.zip: You are not authenticated yet.
+[2026-05-05T00:12:13.104Z] ops/info: Sending create_markdown (0307c413-0fac-4b7d-ab0f-ab3e8433217d) for local markdown create Физика/Лекции/Лекция 24.04.md.
+[2026-05-05T00:12:13.104Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 24.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.104Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 24.04.md: You are not authenticated yet.
+[2026-05-05T00:12:13.115Z] ops/info: Sending create_markdown (887f99b3-cf21-4400-84fc-8d8a41717347) for local markdown create Физика/Лекции/Лекция 13.03/рис. 16.md.
+[2026-05-05T00:12:13.115Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/рис. 16.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.115Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/рис. 16.md: You are not authenticated yet.
+[2026-05-05T00:12:13.124Z] ops/info: Sending create_markdown (9f17a2ea-7ec6-4221-9464-ff72535950ee) for local markdown create Физика/Лекции/Лекция 13.03/Лекция 13.03.md.
+[2026-05-05T00:12:13.124Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/Лекция 13.03.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.124Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/Лекция 13.03.md: You are not authenticated yet.
+[2026-05-05T00:12:13.132Z] ops/info: Sending create_markdown (6b946ad5-bb55-455c-aa8b-aaac86d49434) for local markdown create Физика/Лекции/Лекция 13.03/рис. 17.md.
+[2026-05-05T00:12:13.132Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/рис. 17.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.132Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/рис. 17.md: You are not authenticated yet.
+[2026-05-05T00:12:13.140Z] ops/info: Sending create_binary_placeholder (2d90ec15-6c4c-478c-9cf6-85b394a173f2) for local binary placeholder Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png.
+[2026-05-05T00:12:13.140Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: You are not authenticated yet.
+[2026-05-05T00:12:13.140Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: You are not authenticated yet.
+[2026-05-05T00:12:13.147Z] ops/info: Sending create_markdown (703316af-a859-45b7-b128-06f9ad7657d8) for local markdown create Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
+[2026-05-05T00:12:13.147Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 03.04/Лекция 03.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.147Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: You are not authenticated yet.
+[2026-05-05T00:12:13.154Z] ops/info: Sending create_binary_placeholder (074f5993-9ccc-4860-bc35-43da7987e37b) for local binary placeholder Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png.
+[2026-05-05T00:12:13.154Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: You are not authenticated yet.
+[2026-05-05T00:12:13.154Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: You are not authenticated yet.
+[2026-05-05T00:12:13.170Z] ops/info: Sending create_binary_placeholder (7db97da9-4cb4-448c-be30-1872ca3eab66) for local binary placeholder АГиТДУ/Практика/17.04.2026/image-1.png.
+[2026-05-05T00:12:13.170Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png: You are not authenticated yet.
+[2026-05-05T00:12:13.170Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png: You are not authenticated yet.
+[2026-05-05T00:12:13.173Z] ops/info: Sending create_binary_placeholder (067c348a-56dd-4e20-82c7-67b2deebf9cd) for local binary placeholder АГиТДУ/Практика/17.04.2026/image-2.png.
+[2026-05-05T00:12:13.173Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-2.png: You are not authenticated yet.
+[2026-05-05T00:12:13.173Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-2.png: You are not authenticated yet.
+[2026-05-05T00:12:13.180Z] ops/info: Sending create_markdown (1e47bc62-ead4-4c00-b09c-ff52a49bb1f8) for local markdown create АГиТДУ/Практика/17.04.2026/17.04.2026.md.
+[2026-05-05T00:12:13.180Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/17.04.2026/17.04.2026.md pending until the next successful room refresh/connect: You are not authenticated yet.
+[2026-05-05T00:12:13.180Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: You are not authenticated yet.
+[2026-05-05T00:12:13.193Z] ops/info: Sending create_binary_placeholder (2153ef03-aa41-45e7-b310-68719d8a797b) for local binary placeholder АГиТДУ/Практика/17.04.2026/image.png.
+[2026-05-05T00:12:13.193Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image.png: You are not authenticated yet.
+[2026-05-05T00:12:13.193Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image.png: You are not authenticated yet.
