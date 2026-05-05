@@ -1,317 +1,4 @@
-[2026-05-05T00:13:24.060Z] plugin/info: Trimmed 2358 Rolay log line(s) older than 48 hours.
-local markdown Физика/18б лаба.md untouched during preload because it diverged from the last known cached content.
-[2026-05-05T00:12:12.009Z] plugin/info: Rolay plugin loaded.
-[2026-05-05T00:12:12.136Z] error/error: Refresh failed: Refresh token is invalid or expired.
-[2026-05-05T00:12:12.136Z] error/error: Startup sync failed: Refresh token is invalid or expired.
-[2026-05-05T00:12:12.671Z] ops/info: Sending create_folder (2b3ed6ed-a4f3-4ce4-bb27-b96615ea10a8) for local folder create .
-[2026-05-05T00:12:12.672Z] error/error: Local create sync failed for Rolay/150911: You are not authenticated yet.
-[2026-05-05T00:12:12.726Z] ops/info: Sending create_folder (9cdf63ef-b7a4-49c5-8ab2-6979e4c4b598) for local folder create Misc.
-[2026-05-05T00:12:12.726Z] error/error: Local create sync failed for Rolay/150911/Misc: You are not authenticated yet.
-[2026-05-05T00:12:12.726Z] ops/info: Sending create_folder (38c65de6-7eee-4120-a005-08620572bb07) for local folder create АГиТДУ.
-[2026-05-05T00:12:12.727Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ: You are not authenticated yet.
-[2026-05-05T00:12:12.727Z] ops/info: Sending create_folder (d05b5265-c0b1-4642-a5fb-5920e60a5a1b) for local folder create Матан.
-[2026-05-05T00:12:12.727Z] error/error: Local create sync failed for Rolay/150911/Матан: You are not authenticated yet.
-[2026-05-05T00:12:12.727Z] ops/info: Sending create_folder (4b5b88c9-ec0b-4b3e-861a-660e2c21670a) for local folder create Физика.
-[2026-05-05T00:12:12.727Z] error/error: Local create sync failed for Rolay/150911/Физика: You are not authenticated yet.
-[2026-05-05T00:12:12.761Z] ops/info: Sending create_folder (6a216b74-bd8f-4025-8a0c-8271a1db5536) for local folder create АГиТДУ/Практика.
-[2026-05-05T00:12:12.761Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика: You are not authenticated yet.
-[2026-05-05T00:12:12.761Z] ops/info: Sending create_folder (de356f00-c45e-480a-b123-193d397c84a6) for local folder create АГиТДУ/Лекция.
-[2026-05-05T00:12:12.761Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция: You are not authenticated yet.
-[2026-05-05T00:12:12.762Z] ops/info: Sending create_folder (015fcd48-acf7-4419-82dc-34f13bd8ca22) for local folder create Матан/Лекция.
-[2026-05-05T00:12:12.762Z] error/error: Local create sync failed for Rolay/150911/Матан/Лекция: You are not authenticated yet.
-[2026-05-05T00:12:12.762Z] ops/info: Sending create_folder (65bbc786-0367-46d0-b950-5baec76ca14e) for local folder create Матан/Практика.
-[2026-05-05T00:12:12.762Z] error/error: Local create sync failed for Rolay/150911/Матан/Практика: You are not authenticated yet.
-[2026-05-05T00:12:12.762Z] ops/info: Sending create_folder (cc0e7476-8b32-44ec-913d-da2a5fab371e) for local folder create Физика/Лекции.
-[2026-05-05T00:12:12.762Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции: You are not authenticated yet.
-[2026-05-05T00:12:12.799Z] ops/info: Sending create_folder (57c2ec5a-3f09-4cee-bfef-5599c3710edc) for local folder create АГиТДУ/Практика/17.04.2026.
-[2026-05-05T00:12:12.799Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026: You are not authenticated yet.
-[2026-05-05T00:12:12.803Z] ops/info: Sending create_folder (9525dda3-fc3f-4e1c-818b-799d4b54d011) for local folder create Физика/Лекции/Лекция 13.03.
-[2026-05-05T00:12:12.803Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03: You are not authenticated yet.
-[2026-05-05T00:12:12.804Z] ops/info: Sending create_folder (48cf9e35-b331-4d6c-ad21-f19e36c81dda) for local folder create Физика/Лекции/Лекция 03.04.
-[2026-05-05T00:12:12.804Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04: You are not authenticated yet.
-[2026-05-05T00:12:12.804Z] ops/info: Sending create_folder (0fb4d72d-0980-4116-9e70-541e8ee28cd5) for local folder create Физика/Лекции/Лекция 20.03.
-[2026-05-05T00:12:12.805Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03: You are not authenticated yet.
-[2026-05-05T00:12:12.805Z] ops/info: Sending create_folder (7a6f9471-de13-4c71-be62-f76894b145fb) for local folder create Физика/Лекции/Лекция 27.03.
-[2026-05-05T00:12:12.805Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03: You are not authenticated yet.
-[2026-05-05T00:12:12.839Z] ops/info: Sending create_markdown (f8a6e5be-a88d-4b01-9c9c-339212899a92) for local markdown create Лаба №28.md.
-[2026-05-05T00:12:12.840Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Лаба №28.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.840Z] error/error: Local create sync failed for Rolay/150911/Лаба №28.md: You are not authenticated yet.
-[2026-05-05T00:12:12.861Z] ops/info: Sending create_markdown (8f5652e2-077f-455e-9fb1-9dea60339961) for local markdown create Misc/Плагины к установке.md.
-[2026-05-05T00:12:12.862Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/Плагины к установке.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.862Z] error/error: Local create sync failed for Rolay/150911/Misc/Плагины к установке.md: You are not authenticated yet.
-[2026-05-05T00:12:12.864Z] ops/info: Sending create_markdown (6e11aa95-53dd-4ae6-b22d-b9c5fe3d5f5c) for local markdown create Misc/Untitled.md.
-[2026-05-05T00:12:12.865Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/Untitled.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.865Z] error/error: Local create sync failed for Rolay/150911/Misc/Untitled.md: You are not authenticated yet.
-[2026-05-05T00:12:12.871Z] ops/info: Sending create_markdown (46100864-0655-4d14-8cf5-0cd1a85a5b4c) for local markdown create Misc/test.md.
-[2026-05-05T00:12:12.871Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Misc/test.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.871Z] error/error: Local create sync failed for Rolay/150911/Misc/test.md: You are not authenticated yet.
-[2026-05-05T00:12:12.880Z] ops/info: Sending create_markdown (fcaf1796-34e0-44f4-a4dd-3b4edab16d6e) for local markdown create Физика/28 labaaa.md.
-[2026-05-05T00:12:12.881Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/28 labaaa.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.881Z] error/error: Local create sync failed for Rolay/150911/Физика/28 labaaa.md: You are not authenticated yet.
-[2026-05-05T00:12:12.893Z] ops/info: Sending create_markdown (6c5ccc7a-4429-4410-ba6b-e4814eaf069e) for local markdown create Физика/18б лаба.md.
-[2026-05-05T00:12:12.893Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/18б лаба.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.893Z] error/error: Local create sync failed for Rolay/150911/Физика/18б лаба.md: You are not authenticated yet.
-[2026-05-05T00:12:12.904Z] ops/info: Sending create_markdown (f7bea7e1-e48a-4802-9e40-a82b506fb96b) for local markdown create Физика/18б-2.md.
-[2026-05-05T00:12:12.904Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/18б-2.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.904Z] error/error: Local create sync failed for Rolay/150911/Физика/18б-2.md: You are not authenticated yet.
-[2026-05-05T00:12:12.915Z] ops/info: Sending create_markdown (5ba53eed-b3be-484b-8056-55766c631a02) for local markdown create Физика/lab 28.md.
-[2026-05-05T00:12:12.916Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/lab 28.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.916Z] error/error: Local create sync failed for Rolay/150911/Физика/lab 28.md: You are not authenticated yet.
-[2026-05-05T00:12:12.938Z] ops/info: Sending create_markdown (749e2bea-7cfe-4536-8657-694aae96221c) for local markdown create АГиТДУ/Практика/10.04.2025.md.
-[2026-05-05T00:12:12.938Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/10.04.2025.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.938Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/10.04.2025.md: You are not authenticated yet.
-[2026-05-05T00:12:12.951Z] ops/info: Sending create_markdown (7f66e2d2-1392-494e-b34c-8637a2c6590f) for local markdown create АГиТДУ/Практика/24.04.md.
-[2026-05-05T00:12:12.951Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/24.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.951Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/24.04.md: You are not authenticated yet.
-[2026-05-05T00:12:12.961Z] ops/info: Sending create_markdown (c4564a0b-2480-4729-b9a8-bf70492a5557) for local markdown create АГиТДУ/Практика/10.04.2026.md.
-[2026-05-05T00:12:12.961Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/10.04.2026.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:12.961Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/10.04.2026.md: You are not authenticated yet.
-[2026-05-05T00:12:12.983Z] ops/info: Sending create_binary_placeholder (6a6f00da-5f84-48b5-af4a-a6762149e885) for local binary placeholder АГиТДУ/Практика/image.png.
-[2026-05-05T00:12:12.984Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/image.png: You are not authenticated yet.
-[2026-05-05T00:12:12.984Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/image.png: You are not authenticated yet.
-[2026-05-05T00:12:13.026Z] ops/info: Sending create_markdown (5f8ad56f-5cfd-46a6-bea2-e34ca3dda973) for local markdown create АГиТДУ/Лекция/24.04.md.
-[2026-05-05T00:12:13.027Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/24.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.027Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/24.04.md: You are not authenticated yet.
-[2026-05-05T00:12:13.037Z] ops/info: Sending create_markdown (0e50fab8-f304-443d-a07c-c00bbeb15d7e) for local markdown create АГиТДУ/Лекция/17.04.md.
-[2026-05-05T00:12:13.037Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/17.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.037Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/17.04.md: You are not authenticated yet.
-[2026-05-05T00:12:13.046Z] ops/info: Sending create_markdown (05681aa9-bf6b-4448-aced-61a41b102886) for local markdown create Матан/Практика/20.04.2026.md.
-[2026-05-05T00:12:13.046Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Матан/Практика/20.04.2026.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.046Z] error/error: Local create sync failed for Rolay/150911/Матан/Практика/20.04.2026.md: You are not authenticated yet.
-[2026-05-05T00:12:13.057Z] ops/info: Sending create_binary_placeholder (c9d9a5c7-aabd-4d13-9b19-57bdfc274b07) for local binary placeholder Матан/Практика/image.png.
-[2026-05-05T00:12:13.057Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Матан/Практика/image.png: You are not authenticated yet.
-[2026-05-05T00:12:13.057Z] error/error: Binary sync failed for Rolay/150911/Матан/Практика/image.png: You are not authenticated yet.
-[2026-05-05T00:12:13.066Z] ops/info: Sending create_markdown (e2083e5e-d430-4aaf-9fa6-b1fe22bfcd75) for local markdown create АГиТДУ/Лекция/Лекция 17.04.md.
-[2026-05-05T00:12:13.066Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Лекция/Лекция 17.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.066Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Лекция/Лекция 17.04.md: You are not authenticated yet.
-[2026-05-05T00:12:13.083Z] ops/info: Sending create_binary_placeholder (46e3a1c0-e6c9-4367-86eb-192206338125) for local binary placeholder Матан/Практика/image-1.png.
-[2026-05-05T00:12:13.084Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Матан/Практика/image-1.png: You are not authenticated yet.
-[2026-05-05T00:12:13.084Z] error/error: Binary sync failed for Rolay/150911/Матан/Практика/image-1.png: You are not authenticated yet.
-[2026-05-05T00:12:13.097Z] ops/info: Sending create_binary_placeholder (b6d89a78-4030-4a2a-b9ba-3765865639f3) for local binary placeholder Физика/Лекции/attachments.zip.
-[2026-05-05T00:12:13.097Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/attachments.zip: You are not authenticated yet.
-[2026-05-05T00:12:13.097Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/attachments.zip: You are not authenticated yet.
-[2026-05-05T00:12:13.104Z] ops/info: Sending create_markdown (0307c413-0fac-4b7d-ab0f-ab3e8433217d) for local markdown create Физика/Лекции/Лекция 24.04.md.
-[2026-05-05T00:12:13.104Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 24.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.104Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 24.04.md: You are not authenticated yet.
-[2026-05-05T00:12:13.115Z] ops/info: Sending create_markdown (887f99b3-cf21-4400-84fc-8d8a41717347) for local markdown create Физика/Лекции/Лекция 13.03/рис. 16.md.
-[2026-05-05T00:12:13.115Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/рис. 16.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.115Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/рис. 16.md: You are not authenticated yet.
-[2026-05-05T00:12:13.124Z] ops/info: Sending create_markdown (9f17a2ea-7ec6-4221-9464-ff72535950ee) for local markdown create Физика/Лекции/Лекция 13.03/Лекция 13.03.md.
-[2026-05-05T00:12:13.124Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/Лекция 13.03.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.124Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/Лекция 13.03.md: You are not authenticated yet.
-[2026-05-05T00:12:13.132Z] ops/info: Sending create_markdown (6b946ad5-bb55-455c-aa8b-aaac86d49434) for local markdown create Физика/Лекции/Лекция 13.03/рис. 17.md.
-[2026-05-05T00:12:13.132Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 13.03/рис. 17.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.132Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 13.03/рис. 17.md: You are not authenticated yet.
-[2026-05-05T00:12:13.140Z] ops/info: Sending create_binary_placeholder (2d90ec15-6c4c-478c-9cf6-85b394a173f2) for local binary placeholder Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png.
-[2026-05-05T00:12:13.140Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: You are not authenticated yet.
-[2026-05-05T00:12:13.140Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403084615.png: You are not authenticated yet.
-[2026-05-05T00:12:13.147Z] ops/info: Sending create_markdown (703316af-a859-45b7-b128-06f9ad7657d8) for local markdown create Физика/Лекции/Лекция 03.04/Лекция 03.04.md.
-[2026-05-05T00:12:13.147Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 03.04/Лекция 03.04.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.147Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Лекция 03.04.md: You are not authenticated yet.
-[2026-05-05T00:12:13.154Z] ops/info: Sending create_binary_placeholder (074f5993-9ccc-4860-bc35-43da7987e37b) for local binary placeholder Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png.
-[2026-05-05T00:12:13.154Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: You are not authenticated yet.
-[2026-05-05T00:12:13.154Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 03.04/Pasted image 20260403085625.png: You are not authenticated yet.
-[2026-05-05T00:12:13.170Z] ops/info: Sending create_binary_placeholder (7db97da9-4cb4-448c-be30-1872ca3eab66) for local binary placeholder АГиТДУ/Практика/17.04.2026/image-1.png.
-[2026-05-05T00:12:13.170Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png: You are not authenticated yet.
-[2026-05-05T00:12:13.170Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-1.png: You are not authenticated yet.
-[2026-05-05T00:12:13.173Z] ops/info: Sending create_binary_placeholder (067c348a-56dd-4e20-82c7-67b2deebf9cd) for local binary placeholder АГиТДУ/Практика/17.04.2026/image-2.png.
-[2026-05-05T00:12:13.173Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-2.png: You are not authenticated yet.
-[2026-05-05T00:12:13.173Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image-2.png: You are not authenticated yet.
-[2026-05-05T00:12:13.180Z] ops/info: Sending create_markdown (1e47bc62-ead4-4c00-b09c-ff52a49bb1f8) for local markdown create АГиТДУ/Практика/17.04.2026/17.04.2026.md.
-[2026-05-05T00:12:13.180Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for АГиТДУ/Практика/17.04.2026/17.04.2026.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.180Z] error/error: Local create sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/17.04.2026.md: You are not authenticated yet.
-[2026-05-05T00:12:13.193Z] ops/info: Sending create_binary_placeholder (2153ef03-aa41-45e7-b310-68719d8a797b) for local binary placeholder АГиТДУ/Практика/17.04.2026/image.png.
-[2026-05-05T00:12:13.193Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image.png: You are not authenticated yet.
-[2026-05-05T00:12:13.193Z] error/error: Binary sync failed for Rolay/150911/АГиТДУ/Практика/17.04.2026/image.png: You are not authenticated yet.
-[2026-05-05T00:12:13.205Z] ops/info: Sending create_markdown (11b44db6-05db-439d-9f93-201e493f0a40) for local markdown create Физика/Лекции/Лекция 27.03/задача про газ.md.
-[2026-05-05T00:12:13.205Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/задача про газ.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.205Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/задача про газ.md: You are not authenticated yet.
-[2026-05-05T00:12:13.216Z] ops/info: Sending create_markdown (8b807994-324e-4ed4-9c02-fc3a834e1733) for local markdown create Физика/Лекции/Лекция 27.03/Трёхатомный.md.
-[2026-05-05T00:12:13.216Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/Трёхатомный.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.216Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/Трёхатомный.md: You are not authenticated yet.
-[2026-05-05T00:12:13.228Z] ops/info: Sending create_markdown (d7eed76b-3abe-44ec-91e8-34f9fa53a791) for local markdown create Физика/Лекции/Лекция 27.03/Лекция 27.03.md.
-[2026-05-05T00:12:13.228Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/Лекция 27.03.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.228Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/Лекция 27.03.md: You are not authenticated yet.
-[2026-05-05T00:12:13.240Z] ops/info: Sending create_binary_placeholder (a09bb8f6-80df-4cfc-93e4-6252fab52e59) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png.
-[2026-05-05T00:12:13.241Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png: You are not authenticated yet.
-[2026-05-05T00:12:13.241Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320083846.png: You are not authenticated yet.
-[2026-05-05T00:12:13.251Z] ops/info: Sending create_markdown (1d2401f4-c027-4fc3-94b2-b923ec7ca677) for local markdown create Физика/Лекции/Лекция 27.03/двухатомный.md.
-[2026-05-05T00:12:13.251Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/двухатомный.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.251Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/двухатомный.md: You are not authenticated yet.
-[2026-05-05T00:12:13.262Z] ops/info: Sending create_markdown (14b82d8e-01bc-43bd-b30a-e943a52f76f6) for local markdown create Физика/Лекции/Лекция 27.03/график p-v.md.
-[2026-05-05T00:12:13.263Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 27.03/график p-v.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.263Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 27.03/график p-v.md: You are not authenticated yet.
-[2026-05-05T00:12:13.272Z] ops/info: Sending create_binary_placeholder (715e0091-5c2d-417b-917a-8a6694802b50) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png.
-[2026-05-05T00:12:13.272Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png: You are not authenticated yet.
-[2026-05-05T00:12:13.272Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091653.png: You are not authenticated yet.
-[2026-05-05T00:12:13.280Z] ops/info: Sending create_binary_placeholder (52f2ab1b-8010-46c4-9134-365a43906780) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png.
-[2026-05-05T00:12:13.280Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png: You are not authenticated yet.
-[2026-05-05T00:12:13.280Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084107.png: You are not authenticated yet.
-[2026-05-05T00:12:13.290Z] ops/info: Sending create_binary_placeholder (9098c9b6-92fe-496a-8ddb-c81b40d0c001) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png.
-[2026-05-05T00:12:13.290Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png: You are not authenticated yet.
-[2026-05-05T00:12:13.290Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320084910.png: You are not authenticated yet.
-[2026-05-05T00:12:13.299Z] ops/info: Sending create_markdown (61da24a3-28fc-44d8-b0ac-f2f9c648d893) for local markdown create Физика/Лекции/Лекция 20.03/Лекция 20.03.md.
-[2026-05-05T00:12:13.299Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 20.03/Лекция 20.03.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.299Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Лекция 20.03.md: You are not authenticated yet.
-[2026-05-05T00:12:13.307Z] ops/info: Sending create_binary_placeholder (758e337b-f361-4bea-95af-8804708148fc) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png.
-[2026-05-05T00:12:13.308Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png: You are not authenticated yet.
-[2026-05-05T00:12:13.308Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320091655.png: You are not authenticated yet.
-[2026-05-05T00:12:13.316Z] ops/info: Sending create_binary_placeholder (1099aa75-574d-48f3-82ad-2bb65ee261c7) for local binary placeholder Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png.
-[2026-05-05T00:12:13.316Z] blob/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png: You are not authenticated yet.
-[2026-05-05T00:12:13.316Z] error/error: Binary sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320094113.png: You are not authenticated yet.
-[2026-05-05T00:12:13.335Z] ops/info: Sending create_markdown (a9c92e78-fb5c-4cbc-a14e-a0c02f46c569) for local markdown create Физика/Лекции/Лекция 20.03/лекция от никитки.md.
-[2026-05-05T00:12:13.335Z] ops/error: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Keeping local markdown create for Физика/Лекции/Лекция 20.03/лекция от никитки.md pending until the next successful room refresh/connect: You are not authenticated yet.
-[2026-05-05T00:12:13.335Z] error/error: Local create sync failed for Rolay/150911/Физика/Лекции/Лекция 20.03/лекция от никитки.md: You are not authenticated yet.
-[2026-05-05T00:13:23.781Z] plugin/info: Rolay plugin loaded.
-[2026-05-05T00:13:23.781Z] startup/info: Deferring startup sync bootstrap until after the Obsidian workspace finishes opening.
-[2026-05-05T00:13:25.671Z] rooms/info: Loaded 2 room(s).
-[2026-05-05T00:13:25.672Z] auth/info: Logged in as vladp.
-[2026-05-05T00:13:25.672Z] startup/info: Scheduling 1 downloaded room(s) for staggered resume (startup-deferred).
-[2026-05-05T00:13:26.204Z] tree/info: Fetched snapshot for main150911 with 154 entries (startup-deferred).
-[2026-05-05T00:13:26.235Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 37 markdown document(s) via HTTP bootstrap metadata + state batches (startup-deferred).
-[2026-05-05T00:13:27.031Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.031Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.032Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/Лекция 17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.032Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/10.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.032Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/17.04.2026/17.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.331Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Лаба №28.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.352Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 03.04/Лекция 03.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.353Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/Лекция 13.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.436Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 16.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.436Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 17.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.437Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 20.03/Лекция 20.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.655Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 20.03/лекция от никитки.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.783Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.787Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/график p-v.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.788Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/двухатомный.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.790Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/задача про газ.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.791Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/Лекция 27.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.794Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/Трёхатомный.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.794Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Misc/Плагины к установке.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.795Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Misc/test.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.860Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Misc/Untitled.md because a local markdown create replay is pending.
-[2026-05-05T00:13:27.877Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 37 markdown document(s) with 1.12 MB downloaded.
-[2026-05-05T00:13:27.919Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e localPath=Rolay/150911/АГиТДУ/Практики/image.png serverPath=АГиТДУ/Практики/image.png expectedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= expectedSizeBytes=1201265
-[2026-05-05T00:13:27.920Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_f128e7c8-0069-4482-bf49-716797700a37 localPath=Rolay/150911/Матан/Практика/20.04.2026/graphics.png serverPath=Матан/Практика/20.04.2026/graphics.png expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedSizeBytes=415296
-[2026-05-05T00:13:28.103Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e localPath=Rolay/150911/АГиТДУ/Практики/image.png serverPath=АГиТДУ/Практики/image.png status=200 requestId=req-1z28 hash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= sizeBytes=1201265 contentUrl=https://rolay.ru/v1/files/fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e/blob/content rangeSupported=true
-[2026-05-05T00:13:28.106Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e localPath=Rolay/150911/АГиТДУ/Практики/image.png expectedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= expectedSizeBytes=1201265 partialOffset=0 range=-
-[2026-05-05T00:13:28.188Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_f128e7c8-0069-4482-bf49-716797700a37 localPath=Rolay/150911/Матан/Практика/20.04.2026/graphics.png serverPath=Матан/Практика/20.04.2026/graphics.png status=200 requestId=req-1z29 hash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= sizeBytes=415296 contentUrl=https://rolay.ru/v1/files/fil_f128e7c8-0069-4482-bf49-716797700a37/blob/content rangeSupported=true
-[2026-05-05T00:13:28.189Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_f128e7c8-0069-4482-bf49-716797700a37 localPath=Rolay/150911/Матан/Практика/20.04.2026/graphics.png expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedSizeBytes=415296 partialOffset=0 range=-
-[2026-05-05T00:13:28.892Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 21 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
-[2026-05-05T00:13:29.108Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.109Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.109Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/Лекция 17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.109Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/10.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.110Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/17.04.2026/17.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.110Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Лаба №28.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.110Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 03.04/Лекция 03.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.111Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/Лекция 13.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.187Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 16.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.188Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 17.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.188Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 20.03/Лекция 20.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.396Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 20.03/лекция от никитки.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.400Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_f128e7c8-0069-4482-bf49-716797700a37 localPath=Rolay/150911/Матан/Практика/20.04.2026/graphics.png transport=node status=200 requestId=req-1z2c contentLength=415296 contentRange=- acceptRanges=bytes blobHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU=
-[2026-05-05T00:13:29.403Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_f128e7c8-0069-4482-bf49-716797700a37 localPath=Rolay/150911/Матан/Практика/20.04.2026/graphics.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_f128e7c8-0069-4482-bf49-716797700a37-sha256-LR4bIMCL7QAVJdkL4-y19SiHJvldv7NsdONpeGreA.part computedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= sizeBytes=415296
-[2026-05-05T00:13:29.410Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded Матан/Практика/20.04.2026/graphics.png (406 KB) from startup-deferred.
-[2026-05-05T00:13:29.411Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_8a7186a7-18cf-405c-a324-2176658ef1f3 localPath=Rolay/150911/Матан/Практика/20.04.2026/image.png serverPath=Матан/Практика/20.04.2026/image.png expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedSizeBytes=415296
-[2026-05-05T00:13:29.517Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.520Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/график p-v.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.520Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/двухатомный.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.522Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/задача про газ.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.522Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/Лекция 27.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.524Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/Трёхатомный.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.524Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Misc/Плагины к установке.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.524Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Misc/test.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.575Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Misc/Untitled.md because a local markdown create replay is pending.
-[2026-05-05T00:13:29.580Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 21 markdown document(s) with 930 KB downloaded.
-[2026-05-05T00:13:29.581Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_8a7186a7-18cf-405c-a324-2176658ef1f3 localPath=Rolay/150911/Матан/Практика/20.04.2026/image.png serverPath=Матан/Практика/20.04.2026/image.png status=200 requestId=req-1z2h hash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= sizeBytes=415296 contentUrl=https://rolay.ru/v1/files/fil_8a7186a7-18cf-405c-a324-2176658ef1f3/blob/content rangeSupported=true
-[2026-05-05T00:13:29.582Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_8a7186a7-18cf-405c-a324-2176658ef1f3 localPath=Rolay/150911/Матан/Практика/20.04.2026/image.png expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedSizeBytes=415296 partialOffset=0 range=-
-[2026-05-05T00:13:29.951Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e localPath=Rolay/150911/АГиТДУ/Практики/image.png transport=node status=200 requestId=req-1z2b contentLength=1201265 contentRange=- acceptRanges=bytes blobHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw=
-[2026-05-05T00:13:29.958Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e localPath=Rolay/150911/АГиТДУ/Практики/image.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_596c3f6b-7f76-4042-a69a-4ae2c155d36e-sha256-gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxR.part computedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= expectedHash=sha256:gX5VnEV6Nbom2JPsyIM2jNaTCAX8WGj7KCheSWoxRzw= sizeBytes=1201265
-[2026-05-05T00:13:29.976Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded АГиТДУ/Практики/image.png (1.15 MB) from startup-deferred.
-[2026-05-05T00:13:29.978Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_435e8078-731b-4bd0-bd77-468f90d7e14e localPath=Rolay/150911/Матан/Практика/20.04.2026/image123.png serverPath=Матан/Практика/20.04.2026/image123.png expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedSizeBytes=415296
-[2026-05-05T00:13:30.017Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_8a7186a7-18cf-405c-a324-2176658ef1f3 localPath=Rolay/150911/Матан/Практика/20.04.2026/image.png transport=node status=200 requestId=req-1z2j contentLength=415296 contentRange=- acceptRanges=bytes blobHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU=
-[2026-05-05T00:13:30.019Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_8a7186a7-18cf-405c-a324-2176658ef1f3 localPath=Rolay/150911/Матан/Практика/20.04.2026/image.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_8a7186a7-18cf-405c-a324-2176658ef1f3-sha256-LR4bIMCL7QAVJdkL4-y19SiHJvldv7NsdONpeGreA.part computedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= sizeBytes=415296
-[2026-05-05T00:13:30.025Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded Матан/Практика/20.04.2026/image.png (406 KB) from startup-deferred.
-[2026-05-05T00:13:30.041Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794 localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png serverPath=Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png expectedHash=sha256:Olx9b11PY6lCwEHeiu1k33dTmvt+sIBmaAshaK0pmHI= expectedSizeBytes=52453
-[2026-05-05T00:13:30.216Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_435e8078-731b-4bd0-bd77-468f90d7e14e localPath=Rolay/150911/Матан/Практика/20.04.2026/image123.png serverPath=Матан/Практика/20.04.2026/image123.png status=200 requestId=req-1z2k hash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= sizeBytes=415296 contentUrl=https://rolay.ru/v1/files/fil_435e8078-731b-4bd0-bd77-468f90d7e14e/blob/content rangeSupported=true
-[2026-05-05T00:13:30.223Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_435e8078-731b-4bd0-bd77-468f90d7e14e localPath=Rolay/150911/Матан/Практика/20.04.2026/image123.png expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedSizeBytes=415296 partialOffset=0 range=-
-[2026-05-05T00:13:30.305Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794 localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png serverPath=Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png status=200 requestId=req-1z2l hash=sha256:Olx9b11PY6lCwEHeiu1k33dTmvt+sIBmaAshaK0pmHI= sizeBytes=52453 contentUrl=https://rolay.ru/v1/files/fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794/blob/content rangeSupported=true
-[2026-05-05T00:13:30.313Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794 localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png expectedHash=sha256:Olx9b11PY6lCwEHeiu1k33dTmvt+sIBmaAshaK0pmHI= expectedSizeBytes=52453 partialOffset=0 range=-
-[2026-05-05T00:13:30.474Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794 localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png transport=node status=200 requestId=req-1z2n contentLength=52453 contentRange=- acceptRanges=bytes blobHash=sha256:Olx9b11PY6lCwEHeiu1k33dTmvt+sIBmaAshaK0pmHI=
-[2026-05-05T00:13:30.476Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794 localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_cbd70dd5-49eb-4814-9cf7-6f35fa4a5794-sha256-Olx9b11PY6lCwEHeiu1k33dTmvt-sIBmaAshaK0pm.part computedHash=sha256:Olx9b11PY6lCwEHeiu1k33dTmvt+sIBmaAshaK0pmHI= expectedHash=sha256:Olx9b11PY6lCwEHeiu1k33dTmvt+sIBmaAshaK0pmHI= sizeBytes=52453
-[2026-05-05T00:13:30.483Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded Физика/Лекции/Лекция 20.03/Pasted image 20260320093425.png (51.2 KB) from startup-deferred.
-[2026-05-05T00:13:30.487Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket request entryId=fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png serverPath=Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png expectedHash=sha256:6Hx+mhlqzlmId7nXQbTEabi2+KmFt/yqnLHCBImFArA= expectedSizeBytes=40460
-[2026-05-05T00:13:30.609Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_435e8078-731b-4bd0-bd77-468f90d7e14e localPath=Rolay/150911/Матан/Практика/20.04.2026/image123.png transport=node status=200 requestId=req-1z2m contentLength=415296 contentRange=- acceptRanges=bytes blobHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU=
-[2026-05-05T00:13:30.611Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_435e8078-731b-4bd0-bd77-468f90d7e14e localPath=Rolay/150911/Матан/Практика/20.04.2026/image123.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_435e8078-731b-4bd0-bd77-468f90d7e14e-sha256-LR4bIMCL7QAVJdkL4-y19SiHJvldv7NsdONpeGreA.part computedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= expectedHash=sha256:LR4bIMCL7QAVJdkL4+y19SiHJvldv7NsdONpeGreAVU= sizeBytes=415296
-[2026-05-05T00:13:30.615Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded Матан/Практика/20.04.2026/image123.png (406 KB) from startup-deferred.
-[2026-05-05T00:13:30.673Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download-ticket response entryId=fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png serverPath=Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png status=200 requestId=req-1z2o hash=sha256:6Hx+mhlqzlmId7nXQbTEabi2+KmFt/yqnLHCBImFArA= sizeBytes=40460 contentUrl=https://rolay.ru/v1/files/fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a/blob/content rangeSupported=true
-[2026-05-05T00:13:30.676Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content request entryId=fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png expectedHash=sha256:6Hx+mhlqzlmId7nXQbTEabi2+KmFt/yqnLHCBImFArA= expectedSizeBytes=40460 partialOffset=0 range=-
-[2026-05-05T00:13:30.771Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] blob content response entryId=fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png transport=node status=200 requestId=req-1z2p contentLength=40460 contentRange=- acceptRanges=bytes blobHash=sha256:6Hx+mhlqzlmId7nXQbTEabi2+KmFt/yqnLHCBImFArA=
-[2026-05-05T00:13:30.772Z] blob-trace/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] download finalize entryId=fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a localPath=Rolay/150911/Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png partPath=.obsidian/plugins/rolay/transfers/ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768/fil_cf1bb51f-917a-411c-b3af-eec56fc8c28a-sha256-6Hx-mhlqzlmId7nXQbTEabi2-KmFt-yqnLHCBImFA.part computedHash=sha256:6Hx+mhlqzlmId7nXQbTEabi2+KmFt/yqnLHCBImFArA= expectedHash=sha256:6Hx+mhlqzlmId7nXQbTEabi2+KmFt/yqnLHCBImFArA= sizeBytes=40460
-[2026-05-05T00:13:30.781Z] blob/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Downloaded Физика/Лекции/Лекция 20.03/Pasted image 20260320093744.png (39.5 KB) from startup-deferred.
-[2026-05-05T00:13:30.781Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Replaying 28 pending local markdown create(s) after startup-deferred.
-[2026-05-05T00:13:30.781Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Cleared stale pending markdown create for Лаба №28.md because that path is already owned by remote entry fil_26914c6c-d8a4-41d4-8892-852368f708cb.
-[2026-05-05T00:13:30.782Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Cleared stale pending markdown create for Misc/test.md because that path is already owned by remote entry fil_ebf39dff-431b-4fae-b925-0bad1adbee56.
-[2026-05-05T00:13:30.782Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Cleared stale pending markdown create for Misc/Untitled.md because that path is already owned by remote entry fil_b26977ae-9a3e-4f2d-b75c-bc0a864707a7.
-[2026-05-05T00:13:30.782Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Cleared stale pending markdown create for Misc/Плагины к установке.md because that path is already owned by remote entry fil_6d612d3f-6ec7-4a1b-af1d-5c86da6eb86b.
-[2026-05-05T00:13:30.783Z] ops/info: Sending create_markdown (3d3aa0ef-aeeb-4d6a-97c9-7018c8b1b699) for local markdown create Физика/18б-2.md.
-[2026-05-05T00:13:31.016Z] ops/info: Operation 3d3aa0ef-aeeb-4d6a-97c9-7018c8b1b699 applied at event 387.
-[2026-05-05T00:13:31.016Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for Физика/18б-2.md. Existing local text will be pushed into the remote CRDT doc when possible.
-[2026-05-05T00:13:31.019Z] crdt/info: Merging local markdown state into remote CRDT doc for Физика/18б-2.md.
-[2026-05-05T00:13:31.593Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 21 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
-[2026-05-05T00:13:32.123Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.124Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.124Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/Лекция 17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.124Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/10.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.125Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/17.04.2026/17.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.126Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 03.04/Лекция 03.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.126Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/Лекция 13.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.222Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 16.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.223Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 17.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.224Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 20.03/Лекция 20.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.423Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 20.03/лекция от никитки.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.451Z] crdt/info: Merged local markdown state into remote CRDT doc for Физика/18б-2.md.
-[2026-05-05T00:13:32.455Z] ops/info: Sending create_markdown (ff375016-a53c-452b-ad3d-b7dc8185b571) for local markdown create Физика/18б лаба.md.
-[2026-05-05T00:13:32.619Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.622Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/график p-v.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.623Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/двухатомный.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.624Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/задача про газ.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.625Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/Лекция 27.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.627Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 27.03/Трёхатомный.md because a local markdown create replay is pending.
-[2026-05-05T00:13:32.628Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
-[2026-05-05T00:13:32.719Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 21 markdown document(s) with 930 KB downloaded.
-[2026-05-05T00:13:32.738Z] ops/info: Operation ff375016-a53c-452b-ad3d-b7dc8185b571 applied at event 388.
-[2026-05-05T00:13:32.738Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for Физика/18б лаба.md. Existing local text will be pushed into the remote CRDT doc when possible.
-[2026-05-05T00:13:32.739Z] crdt/info: Merging local markdown state into remote CRDT doc for Физика/18б лаба.md.
-[2026-05-05T00:13:33.596Z] crdt/info: Merged local markdown state into remote CRDT doc for Физика/18б лаба.md.
-[2026-05-05T00:13:33.596Z] ops/info: Sending create_markdown (b4be7586-c45c-4310-b6a6-40db9a913f4b) for local markdown create Физика/28 labaaa.md.
-[2026-05-05T00:13:33.868Z] ops/info: Operation b4be7586-c45c-4310-b6a6-40db9a913f4b applied at event 389.
-[2026-05-05T00:13:33.868Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for Физика/28 labaaa.md. Existing local text will be pushed into the remote CRDT doc when possible.
-[2026-05-05T00:13:33.868Z] crdt/info: Merging local markdown state into remote CRDT doc for Физика/28 labaaa.md.
-[2026-05-05T00:13:34.724Z] crdt/info: Merged local markdown state into remote CRDT doc for Физика/28 labaaa.md.
-[2026-05-05T00:13:34.725Z] ops/info: Sending create_markdown (3b63f5db-7089-4f6e-9010-49ac5632dfd9) for local markdown create Физика/lab 28.md.
-[2026-05-05T00:13:34.991Z] ops/info: Operation 3b63f5db-7089-4f6e-9010-49ac5632dfd9 applied at event 390.
-[2026-05-05T00:13:34.991Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for Физика/lab 28.md. Existing local text will be pushed into the remote CRDT doc when possible.
-[2026-05-05T00:13:34.992Z] crdt/info: Merging local markdown state into remote CRDT doc for Физика/lab 28.md.
-[2026-05-05T00:13:35.781Z] crdt/info: Merged local markdown state into remote CRDT doc for Физика/lab 28.md.
-[2026-05-05T00:13:35.782Z] ops/info: Sending create_markdown (199007d9-7025-4e9e-8b8a-37fdb139bc90) for local markdown create АГиТДУ/Практика/10.04.2025.md.
-[2026-05-05T00:13:36.067Z] ops/info: Operation 199007d9-7025-4e9e-8b8a-37fdb139bc90 applied at event 391.
-[2026-05-05T00:13:36.068Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for АГиТДУ/Практика/10.04.2025.md. Existing local text will be pushed into the remote CRDT doc when possible.
-[2026-05-05T00:13:36.069Z] crdt/info: Merging local markdown state into remote CRDT doc for АГиТДУ/Практика/10.04.2025.md.
-[2026-05-05T00:13:36.741Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 19 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
-[2026-05-05T00:13:36.864Z] crdt/info: Merged local markdown state into remote CRDT doc for АГиТДУ/Практика/10.04.2025.md.
-[2026-05-05T00:13:36.865Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Cleared stale pending markdown create for АГиТДУ/Практика/10.04.2026.md because that path is already owned by remote entry fil_ad507ee9-cb7c-432d-ba78-5e2f8e386511.
-[2026-05-05T00:13:36.866Z] ops/info: Sending create_markdown (6d71ae93-ea6d-4591-8f3e-ea5f956cf082) for local markdown create АГиТДУ/Практика/24.04.md.
-[2026-05-05T00:13:37.007Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:37.008Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/24.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:37.009Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Лекция/Лекция 17.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:37.009Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
-[2026-05-05T00:13:37.010Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for АГиТДУ/Практика/17.04.2026/17.04.2026.md because a local markdown create replay is pending.
-[2026-05-05T00:13:37.015Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/18б-2.md because a local create is still pending.
-[2026-05-05T00:13:37.018Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 03.04/Лекция 03.04.md because a local markdown create replay is pending.
-[2026-05-05T00:13:37.020Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/Лекция 13.03.md because a local markdown create replay is pending.
-[2026-05-05T00:13:37.131Z] ops/info: Operation 6d71ae93-ea6d-4591-8f3e-ea5f956cf082 applied at event 392.
+[2026-05-05T00:22:42.910Z] plugin/info: Trimmed persistent Rolay log to the newest 192 KB because it exceeded 256 KB.
 [2026-05-05T00:13:37.131Z] ops/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Markdown entry created for АГиТДУ/Практика/24.04.md. Existing local text will be pushed into the remote CRDT doc when possible.
 [2026-05-05T00:13:37.132Z] crdt/info: Merging local markdown state into remote CRDT doc for АГиТДУ/Практика/24.04.md.
 [2026-05-05T00:13:37.141Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Skipped preload overwrite for Физика/Лекции/Лекция 13.03/рис. 16.md because a local markdown create replay is pending.
@@ -1166,3 +853,290 @@ local markdown Физика/18б лаба.md untouched during preload because it
 [2026-05-05T00:21:53.016Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
 [2026-05-05T00:21:53.016Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
 [2026-05-05T00:21:53.053Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:21:54.147Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:21:54.155Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:21:54.421Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:21:55.087Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:21:55.089Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:00.501Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:00.509Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:00.765Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:01.114Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:01.253Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:01.254Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:01.256Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:01.258Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:01.309Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:01.364Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:01.365Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:06.790Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:06.798Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:07.046Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:07.545Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:07.546Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:09.352Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:09.492Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:09.494Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:09.497Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:09.499Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:09.586Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:12.938Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:12.946Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:13.206Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:13.830Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:13.832Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:17.664Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:17.806Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:17.809Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:17.812Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:17.814Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:17.872Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:19.238Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:19.244Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:19.489Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:20.149Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:20.151Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:25.587Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:25.594Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:25.844Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:25.919Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:26.079Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:26.083Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:26.087Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:26.089Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:26.226Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:26.528Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:26.530Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:31.945Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:31.951Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:32.191Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:32.820Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:32.821Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:34.318Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:34.453Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:34.455Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:34.458Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:34.460Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:34.534Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:38.239Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:38.245Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:38.502Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:39.060Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:39.063Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:42.617Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:42.757Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:42.760Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:42.763Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:42.765Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:42.822Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:44.464Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:44.471Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:44.721Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:45.299Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:45.300Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:50.712Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:50.718Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:50.937Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:50.964Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:51.078Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:51.080Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:51.084Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:51.086Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:51.132Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:22:51.555Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:51.557Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:57.015Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:57.021Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:57.291Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:57.929Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:57.931Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:22:59.225Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:22:59.374Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:59.376Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:59.380Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:59.382Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:22:59.469Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:03.335Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:03.345Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:03.569Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:04.180Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:04.181Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:07.549Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:07.688Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:07.691Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:07.694Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:07.696Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:07.769Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:09.564Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:09.568Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:09.809Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:10.303Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:10.303Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:15.708Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:15.715Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:15.860Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:15.963Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:16.003Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:16.005Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:16.010Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:16.011Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:16.088Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:16.557Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:16.558Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:21.957Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:21.963Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:22.201Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:22.805Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:22.808Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:24.146Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:24.287Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:24.288Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:24.291Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:24.292Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:24.329Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:28.369Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:28.375Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:28.829Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:29.722Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:29.722Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:32.414Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:32.549Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:32.552Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:32.555Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:32.557Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:32.622Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:35.138Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:35.145Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:35.384Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:35.970Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:35.972Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:40.735Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:40.873Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:40.876Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:40.879Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:40.880Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:40.951Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:41.352Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:41.356Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:41.589Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:42.170Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:42.172Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:47.566Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:47.572Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:47.797Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:48.364Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:48.366Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:49.035Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:49.171Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:49.174Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:49.177Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:49.178Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:49.241Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:23:53.805Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:53.812Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:54.058Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:54.633Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:54.634Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:23:57.359Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:23:57.506Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:57.508Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:57.512Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:57.513Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:23:57.594Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:00.075Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:00.079Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:00.332Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:00.964Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:00.965Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:05.682Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:05.822Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:05.824Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:05.827Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:05.828Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:05.910Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:06.358Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:06.365Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:06.614Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:07.169Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:07.174Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:12.588Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:12.595Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:12.852Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:13.427Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:13.429Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:14.016Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:14.157Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:14.159Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:14.162Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:14.164Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:14.261Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:18.854Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:18.860Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:19.120Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:19.749Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:19.750Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:22.358Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:22.493Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:22.495Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:22.498Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:22.499Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:22.540Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:25.141Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:25.148Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:25.396Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:25.978Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:25.980Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:30.643Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:30.776Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:30.778Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:30.780Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:30.782Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:30.859Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:31.327Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:31.330Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:31.559Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:32.181Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:32.182Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:37.595Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:37.601Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:37.844Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:38.405Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:38.406Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:38.936Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:39.083Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:39.086Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:39.089Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:39.090Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:39.155Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:43.790Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:43.799Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:44.050Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:44.608Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:44.610Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:47.260Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:47.396Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:47.399Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:47.401Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:47.403Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:47.487Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:50.023Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:50.030Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:50.275Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:50.809Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:50.810Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:24:55.580Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 4 markdown document(s) via HTTP bootstrap metadata + state batches (locked-retry).
+[2026-05-05T00:24:55.716Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:55.718Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:55.721Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:55.723Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:55.773Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 4 markdown document(s) with 19.3 KB downloaded.
+[2026-05-05T00:24:56.215Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:56.221Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:56.465Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:57.015Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:24:57.016Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-05T00:25:02.404Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Лекция/17.04.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:25:02.411Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown АГиТДУ/Практика/10.04.2026.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:25:02.650Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Физика/Лекции/Лекция 13.03/Лекция 13.03.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:25:03.213Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Left local markdown Misc/test.md untouched during preload because it diverged from the last known cached content.
+[2026-05-05T00:25:03.214Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 40/44 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
