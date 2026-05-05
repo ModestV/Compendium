@@ -1093,3 +1093,5 @@
 [2026-05-05T08:36:43.213Z] startup/info: Deferring startup sync bootstrap until after the Obsidian workspace finishes opening.
 [2026-05-05T08:36:46.782Z] error/error: Refresh failed: net::ERR_PROXY_CONNECTION_FAILED
 [2026-05-05T08:36:46.783Z] error/error: Startup sync failed: net::ERR_PROXY_CONNECTION_FAILED
+[2026-05-05T20:06:53.471Z] settings-sse/info: Subscribed to settings events.
+[2026-05-05T20:06:53.473Z] settings-sse/info: Settings stream ready at event 138.
