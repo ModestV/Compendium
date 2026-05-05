@@ -8548,6 +8548,19 @@ var RolayApiClient = class {
       `/v1/rooms/${encodeURIComponent(workspaceId)}/invite/regenerate`
     );
   }
+  async getRoomPublication(workspaceId) {
+    return this.requestJson(
+      "GET",
+      `/v1/rooms/${encodeURIComponent(workspaceId)}/publication`
+    );
+  }
+  async updateRoomPublication(workspaceId, body) {
+    return this.requestJson(
+      "PATCH",
+      `/v1/rooms/${encodeURIComponent(workspaceId)}/publication`,
+      body
+    );
+  }
   async listManagedUsers() {
     return this.requestJson(
       "GET",
@@ -10346,6 +10359,7 @@ var _FileBridge = class _FileBridge {
     this.getFolderName = config.getFolderName;
     this.getDownloadedRooms = config.getDownloadedRooms;
     this.getEntryByPath = config.getEntryByPath;
+    this.isWorkspaceSyncActive = config.isWorkspaceSyncActive;
     this.hasPendingCreate = config.hasPendingCreate;
     this.hasPendingDelete = config.hasPendingDelete;
     this.hasPendingBinaryWrite = config.hasPendingBinaryWrite;
@@ -10361,7 +10375,7 @@ var _FileBridge = class _FileBridge {
   }
   async applySnapshot(snapshot, previousEntries) {
     const folderName = this.getFolderName(snapshot.workspace.id);
-    if (!folderName) {
+    if (!folderName || !this.isWorkspaceSyncActive(snapshot.workspace.id)) {
       return;
     }
     const roomRoot = this.getRoomRoot(folderName);
@@ -10378,6 +10392,9 @@ var _FileBridge = class _FileBridge {
       return previous && !previous.deleted && previous.path !== entry.path;
     });
     for (const entry of renamedEntries) {
+      if (!this.isWorkspaceSyncActive(snapshot.workspace.id)) {
+        return;
+      }
       const previous = previousById.get(entry.id);
       if (previous) {
         await this.safeApply(`rename local ${previous.path} -> ${entry.path}`, async () => {
@@ -10385,8 +10402,11 @@ var _FileBridge = class _FileBridge {
         });
       }
     }
-    const activeEntries = snapshot.entries.filter((entry) => !entry.deleted).sort(compareEntriesForMaterialization);
+    const activeEntries = snapshot.entries.filter((entry) => !entry.deleted).filter((entry) => !this.hasPendingDelete(snapshot.workspace.id, entry.path)).sort(compareEntriesForMaterialization);
     for (const entry of activeEntries) {
+      if (!this.isWorkspaceSyncActive(snapshot.workspace.id)) {
+        return;
+      }
       await this.safeApply(`materialize ${entry.path}`, async () => {
         await this.ensureLocalEntry(snapshot.workspace.id, folderName, entry);
       });
@@ -10405,6 +10425,9 @@ var _FileBridge = class _FileBridge {
       return !next || next.deleted;
     });
     for (const entry of deletedEntries.sort(compareEntriesForDeletion)) {
+      if (!this.isWorkspaceSyncActive(snapshot.workspace.id)) {
+        return;
+      }
       await this.safeApply(`trash ${entry.path}`, async () => {
         await this.trashLocalEntry(folderName, entry.path);
       });
@@ -13420,6 +13443,9 @@ var CrdtSessionManager = class {
     }
     return this.activeSession.getState();
   }
+  getLocalNotePresenceViewer() {
+    return this.activeSession?.getLocalNotePresenceViewer() ?? null;
+  }
   async seedRemoteMarkdown(entry, localText, contextLabel = entry.path) {
     if (!localText) {
       return;
@@ -13679,6 +13705,24 @@ var BoundCrdtSession = class {
       status: this.status
     };
   }
+  getLocalNotePresenceViewer() {
+    if (this.status === "idle" || this.status === "offline") {
+      return null;
+    }
+    const activeView = this.app.workspace.getActiveViewOfType(import_obsidian5.MarkdownView);
+    if (!activeView?.file || activeView.file.path !== this.file.path) {
+      return null;
+    }
+    return {
+      presenceId: `presence:${this.workspaceId}:${this.entry.id}:${this.yDocument.clientID}`,
+      workspaceId: this.workspaceId,
+      entryId: this.entry.id,
+      userId: this.awarenessUser.userId,
+      displayName: this.awarenessUser.displayName,
+      color: this.awarenessUser.color,
+      hasSelection: this.hasLocalTextSelection()
+    };
+  }
   async destroy() {
     this.clearLocalPresence();
     this.clearRemotePresence();
@@ -13777,6 +13821,13 @@ var BoundCrdtSession = class {
     }
     this.provider.setAwarenessField("viewer", null);
     this.clearLocalSelectionPresence();
+  }
+  hasLocalTextSelection() {
+    if (!this.lastLocalSelectionKey) {
+      return false;
+    }
+    const [anchor, head] = this.lastLocalSelectionKey.split(":").map((part) => Number(part));
+    return Number.isFinite(anchor) && Number.isFinite(head) && anchor !== head;
   }
   schedulePersistedState() {
     if (this.persistHandle !== null) {
@@ -14715,7 +14766,7 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         this.finishRender(scrollHost, renderKey, preservedScrollTop);
         return;
       } else {
-        this.renderRoomDetailView(shell, activeRoom);
+        this.renderRoomDetailView(shell, activeRoom, currentUser);
         this.finishRender(scrollHost, renderKey, preservedScrollTop);
         return;
       }
@@ -15022,7 +15073,7 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       });
     }
   }
-  renderRoomDetailView(containerEl, room) {
+  renderRoomDetailView(containerEl, room, currentUser) {
     const pageTop = containerEl.createDiv({ cls: "rolay-settings-page-top" });
     const navRow = pageTop.createDiv({ cls: "rolay-settings-page-nav" });
     const backButton = navRow.createEl("button", {
@@ -15063,6 +15114,11 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       badges,
       room.room.membershipRole === "owner" ? "Owner" : "Member",
       room.room.membershipRole === "owner" ? "accent" : "muted"
+    );
+    this.createBadge(
+      badges,
+      room.publication.enabled ? "Public" : "Private",
+      room.publication.enabled ? "accent" : "muted"
     );
     const grid = this.createGrid(containerEl);
     const membersCard = this.createCard(grid, "Members");
@@ -15121,6 +15177,12 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
         });
       }
     }
+    this.renderPublicationCard(grid, {
+      workspaceId: room.room.workspace.id,
+      roomName: room.room.workspace.name,
+      publication: room.publication,
+      canManage: Boolean(currentUser?.isAdmin) || room.room.membershipRole === "owner"
+    });
     if (room.room.membershipRole === "owner") {
       const inviteCard = this.createCard(grid, "Invites", "Owner-only controls for the current invite key.");
       const inviteEnabled = room.invite?.enabled ?? room.room.inviteEnabled;
@@ -15399,7 +15461,18 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       adminRoom?.inviteEnabled ?? room.room.inviteEnabled ? "Invite on" : "Invite off",
       adminRoom?.inviteEnabled ?? room.room.inviteEnabled ? "ready" : "muted"
     );
+    this.createBadge(
+      badges,
+      (adminRoom?.publication ?? room.publication).enabled ? "Public" : "Private",
+      (adminRoom?.publication ?? room.publication).enabled ? "accent" : "muted"
+    );
     const grid = this.createGrid(containerEl);
+    this.renderPublicationCard(grid, {
+      workspaceId: room.room.workspace.id,
+      roomName: room.room.workspace.name,
+      publication: adminRoom?.publication ?? room.publication,
+      canManage: Boolean(currentUser?.isAdmin)
+    });
     const membersCard = this.createCard(grid, "People");
     this.renderMembersPanel(membersCard.body, this.rolay.getRoomMembers(room.room.workspace.id), {
       listKey: `admin-members:${room.room.workspace.id}`
@@ -15462,10 +15535,59 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
       ["Room ID", room.room.workspace.id],
       ["Name", room.room.workspace.name],
       ["Invite", adminRoom?.inviteEnabled ?? room.room.inviteEnabled ? "enabled" : "disabled"],
+      ["Publication", (adminRoom?.publication ?? room.publication).enabled ? "public" : "private"],
       ["Members", String(adminRoom?.memberCount ?? room.room.memberCount)],
       ["Owners", String(adminRoom?.ownerCount ?? 0)],
       ["Viewer account", currentUser?.username ?? "unknown"]
     ]);
+  }
+  renderPublicationCard(containerEl, options) {
+    const publicationCard = this.createCard(
+      containerEl,
+      "Publication",
+      "Public rooms are readable by anyone who has the public site address. The public site is read-only and does not use private editor sync."
+    );
+    this.createInfoBlock(publicationCard.body, [
+      ["Status", options.publication.enabled ? "Public" : "Private"],
+      ["Updated", this.formatDateTime(options.publication.updatedAt) ?? "never"]
+    ]);
+    if (options.canManage) {
+      this.createSelectField(publicationCard.body, {
+        label: "Visibility",
+        value: options.publication.enabled ? "public" : "private",
+        options: [
+          ["private", "Private"],
+          ["public", "Public"]
+        ],
+        onChange: async (value) => {
+          await this.rolay.setRoomPublicationEnabled(options.workspaceId, value === "public");
+          this.requestRender();
+        }
+      });
+    }
+    if (options.publication.enabled) {
+      publicationCard.body.createDiv({
+        cls: "rolay-settings-inline-note",
+        text: "Anyone who knows the public site address can read this room without logging in. Public visitors cannot edit, upload, or send presence."
+      });
+      this.addCopyableInfoLine(
+        publicationCard.body,
+        "Public site",
+        this.rolay.getPublicSiteUrl()
+      );
+      const actions = this.createActionRow(publicationCard.body);
+      this.createActionButton(actions, "Open public site", "mod-cta", async () => {
+        window.open(this.rolay.getPublicSiteUrl(), "_blank", "noopener,noreferrer");
+      });
+      this.createActionButton(actions, "Copy public link", "", async () => {
+        await this.copyToClipboard(this.rolay.getPublicSiteUrl(), "Public site link copied.");
+      });
+      return;
+    }
+    publicationCard.body.createDiv({
+      cls: "rolay-settings-empty-state",
+      text: options.canManage ? `The room "${options.roomName}" is private. Turn on public access only if read-only open access is intended.` : `The room "${options.roomName}" is private.`
+    });
   }
   createGrid(containerEl, twoColumns = false) {
     const grid = containerEl.createDiv({
@@ -15678,7 +15800,10 @@ var RolaySettingTab = class extends import_obsidian8.PluginSettingTab {
   openDetail(mode, roomId) {
     this.resetScrollOnNextRender = true;
     this.activeDetail = { mode, roomId };
-    void this.rolay.loadRoomMembersForUi(roomId).then(() => this.requestRender());
+    void Promise.allSettled([
+      this.rolay.loadRoomMembersForUi(roomId),
+      this.rolay.refreshRoomPublication(roomId)
+    ]).then(() => this.requestRender());
     this.render();
   }
   formatDateTime(value) {
@@ -15962,6 +16087,10 @@ var WorkspaceEventStream = class {
       if (this.stopped || isAbortError(error)) {
         return;
       }
+      if (isSoftStreamCloseError(error)) {
+        this.scheduleReconnect();
+        return;
+      }
       const normalizedError = error instanceof Error ? error : new Error(String(error));
       this.handlers.onStatusChange?.("error");
       this.handlers.onError?.(normalizedError);
@@ -16076,6 +16205,17 @@ var WorkspaceEventStream = class {
 };
 function isAbortError(error) {
   return error instanceof DOMException && error.name === "AbortError" || error instanceof Error && error.name === "AbortError";
+}
+function isSoftStreamCloseError(error) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+  const code = error.code;
+  if (code === "ECONNRESET" || code === "ERR_STREAM_PREMATURE_CLOSE" || code === "UND_ERR_SOCKET") {
+    return true;
+  }
+  const message = error.message.trim().toLowerCase();
+  return message === "aborted" || message.includes("premature close") || message.includes("socket hang up");
 }
 function isNodeResponse(response) {
   return typeof response.setEncoding === "function";
@@ -16250,6 +16390,10 @@ var SettingsEventStream = class {
       if (this.stopped || isAbortError2(error)) {
         return;
       }
+      if (isSoftStreamCloseError2(error)) {
+        this.scheduleReconnect();
+        return;
+      }
       const normalizedError = error instanceof Error ? error : new Error(String(error));
       this.handlers.onStatusChange?.("error");
       this.handlers.onError?.(normalizedError);
@@ -16373,6 +16517,17 @@ var SettingsEventStream = class {
 function isAbortError2(error) {
   return error instanceof DOMException && error.name === "AbortError" || error instanceof Error && error.name === "AbortError";
 }
+function isSoftStreamCloseError2(error) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+  const code = error.code;
+  if (code === "ECONNRESET" || code === "ERR_STREAM_PREMATURE_CLOSE" || code === "UND_ERR_SOCKET") {
+    return true;
+  }
+  const message = error.message.trim().toLowerCase();
+  return message === "aborted" || message.includes("premature close") || message.includes("socket hang up");
+}
 function isNodeResponse2(response) {
   return typeof response.setEncoding === "function";
 }
@@ -16486,6 +16641,10 @@ var NotePresenceEventStream = class {
       if (this.stopped || isAbortError3(error)) {
         return;
       }
+      if (isSoftStreamCloseError3(error)) {
+        this.scheduleReconnect();
+        return;
+      }
       const normalizedError = error instanceof Error ? error : new Error(String(error));
       this.handlers.onStatusChange?.("error");
       this.handlers.onError?.(normalizedError);
@@ -16595,6 +16754,17 @@ var NotePresenceEventStream = class {
 };
 function isAbortError3(error) {
   return error instanceof DOMException && error.name === "AbortError" || error instanceof Error && error.name === "AbortError";
+}
+function isSoftStreamCloseError3(error) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+  const code = error.code;
+  if (code === "ECONNRESET" || code === "ERR_STREAM_PREMATURE_CLOSE" || code === "UND_ERR_SOCKET") {
+    return true;
+  }
+  const message = error.message.trim().toLowerCase();
+  return message === "aborted" || message.includes("premature close") || message.includes("socket hang up");
 }
 function isNodeResponse3(response) {
   return typeof response.setEncoding === "function";
@@ -16755,7 +16925,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     this.roomRuntime = /* @__PURE__ */ new Map();
     this.roomInvites = /* @__PURE__ */ new Map();
     this.pendingLocalCreates = /* @__PURE__ */ new Map();
-    this.pendingLocalDeletes = /* @__PURE__ */ new Set();
+    this.pendingLocalDeletes = /* @__PURE__ */ new Map();
     this.binaryTransferState = /* @__PURE__ */ new Map();
     this.binarySyncTokens = /* @__PURE__ */ new Map();
     this.binarySyncPathsByToken = /* @__PURE__ */ new Map();
@@ -16765,6 +16935,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     this.persistHandle = null;
     this.isUnloading = false;
     this.explorerDecorationHandle = null;
+    this.explorerDecorationFrame = null;
+    this.explorerToggleRefreshHandle = null;
+    this.explorerMutationObserver = null;
     this.notePresenceUiHandle = null;
     this.roomList = [];
     this.adminRoomList = [];
@@ -16780,6 +16953,8 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     this.settingsEventCursor = null;
     this.settingsEventStreamStatus = "stopped";
     this.settingsStreamRecoveryInFlight = false;
+    this.startupBootstrapHandle = null;
+    this.startupRoomResumeHandles = /* @__PURE__ */ new Set();
     this.profileDraftDisplayName = "";
     this.passwordChangeDraft = {
       currentPassword: "",
@@ -16806,6 +16981,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   async onload() {
     this.isUnloading = false;
     this.data = mergePluginData(await this.loadData());
+    this.data.logs = trimRecentLogEntries(this.data.logs, Date.now(), _RolayPlugin.LOG_FILE_RETENTION_MS, 100);
     this.restorePersistedBinaryTransfers();
     this.resetProfileDraft();
     this.apiClient = new RolayApiClient({
@@ -16859,6 +17035,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       getFolderName: (workspaceId) => this.getDownloadedFolderName(workspaceId),
       getDownloadedRooms: () => this.getDownloadedRooms(),
       getEntryByPath: (workspaceId, path) => this.getRoomStore(workspaceId)?.getEntryByPath(path) ?? null,
+      isWorkspaceSyncActive: (workspaceId) => this.isRoomSyncActive(workspaceId),
       hasPendingCreate: (workspaceId, path) => this.hasPendingLocalCreate(workspaceId, path),
       hasPendingDelete: (workspaceId, path) => this.hasPendingLocalDelete(workspaceId, path),
       hasPendingBinaryWrite: (localPath) => (0, import_obsidian9.normalizePath)(localPath) in this.data.pendingBinaryWrites,
@@ -16895,8 +17072,20 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       this.app.workspace.on("layout-change", () => {
         this.scheduleExplorerLoadingDecorations();
         this.scheduleNotePresenceUiRefresh();
+        this.ensureExplorerMutationObserver();
       })
     );
+    this.ensureExplorerMutationObserver();
+    this.registerDomEvent(this.app.workspace.containerEl, "click", (event) => {
+      if (this.isExplorerFolderInteractionTarget(event.target)) {
+        this.refreshExplorerDecorationsAfterFolderToggle();
+      }
+    }, true);
+    this.registerDomEvent(this.app.workspace.containerEl, "keydown", (event) => {
+      if ((event.key === "ArrowLeft" || event.key === "ArrowRight" || event.key === "Enter" || event.key === " ") && this.isExplorerFolderInteractionTarget(event.target)) {
+        this.refreshExplorerDecorationsAfterFolderToggle();
+      }
+    }, true);
     this.registerEvent(
       this.app.vault.on("create", (file) => {
         void this.handleVaultCreate(file);
@@ -16926,12 +17115,21 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       if (this.explorerDecorationHandle !== null) {
         window.clearTimeout(this.explorerDecorationHandle);
       }
+      if (this.explorerDecorationFrame !== null) {
+        window.cancelAnimationFrame(this.explorerDecorationFrame);
+      }
+      if (this.explorerToggleRefreshHandle !== null) {
+        window.clearTimeout(this.explorerToggleRefreshHandle);
+      }
+      this.explorerMutationObserver?.disconnect();
+      this.explorerMutationObserver = null;
       if (this.notePresenceUiHandle !== null) {
         window.clearTimeout(this.notePresenceUiHandle);
       }
       if (this.logFlushHandle !== null) {
         window.clearTimeout(this.logFlushHandle);
       }
+      this.clearDeferredStartupWork();
       for (const runtime of this.roomRuntime.values()) {
         if (runtime.snapshotRefreshHandle !== null) {
           window.clearTimeout(runtime.snapshotRefreshHandle);
@@ -16955,10 +17153,11 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       this.binarySyncPathsByToken.clear();
     });
     this.recordLog("plugin", "Rolay plugin loaded.");
-    await this.bootstrapSync("startup");
+    this.scheduleStartupBootstrap("startup");
   }
   async onunload() {
     this.isUnloading = true;
+    this.clearDeferredStartupWork();
     this.stopSettingsEventStream();
     this.stopAllRoomEventStreams();
     await this.crdtManager.disconnect();
@@ -16989,7 +17188,8 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
         membershipRole: "member",
         createdAt: "",
         memberCount: 0,
-        inviteEnabled: false
+        inviteEnabled: false,
+        publication: createDefaultRoomPublicationState(roomId)
       };
       const folderName = this.getResolvedRoomFolderName(room.workspace.id, room.workspace.name);
       const binding = this.getStoredRoomBinding(room.workspace.id);
@@ -17014,7 +17214,8 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
         cachedMarkdownCount,
         crdtCacheLabel: this.formatRoomCrdtCacheLabel(runtime?.markdownBootstrap, markdownEntries.length, cachedMarkdownCount),
         binaryTransferLabel,
-        invite: this.roomInvites.get(room.workspace.id) ?? null
+        invite: this.roomInvites.get(room.workspace.id) ?? null,
+        publication: normalizeRoomPublicationState(room.publication, room.workspace.id)
       };
     });
   }
@@ -17198,7 +17399,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       downloaded: Boolean(binding?.downloaded)
     });
   }
-  async loginWithSettings(showNotice = true) {
+  async loginWithSettings(showNotice = true, resumeRooms = true) {
     const { username, password } = this.data.settings;
     if (!username || !password) {
       throw this.notifyError("Username and password are required before login.");
@@ -17211,7 +17412,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       });
       await this.applySessionUser(response.user);
       await this.refreshPostAuthState();
-      await this.resumeDownloadedRooms("login");
+      if (resumeRooms) {
+        await this.resumeDownloadedRooms("login");
+      }
       this.recordLog("auth", `Logged in as ${response.user.username}.`);
       if (showNotice) {
         new import_obsidian9.Notice(`Rolay login successful for ${response.user.username}.`);
@@ -17341,7 +17544,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   async refreshRooms(showNotice = false, logActivity = true) {
     const response = await this.apiClient.listRooms();
-    this.roomList = [...response.workspaces].sort(compareRoomsByName);
+    this.roomList = [...response.workspaces].map(normalizeRoomListItem).sort(compareRoomsByName);
     await this.reconcileLocalRoomFolders();
     this.reconcileInviteCache();
     if (logActivity) {
@@ -17443,7 +17646,14 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   async connectRoom(workspaceId, showNotice = true, reason = "manual-connect") {
     const room = this.requireDownloadedRoom(workspaceId);
+    const runtime = this.ensureRoomRuntime(room.workspace.id);
+    runtime.streamStatus = "connecting";
+    this.updateStatusBar();
+    this.scheduleExplorerLoadingDecorations();
     await this.refreshRoomSnapshot(room.workspace.id, reason);
+    if (!this.isRoomSyncActive(room.workspace.id)) {
+      return;
+    }
     await this.startRoomEventStream(room.workspace.id);
     this.scheduleSnapshotRefresh(room.workspace.id, "post-connect-binary-followup");
     this.scheduleBackgroundMarkdownRefresh(
@@ -17463,6 +17673,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   async disconnectRoom(workspaceId, showNotice = true) {
     const room = this.requireDownloadedRoom(workspaceId);
     this.stopRoomEventStream(room.workspace.id);
+    await this.cancelRoomBinaryTransfers(room.workspace.id, "disconnect");
     const activeFile = this.app.workspace.getActiveFile();
     if (activeFile && this.isLocalPathInDownloadedRoom(activeFile.path, room.workspace.id)) {
       await this.crdtManager.goOffline();
@@ -17561,6 +17772,57 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       throw error;
     }
   }
+  getPublicSiteUrl() {
+    const normalizedServerUrl = normalizeServerUrl(this.data.settings.serverUrl) || ROLAY_SERVER_URL;
+    return `${normalizedServerUrl.replace(/\/+$/, "")}/`;
+  }
+  canCurrentUserManageRoomPublication(workspaceId) {
+    const currentUser = this.getCurrentUser();
+    if (!currentUser) {
+      return false;
+    }
+    if (currentUser.isAdmin) {
+      return true;
+    }
+    return this.roomList.some((room) => {
+      return room.workspace.id === workspaceId && room.membershipRole === "owner";
+    });
+  }
+  async refreshRoomPublication(workspaceId, logActivity = false) {
+    const response = await this.apiClient.getRoomPublication(workspaceId);
+    const publication = normalizeRoomPublicationState(response.publication, workspaceId);
+    this.patchRoomPublication(workspaceId, publication);
+    if (logActivity) {
+      this.recordLog(
+        "publication",
+        `Loaded publication state for ${workspaceId}: ${publication.enabled ? "public" : "private"}.`
+      );
+    }
+    this.updateStatusBar();
+    this.requestSettingsRender();
+    return publication;
+  }
+  async setRoomPublicationEnabled(workspaceId, enabled) {
+    this.requireRoomPublicationManager(workspaceId);
+    const roomName = this.getKnownRoomName(workspaceId);
+    try {
+      const response = await this.apiClient.updateRoomPublication(workspaceId, { enabled });
+      const publication = normalizeRoomPublicationState(response.publication, workspaceId);
+      this.patchRoomPublication(workspaceId, publication);
+      this.recordLog(
+        "publication",
+        `${enabled ? "Enabled" : "Disabled"} public publication for ${workspaceId}.`
+      );
+      this.updateStatusBar();
+      new import_obsidian9.Notice(
+        enabled ? `Room is now public on the read-only site: ${roomName}` : `Room is now private again: ${roomName}`
+      );
+      this.requestSettingsRender();
+    } catch (error) {
+      this.handleError("Room publication update failed", error);
+      throw error;
+    }
+  }
   async refreshManagedUsers(showNotice = false, logActivity = true) {
     this.requireAdmin();
     const response = await this.apiClient.listManagedUsers();
@@ -17619,7 +17881,7 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   async refreshAdminRooms(showNotice = false, logActivity = true) {
     this.requireAdmin();
     const response = await this.apiClient.listAllRoomsAsAdmin();
-    this.adminRoomList = [...response.workspaces].sort(compareRoomsByName);
+    this.adminRoomList = [...response.workspaces].map(normalizeAdminRoomListItem).sort(compareRoomsByName);
     if (!this.adminSelectedRoomId && this.adminRoomList.length === 1) {
       this.adminSelectedRoomId = this.adminRoomList[0].workspace.id;
     } else if (this.adminSelectedRoomId && !this.adminRoomList.some((room) => room.workspace.id === this.adminSelectedRoomId)) {
@@ -17728,6 +17990,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   async refreshRoomSnapshot(workspaceId, reason = "manual") {
     const runtime = this.ensureRoomRuntime(workspaceId);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     if (runtime.snapshotRefreshInFlight) {
       runtime.snapshotRefreshQueuedReason = runtime.snapshotRefreshQueuedReason ?? reason;
       return;
@@ -17752,22 +18017,35 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       runtime.snapshotRefreshInFlight = false;
       const queuedReason = runtime.snapshotRefreshQueuedReason;
       runtime.snapshotRefreshQueuedReason = null;
-      if (queuedReason) {
+      if (queuedReason && this.isRoomSyncActive(workspaceId)) {
         this.scheduleSnapshotRefresh(workspaceId, queuedReason);
       }
     }
   }
   async performRoomSnapshotRefresh(workspaceId, reason) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     if (!this.hasUsableSessionTokens() && this.canAttemptAuth()) {
       await this.ensureAuthenticated(true);
+    }
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
     }
     const room = this.requireDownloadedRoom(workspaceId);
     const runtime = this.ensureRoomRuntime(room.workspace.id);
     const previousEntries = runtime.treeStore.getEntries();
     const snapshot = await this.apiClient.getWorkspaceTree(room.workspace.id);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     runtime.treeStore.applySnapshot(snapshot);
     this.confirmSnapshotPendingCreates(room.workspace.id, snapshot.entries);
+    this.confirmSnapshotPendingDeletes(room.workspace.id, snapshot.entries);
     await this.fileBridge.applySnapshot(snapshot, previousEntries);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     this.scheduleExplorerLoadingDecorations();
     this.setRoomSyncState(room.workspace.id, {
       lastCursor: snapshot.cursor,
@@ -17778,7 +18056,13 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       `Fetched snapshot for ${snapshot.workspace.name} with ${snapshot.entries.length} entries (${reason}).`
     );
     await this.bootstrapRoomMarkdownCache(room.workspace.id, snapshot.entries, reason);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     await this.syncBinaryEntriesFromSnapshot(room.workspace.id, snapshot.entries, reason);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     this.scheduleBackgroundMarkdownRefresh(
       room.workspace.id,
       "post-snapshot-background-refresh",
@@ -17810,6 +18094,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     this.stopRoomEventStream(room.workspace.id);
     const generation = runtime.eventStreamGeneration + 1;
     runtime.eventStreamGeneration = generation;
+    runtime.streamStatus = "connecting";
+    this.updateStatusBar();
+    this.scheduleExplorerLoadingDecorations();
     const roomSync = getRoomSyncState(this.data.sync, room.workspace.id);
     const treeCursor = runtime.treeStore.getCursor();
     if (treeCursor === null && roomSync.lastCursor === null) {
@@ -17882,8 +18169,8 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     runtime.streamStatus = "stopped";
     runtime.lastHandledEventId = runtime.treeStore.getCursor();
     this.updateStatusBar();
-    this.scheduleExplorerLoadingDecorations();
-    this.scheduleNotePresenceUiRefresh();
+    this.scheduleImmediateExplorerLoadingDecorations();
+    this.refreshNotePresenceUiNow();
   }
   stopAllRoomEventStreams() {
     for (const workspaceId of this.roomRuntime.keys()) {
@@ -17938,8 +18225,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     runtime.notePresenceStream?.stop();
     runtime.notePresenceStream = null;
     runtime.notePresenceByEntryId.clear();
-    this.scheduleExplorerLoadingDecorations();
-    this.scheduleNotePresenceUiRefresh();
+    runtime.noteAnonymousViewerCountByEntryId.clear();
+    this.scheduleImmediateExplorerLoadingDecorations();
+    this.refreshNotePresenceUiNow();
   }
   startSettingsEventStream(cursor) {
     this.stopSettingsEventStream();
@@ -18025,6 +18313,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       case "room.invite.updated":
         this.applySettingsInviteUpdate(extractInviteFromSettingsPayload(envelope.payload));
         break;
+      case "room.publication.updated":
+        this.applySettingsRoomPublicationUpdate(extractRoomPublicationUpdatedPayload(envelope.payload));
+        break;
       case "admin.user.created":
       case "admin.user.updated":
         this.applySettingsManagedUserUpsert(extractManagedUserFromSettingsPayload(envelope.payload));
@@ -18084,18 +18375,46 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       return;
     }
     try {
-      await this.ensureAuthenticated(true);
+      await this.ensureAuthenticated(true, !reason.includes("startup"));
       await this.resumeDownloadedRooms(reason);
     } catch (error) {
       this.handleError("Startup sync failed", error, false);
     }
   }
-  async ensureAuthenticated(silent = false) {
+  scheduleStartupBootstrap(reason) {
+    this.app.workspace.onLayoutReady(() => {
+      if (this.isUnloading || this.startupBootstrapHandle !== null) {
+        return;
+      }
+      this.recordLog(
+        "startup",
+        `Deferring ${reason} sync bootstrap until after the Obsidian workspace finishes opening.`
+      );
+      this.startupBootstrapHandle = window.setTimeout(() => {
+        this.startupBootstrapHandle = null;
+        if (this.isUnloading) {
+          return;
+        }
+        void this.bootstrapSync(`${reason}-deferred`);
+      }, _RolayPlugin.STARTUP_BOOTSTRAP_DELAY_MS);
+    });
+  }
+  clearDeferredStartupWork() {
+    if (this.startupBootstrapHandle !== null) {
+      window.clearTimeout(this.startupBootstrapHandle);
+      this.startupBootstrapHandle = null;
+    }
+    for (const handle of this.startupRoomResumeHandles) {
+      window.clearTimeout(handle);
+    }
+    this.startupRoomResumeHandles.clear();
+  }
+  async ensureAuthenticated(silent = false, resumeRoomsAfterLogin = true) {
     if (this.data.session?.refreshToken) {
       await this.refreshSession(!silent);
       return;
     }
-    await this.loginWithSettings(!silent);
+    await this.loginWithSettings(!silent, resumeRoomsAfterLogin);
   }
   canAttemptAuth() {
     const { serverUrl, username, password } = this.data.settings;
@@ -18162,8 +18481,8 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     }
     await this.syncMarkdownLockForLocalPath(file?.path ?? null);
     this.updateStatusBar();
-    this.scheduleNotePresenceUiRefresh();
-    this.scheduleExplorerLoadingDecorations();
+    this.refreshNotePresenceUiNow();
+    this.scheduleImmediateExplorerLoadingDecorations();
   }
   async handleVaultCreate(file) {
     try {
@@ -18255,6 +18574,29 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       this.recordLog("startup", `No downloaded rooms to resume (${reason}).`);
       return;
     }
+    if (reason.includes("startup")) {
+      this.recordLog(
+        "startup",
+        `Scheduling ${downloadedRooms.length} downloaded room(s) for staggered resume (${reason}).`
+      );
+      downloadedRooms.forEach((room, index) => {
+        const handle = window.setTimeout(() => {
+          this.startupRoomResumeHandles.delete(handle);
+          if (this.isUnloading) {
+            return;
+          }
+          const runtime = this.roomRuntime.get(room.workspaceId);
+          if (runtime && runtime.streamStatus !== "stopped") {
+            return;
+          }
+          void this.connectRoom(room.workspaceId, false, reason).catch((error) => {
+            this.handleError(`Startup room resume failed (${room.workspaceId})`, error, false);
+          });
+        }, index * _RolayPlugin.STARTUP_ROOM_CONNECT_STAGGER_MS);
+        this.startupRoomResumeHandles.add(handle);
+      });
+      return;
+    }
     for (const room of downloadedRooms) {
       await this.connectRoom(room.workspaceId, false, reason);
     }
@@ -18284,6 +18626,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   scheduleSnapshotRefresh(workspaceId, reason = "event-stream") {
     const runtime = this.ensureRoomRuntime(workspaceId);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     if (runtime.snapshotRefreshInFlight) {
       runtime.snapshotRefreshQueuedReason = runtime.snapshotRefreshQueuedReason ?? reason;
       return;
@@ -18310,6 +18655,9 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   scheduleBackgroundMarkdownRefresh(workspaceId, reason, delayMs = _RolayPlugin.ROOM_MARKDOWN_REFRESH_INTERVAL_MS, replaceExisting = false) {
     const runtime = this.ensureRoomRuntime(workspaceId);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     if (runtime.backgroundMarkdownRefreshHandle !== null) {
       if (!replaceExisting) {
         return;
@@ -18340,11 +18688,25 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
     try {
       await this.refreshClosedRoomMarkdownContent(workspaceId, reason);
     } catch (error) {
-      this.recordLog(
-        "crdt",
-        `[${workspaceId}] Background markdown refresh failed: ${error instanceof Error ? error.message : String(error)}`,
-        "error"
-      );
+      const message = getErrorMessage(error);
+      if (isStaleMarkdownBootstrapError(error)) {
+        this.recordLog(
+          "crdt",
+          `[${workspaceId}] Background markdown refresh saw a stale markdown entry; refreshing snapshot before retry.`
+        );
+        this.scheduleSnapshotRefresh(workspaceId, "markdown-bootstrap-stale-entry");
+      } else if (isRetryableBackgroundMarkdownError(error)) {
+        this.recordLog(
+          "crdt",
+          `[${workspaceId}] Background markdown refresh will retry after transient failure: ${message}`
+        );
+      } else {
+        this.recordLog(
+          "crdt",
+          `[${workspaceId}] Background markdown refresh failed: ${message}`,
+          "error"
+        );
+      }
     } finally {
       runtime.backgroundMarkdownRefreshInFlight = false;
       const currentRuntime = this.roomRuntime.get(workspaceId);
@@ -18362,7 +18724,10 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
       scope,
       message
     };
-    this.data.logs = [...this.data.logs.slice(-99), entry];
+    this.data.logs = [
+      ...trimRecentLogEntries(this.data.logs, Date.now(), _RolayPlugin.LOG_FILE_RETENTION_MS, 99),
+      entry
+    ];
     this.pendingLogLines.push(formatPersistentLogLine(entry));
     this.schedulePersist();
     this.scheduleLogFlush();
@@ -18471,14 +18836,21 @@ var _RolayPlugin = class _RolayPlugin extends import_obsidian9.Plugin {
   }
   async trimPersistentLogFileIfNeeded(logFilePath) {
     const stat = await this.app.vault.adapter.stat(logFilePath);
-    if (!stat || stat.size <= _RolayPlugin.MAX_LOG_FILE_BYTES) {
+    if (!stat || stat.size <= 0) {
       return;
     }
     const fileContents = await this.app.vault.adapter.read(logFilePath);
-    const keptTail = fileContents.slice(-Math.floor(_RolayPlugin.MAX_LOG_FILE_BYTES / 2));
-    const trimmedContents = `... trimmed older Rolay log lines ...
-${keptTail}`;
-    await this.app.vault.adapter.write(logFilePath, trimmedContents);
+    const nowMs = Date.now();
+    const trimmedByAge = trimPersistentLogByAge(fileContents, _RolayPlugin.LOG_FILE_RETENTION_MS, nowMs);
+    const trimmedBySize = trimPersistentLogBySize(
+      trimmedByAge,
+      _RolayPlugin.MAX_LOG_FILE_BYTES,
+      _RolayPlugin.LOG_FILE_TRIM_TARGET_BYTES,
+      nowMs
+    );
+    if (trimmedBySize !== fileContents) {
+      await this.app.vault.adapter.write(logFilePath, trimmedBySize);
+    }
   }
   async getAdapterFileSize(path) {
     try {
@@ -18543,6 +18915,18 @@ ${keptTail}`;
     }
     return room;
   }
+  requireRoomPublicationManager(workspaceId) {
+    if (this.data.session?.user?.isAdmin) {
+      return;
+    }
+    const room = this.requireRoom(workspaceId);
+    if (room.membershipRole !== "owner") {
+      throw this.notifyError("Only room owners and admins can change room publication.");
+    }
+  }
+  getKnownRoomName(workspaceId) {
+    return this.roomList.find((room) => room.workspace.id === workspaceId)?.workspace.name ?? this.adminRoomList.find((room) => room.workspace.id === workspaceId)?.workspace.name ?? this.getStoredRoomBinding(workspaceId)?.folderName ?? workspaceId;
+  }
   getStoredRoomBinding(workspaceId) {
     return getRoomBindingSettings(this.data.settings, workspaceId);
   }
@@ -18579,6 +18963,7 @@ ${keptTail}`;
       notePresenceStream: null,
       notePresenceStreamGeneration: 0,
       notePresenceByEntryId: /* @__PURE__ */ new Map(),
+      noteAnonymousViewerCountByEntryId: /* @__PURE__ */ new Map(),
       streamStatus: "stopped",
       lastHandledEventId: null,
       snapshotRefreshHandle: null,
@@ -18594,6 +18979,8 @@ ${keptTail}`;
         completedTargets: 0,
         totalBytes: 0,
         completedBytes: 0,
+        documentBytesByEntryId: /* @__PURE__ */ new Map(),
+        completedEntryIds: /* @__PURE__ */ new Set(),
         hydratedTargets: 0,
         lockedLocalPaths: /* @__PURE__ */ new Set(),
         lastRunAt: null,
@@ -18737,6 +19124,57 @@ ${keptTail}`;
       this.refreshExplorerLoadingDecorations();
     }, 80);
   }
+  scheduleImmediateExplorerLoadingDecorations() {
+    if (this.explorerDecorationHandle !== null) {
+      window.clearTimeout(this.explorerDecorationHandle);
+      this.explorerDecorationHandle = null;
+    }
+    if (this.explorerDecorationFrame !== null) {
+      return;
+    }
+    this.explorerDecorationFrame = window.requestAnimationFrame(() => {
+      this.explorerDecorationFrame = null;
+      this.refreshExplorerLoadingDecorations();
+    });
+  }
+  refreshNotePresenceUiNow() {
+    if (this.notePresenceUiHandle !== null) {
+      window.clearTimeout(this.notePresenceUiHandle);
+      this.notePresenceUiHandle = null;
+    }
+    this.refreshNotePresenceUi();
+  }
+  refreshExplorerDecorationsAfterFolderToggle() {
+    this.scheduleImmediateExplorerLoadingDecorations();
+    if (this.explorerToggleRefreshHandle !== null) {
+      return;
+    }
+    this.explorerToggleRefreshHandle = window.setTimeout(() => {
+      this.explorerToggleRefreshHandle = null;
+      this.scheduleImmediateExplorerLoadingDecorations();
+    }, 32);
+  }
+  ensureExplorerMutationObserver() {
+    if (this.explorerMutationObserver || typeof MutationObserver === "undefined") {
+      return;
+    }
+    const container = this.app.workspace.containerEl;
+    if (!container) {
+      return;
+    }
+    this.explorerMutationObserver = new MutationObserver((mutations) => {
+      if (this.shouldRefreshExplorerDecorationsForMutations(mutations)) {
+        this.refreshExplorerDecorationsAfterFolderToggle();
+      }
+    });
+    this.explorerMutationObserver.observe(container, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: ["class", "aria-expanded", "style"],
+      attributeOldValue: true
+    });
+  }
   scheduleNotePresenceUiRefresh() {
     if (this.notePresenceUiHandle !== null) {
       return;
@@ -18763,9 +19201,11 @@ ${keptTail}`;
     const loadingPaths = this.getLoadingExplorerPaths();
     const uploadingPaths = this.getUploadingExplorerPaths();
     const roomFolderStatuses = this.getRoomFolderExplorerStatuses();
+    const pathElements = [...container.querySelectorAll("[data-path]")];
+    const visibleExplorerPaths = this.getVisibleExplorerPathSet(pathElements);
     const transferBadges = this.getExplorerTransferBadges();
-    const notePresenceBadges = this.getExplorerNotePresenceBadges();
-    const pathElements = container.querySelectorAll("[data-path]");
+    const notePresenceBadges = this.getExplorerNotePresenceBadges(visibleExplorerPaths);
+    const anonymousPresenceBadges = this.getExplorerAnonymousPresenceBadges(visibleExplorerPaths);
     for (const element2 of pathElements) {
       element2.classList.remove(
         "rolay-loading-path",
@@ -18821,6 +19261,10 @@ ${keptTail}`;
         element2,
         notePresenceBadges.get(normalizedPath) ?? null
       );
+      this.updateExplorerAnonymousPresenceBadge(
+        element2,
+        anonymousPresenceBadges.get(normalizedPath) ?? null
+      );
     }
   }
   renderNotePresenceChipsForView(view) {
@@ -18830,8 +19274,11 @@ ${keptTail}`;
       this.removeNotePresenceBar(view);
       return;
     }
-    const presence = file ? this.getNotePresenceForLocalPath(file.path) : [];
-    if (presence.length === 0) {
+    const presence = file ? this.getNotePresenceForLocalPath(file.path) : {
+      viewers: [],
+      anonymousViewerCount: 0
+    };
+    if (presence.viewers.length === 0 && presence.anonymousViewerCount === 0) {
       this.removeNotePresenceBar(view);
       return;
     }
@@ -18841,20 +19288,36 @@ ${keptTail}`;
       bar.className = "rolay-note-presence-bar";
       host.parentElement?.insertBefore(bar, host);
     }
-    const signature = presence.map((viewer) => `${viewer.presenceId}:${viewer.displayName}:${viewer.color}`).join("|");
+    const signature = presence.viewers.map((viewer) => `${viewer.presenceId}:${viewer.displayName}:${viewer.color}`).join("|") + `|anonymous:${presence.anonymousViewerCount}`;
     if (bar.dataset.signature === signature) {
       return;
     }
     bar.dataset.signature = signature;
     bar.replaceChildren(
-      ...presence.map((viewer) => {
+      ...presence.viewers.map((viewer) => {
         const chip = document.createElement("span");
         chip.className = "rolay-note-presence-chip";
         chip.textContent = viewer.displayName;
         chip.style.setProperty("--rolay-note-presence-color", viewer.color);
         return chip;
-      })
+      }),
+      ...presence.anonymousViewerCount > 0 ? [this.createAnonymousPresenceChip(presence.anonymousViewerCount)] : []
     );
+  }
+  createAnonymousPresenceChip(count) {
+    const chip = document.createElement("span");
+    chip.className = "rolay-note-presence-chip rolay-note-presence-chip-anonymous";
+    chip.setAttribute(
+      "aria-label",
+      count === 1 ? "1 anonymous public viewer" : `${count} anonymous public viewers`
+    );
+    const icon = document.createElement("span");
+    icon.className = "rolay-note-presence-chip-icon";
+    (0, import_obsidian9.setIcon)(icon, "eye");
+    const label = document.createElement("span");
+    label.textContent = String(count);
+    chip.replaceChildren(icon, label);
+    return chip;
   }
   removeNotePresenceBar(view) {
     view.containerEl.querySelector(".rolay-note-presence-bar")?.remove();
@@ -18863,7 +19326,7 @@ ${keptTail}`;
     const container = view.containerEl;
     return container.querySelector(".inline-title") ?? container.querySelector(".view-content .inline-title");
   }
-  getExplorerNotePresenceBadges() {
+  getExplorerNotePresenceBadges(visibleExplorerPaths) {
     const aggregate = /* @__PURE__ */ new Map();
     const downloadedRooms = new Map(
       this.getDownloadedRooms().map((room) => [room.workspaceId, room])
@@ -18874,10 +19337,13 @@ ${keptTail}`;
         continue;
       }
       const roomRoot = (0, import_obsidian9.normalizePath)(getRoomRoot(this.data.settings.syncRoot, downloadedRoom.folderName));
+      let localPresenceRolledUp = false;
       for (const [entryId, viewers] of runtime.notePresenceByEntryId.entries()) {
-        if (viewers.length === 0) {
+        const effectiveViewers = this.mergeLocalNotePresenceViewer(workspaceId, entryId, viewers);
+        if (effectiveViewers.length === 0) {
           continue;
         }
+        localPresenceRolledUp || (localPresenceRolledUp = this.isLocalNotePresenceForEntry(workspaceId, entryId));
         const entry = runtime.treeStore.getEntryById(entryId);
         if (!entry || entry.deleted || entry.kind !== "markdown") {
           continue;
@@ -18887,17 +19353,22 @@ ${keptTail}`;
           continue;
         }
         const normalizedLocalPath = (0, import_obsidian9.normalizePath)(localPath);
-        this.accumulateExplorerNotePresenceBadge(aggregate, normalizedLocalPath, viewers);
-        let parentPath = getParentPath2(normalizedLocalPath);
-        while (parentPath) {
-          if (parentPath !== roomRoot && !parentPath.startsWith(`${roomRoot}/`)) {
-            break;
-          }
-          this.accumulateExplorerNotePresenceBadge(aggregate, parentPath, viewers);
-          if (parentPath === roomRoot) {
-            break;
-          }
-          parentPath = getParentPath2(parentPath);
+        this.accumulateExplorerNotePresenceBadge(
+          aggregate,
+          this.getMinimalVisibleExplorerPresencePath(normalizedLocalPath, roomRoot, visibleExplorerPaths),
+          effectiveViewers
+        );
+      }
+      const localPresence = this.crdtManager.getLocalNotePresenceViewer();
+      if (localPresence && localPresence.workspaceId === workspaceId && !localPresenceRolledUp && !runtime.notePresenceByEntryId.has(localPresence.entryId)) {
+        const entry = runtime.treeStore.getEntryById(localPresence.entryId);
+        const localPath = entry && !entry.deleted && entry.kind === "markdown" ? this.fileBridge.toLocalPath(workspaceId, entry.path) : null;
+        if (localPath) {
+          this.accumulateExplorerNotePresenceBadge(
+            aggregate,
+            this.getMinimalVisibleExplorerPresencePath((0, import_obsidian9.normalizePath)(localPath), roomRoot, visibleExplorerPaths),
+            [localPresence]
+          );
         }
       }
     }
@@ -18910,6 +19381,41 @@ ${keptTail}`;
     }
     return badges;
   }
+  getExplorerAnonymousPresenceBadges(visibleExplorerPaths) {
+    const aggregate = /* @__PURE__ */ new Map();
+    const downloadedRooms = new Map(
+      this.getDownloadedRooms().map((room) => [room.workspaceId, room])
+    );
+    for (const [workspaceId, runtime] of this.roomRuntime.entries()) {
+      const downloadedRoom = downloadedRooms.get(workspaceId);
+      if (!downloadedRoom) {
+        continue;
+      }
+      const roomRoot = (0, import_obsidian9.normalizePath)(getRoomRoot(this.data.settings.syncRoot, downloadedRoom.folderName));
+      for (const [entryId, anonymousViewerCount] of runtime.noteAnonymousViewerCountByEntryId.entries()) {
+        if (anonymousViewerCount <= 0) {
+          continue;
+        }
+        const entry = runtime.treeStore.getEntryById(entryId);
+        if (!entry || entry.deleted || entry.kind !== "markdown") {
+          continue;
+        }
+        const localPath = this.fileBridge.toLocalPath(workspaceId, entry.path);
+        if (!localPath) {
+          continue;
+        }
+        const normalizedLocalPath = (0, import_obsidian9.normalizePath)(localPath);
+        this.accumulateExplorerAnonymousPresenceBadge(
+          aggregate,
+          this.getMinimalVisibleExplorerPresencePath(normalizedLocalPath, roomRoot, visibleExplorerPaths),
+          anonymousViewerCount
+        );
+      }
+    }
+    return new Map(
+      [...aggregate.entries()].map(([localPath, count]) => [localPath, { count }])
+    );
+  }
   accumulateExplorerNotePresenceBadge(aggregate, localPath, viewers) {
     const existing = aggregate.get(localPath);
     const nextCount = (existing?.count ?? 0) + viewers.length;
@@ -18918,6 +19424,141 @@ ${keptTail}`;
       count: nextCount,
       soleColor: nextSoleColor
     });
+  }
+  accumulateExplorerAnonymousPresenceBadge(aggregate, localPath, anonymousViewerCount) {
+    aggregate.set(localPath, (aggregate.get(localPath) ?? 0) + anonymousViewerCount);
+  }
+  mergeLocalNotePresenceViewer(workspaceId, entryId, viewers) {
+    const merged = [...viewers];
+    const localPresence = this.crdtManager.getLocalNotePresenceViewer();
+    if (!localPresence || localPresence.workspaceId !== workspaceId || localPresence.entryId !== entryId) {
+      return merged;
+    }
+    if (merged.some((viewer) => this.isSamePresenceViewer(viewer, localPresence))) {
+      return merged;
+    }
+    merged.push(localPresence);
+    merged.sort(compareNotePresenceViewers);
+    return merged;
+  }
+  isLocalNotePresenceForEntry(workspaceId, entryId) {
+    const localPresence = this.crdtManager.getLocalNotePresenceViewer();
+    return Boolean(localPresence && localPresence.workspaceId === workspaceId && localPresence.entryId === entryId);
+  }
+  isSamePresenceViewer(viewer, localPresence) {
+    if (viewer.presenceId === localPresence.presenceId) {
+      return true;
+    }
+    const localClientId = localPresence.presenceId.split(":").pop();
+    return Boolean(
+      localClientId && viewer.userId === localPresence.userId && viewer.presenceId.endsWith(`:${localClientId}`)
+    );
+  }
+  getVisibleExplorerPathSet(pathElements) {
+    const visiblePaths = /* @__PURE__ */ new Set();
+    for (const element2 of pathElements) {
+      const dataPath = element2.getAttribute("data-path");
+      if (!dataPath || !this.isExplorerDecorationElement(element2) || !this.isElementVisiblyRendered(element2)) {
+        continue;
+      }
+      visiblePaths.add((0, import_obsidian9.normalizePath)(dataPath));
+    }
+    return visiblePaths;
+  }
+  getMinimalVisibleExplorerPresencePath(localPath, roomRoot, visibleExplorerPaths) {
+    const normalizedRoomRoot = (0, import_obsidian9.normalizePath)(roomRoot);
+    let candidate = (0, import_obsidian9.normalizePath)(localPath);
+    while (candidate) {
+      if ((candidate === normalizedRoomRoot || candidate.startsWith(`${normalizedRoomRoot}/`)) && visibleExplorerPaths.has(candidate)) {
+        return candidate;
+      }
+      if (candidate === normalizedRoomRoot) {
+        break;
+      }
+      const parentPath = getParentPath2(candidate);
+      if (!parentPath || parentPath === candidate) {
+        break;
+      }
+      candidate = parentPath;
+    }
+    return visibleExplorerPaths.has(normalizedRoomRoot) ? normalizedRoomRoot : (0, import_obsidian9.normalizePath)(localPath);
+  }
+  isExplorerDecorationElement(element2) {
+    return Boolean(
+      element2.closest(".nav-files-container") || element2.closest('.workspace-leaf-content[data-type="file-explorer"]') || element2.classList.contains("nav-file") || element2.classList.contains("nav-folder") || element2.classList.contains("nav-file-title") || element2.classList.contains("nav-folder-title") || element2.classList.contains("tree-item-self")
+    );
+  }
+  isElementVisiblyRendered(element2) {
+    return element2.getClientRects().length > 0;
+  }
+  shouldRefreshExplorerDecorationsForMutations(mutations) {
+    for (const mutation of mutations) {
+      if (mutation.type === "attributes") {
+        const target2 = mutation.target;
+        if (!(target2 instanceof HTMLElement) || !this.isExplorerDecorationElement(target2)) {
+          continue;
+        }
+        if (mutation.attributeName === "class") {
+          const previousClass = this.stripRolayDecorationClasses(mutation.oldValue ?? "");
+          const currentClass = this.stripRolayDecorationClasses(target2.className);
+          if (previousClass === currentClass) {
+            continue;
+          }
+        }
+        return true;
+      }
+      if (mutation.type !== "childList") {
+        continue;
+      }
+      const target = mutation.target;
+      if (!(target instanceof HTMLElement) || !this.isExplorerDecorationElement(target)) {
+        continue;
+      }
+      const changedNodes = [...mutation.addedNodes, ...mutation.removedNodes];
+      if (changedNodes.length === 0 || changedNodes.every((node) => this.isRolayDecorationNode(node))) {
+        continue;
+      }
+      if (changedNodes.some((node) => this.isExplorerStructureNode(node))) {
+        return true;
+      }
+    }
+    return false;
+  }
+  stripRolayDecorationClasses(className) {
+    return className.split(/\s+/).filter((classToken) => classToken && !classToken.startsWith("rolay-")).sort().join(" ");
+  }
+  isRolayDecorationNode(node) {
+    if (!(node instanceof HTMLElement)) {
+      return false;
+    }
+    return this.isRolayDecorationElement(node);
+  }
+  isRolayDecorationElement(element2) {
+    return Boolean(
+      element2.closest(
+        ".rolay-note-presence-badge, .rolay-note-anonymous-presence-badge, .rolay-transfer-progress-badge"
+      ) || [...element2.classList].some((className) => className.startsWith("rolay-"))
+    );
+  }
+  isExplorerStructureNode(node) {
+    if (!(node instanceof HTMLElement)) {
+      return false;
+    }
+    return Boolean(
+      node.matches?.("[data-path], .nav-file, .nav-folder, .nav-file-title, .nav-folder-title, .tree-item-self") || node.querySelector?.("[data-path], .nav-file, .nav-folder, .nav-file-title, .nav-folder-title, .tree-item-self")
+    );
+  }
+  isExplorerFolderInteractionTarget(target) {
+    if (!(target instanceof HTMLElement)) {
+      return false;
+    }
+    const folderElement = target.closest(".nav-folder, .nav-folder-title");
+    if (!folderElement) {
+      return false;
+    }
+    return Boolean(
+      folderElement.closest(".nav-files-container") || folderElement.closest('.workspace-leaf-content[data-type="file-explorer"]')
+    );
   }
   updateExplorerNotePresenceBadge(element2, badgeState) {
     const titleHost = this.findExplorerTitleHost(element2);
@@ -18932,37 +19573,246 @@ ${keptTail}`;
     if (!badge) {
       badge = document.createElement("span");
       badge.className = "rolay-note-presence-badge";
-      titleHost.appendChild(badge);
+      const anonymousBadge = titleHost.querySelector(".rolay-note-anonymous-presence-badge");
+      if (anonymousBadge) {
+        titleHost.insertBefore(badge, anonymousBadge);
+      } else {
+        titleHost.appendChild(badge);
+      }
     }
     badge.style.setProperty("--rolay-note-presence-badge-color", badgeState.color);
     badge.textContent = badgeState.count <= 1 ? "" : String(badgeState.count);
     badge.classList.toggle("rolay-note-presence-badge-multi", badgeState.count > 1);
     badge.setAttribute("aria-label", badgeState.count <= 1 ? "1 viewer" : `${badgeState.count} viewers`);
   }
+  updateExplorerAnonymousPresenceBadge(element2, badgeState) {
+    const titleHost = this.findExplorerTitleHost(element2);
+    if (!titleHost) {
+      return;
+    }
+    let badge = titleHost.querySelector(".rolay-note-anonymous-presence-badge");
+    if (!badgeState || badgeState.count <= 0) {
+      badge?.remove();
+      return;
+    }
+    if (!badge) {
+      badge = document.createElement("span");
+      badge.className = "rolay-note-anonymous-presence-badge";
+      titleHost.appendChild(badge);
+    }
+    const icon = document.createElement("span");
+    icon.className = "rolay-note-anonymous-presence-badge-icon";
+    (0, import_obsidian9.setIcon)(icon, "eye");
+    const label = document.createElement("span");
+    label.textContent = String(badgeState.count);
+    badge.replaceChildren(icon, label);
+    badge.setAttribute(
+      "aria-label",
+      badgeState.count === 1 ? "1 anonymous public viewer" : `${badgeState.count} anonymous public viewers`
+    );
+  }
   getExplorerTransferBadges() {
-    const badges = /* @__PURE__ */ new Map();
+    const aggregate = /* @__PURE__ */ new Map();
+    const exactTransferPaths = /* @__PURE__ */ new Set();
     for (const transfer of this.binaryTransferState.values()) {
       const activeUpload = transfer.kind === "upload" && (transfer.status === "preparing" || transfer.status === "uploading" || transfer.status === "canceling" || transfer.status === "committing");
       const activeDownload = transfer.kind === "download" && (transfer.status === "preparing" || transfer.status === "downloading");
       if (!activeUpload && !activeDownload) {
         continue;
       }
-      badges.set((0, import_obsidian9.normalizePath)(transfer.localPath), {
-        label: this.formatBinaryTransferPercentLabel(transfer),
-        kind: transfer.kind
-      });
+      exactTransferPaths.add((0, import_obsidian9.normalizePath)(transfer.localPath));
+      this.addExplorerTransferProgress(
+        aggregate,
+        transfer.localPath,
+        transfer.kind,
+        Math.max(0, transfer.bytesDone),
+        Math.max(0, transfer.bytesTotal)
+      );
     }
     for (const placeholderPath of this.fileBridge.getProtectedRemoteBinaryPlaceholderPaths()) {
       const normalizedPath = (0, import_obsidian9.normalizePath)(placeholderPath);
-      if (badges.has(normalizedPath)) {
+      if (exactTransferPaths.has(normalizedPath)) {
         continue;
       }
-      badges.set(normalizedPath, {
-        label: "0%",
-        kind: "download"
-      });
+      exactTransferPaths.add(normalizedPath);
+      const entry = this.resolveEntryByLocalPath(normalizedPath);
+      this.addExplorerTransferProgress(
+        aggregate,
+        normalizedPath,
+        "download",
+        0,
+        entry?.blob?.sizeBytes ?? 1
+      );
     }
-    return badges;
+    for (const [workspaceId, runtime] of this.roomRuntime.entries()) {
+      for (const lockedPath of runtime.markdownBootstrap.lockedLocalPaths) {
+        const normalizedPath = (0, import_obsidian9.normalizePath)(lockedPath);
+        if (this.isExplorerPathUploading(normalizedPath) || exactTransferPaths.has(normalizedPath)) {
+          continue;
+        }
+        const progress = this.getMarkdownLockProgress(workspaceId, normalizedPath);
+        this.addExplorerTransferProgress(
+          aggregate,
+          normalizedPath,
+          "download",
+          progress.completedBytes,
+          progress.totalBytes
+        );
+      }
+    }
+    for (const pendingCreate of Object.values(this.data.pendingMarkdownCreates)) {
+      const normalizedPath = (0, import_obsidian9.normalizePath)(pendingCreate.localPath);
+      if (exactTransferPaths.has(normalizedPath)) {
+        continue;
+      }
+      exactTransferPaths.add(normalizedPath);
+      this.addExplorerTransferProgress(
+        aggregate,
+        normalizedPath,
+        "upload",
+        0,
+        this.getLocalFileSizeOrOne(normalizedPath)
+      );
+    }
+    for (const pendingMerge of Object.values(this.data.pendingMarkdownMerges)) {
+      const normalizedPath = (0, import_obsidian9.normalizePath)(pendingMerge.localPath);
+      if (exactTransferPaths.has(normalizedPath)) {
+        continue;
+      }
+      exactTransferPaths.add(normalizedPath);
+      this.addExplorerTransferProgress(
+        aggregate,
+        normalizedPath,
+        "upload",
+        0,
+        this.getLocalFileSizeOrOne(normalizedPath)
+      );
+    }
+    for (const pendingWrite of Object.values(this.data.pendingBinaryWrites)) {
+      const normalizedPath = (0, import_obsidian9.normalizePath)(pendingWrite.localPath);
+      if (exactTransferPaths.has(normalizedPath)) {
+        continue;
+      }
+      exactTransferPaths.add(normalizedPath);
+      this.addExplorerTransferProgress(
+        aggregate,
+        normalizedPath,
+        "upload",
+        0,
+        this.getLocalFileSizeOrOne(normalizedPath)
+      );
+    }
+    return new Map(
+      [...aggregate.entries()].map(([localPath, state]) => [
+        localPath,
+        {
+          label: this.formatExplorerTransferAggregatePercentLabel(state),
+          kind: state.kind
+        }
+      ])
+    );
+  }
+  addExplorerTransferProgress(aggregate, localPath, kind, completedBytes, totalBytes) {
+    const normalizedPath = (0, import_obsidian9.normalizePath)(localPath);
+    this.mergeExplorerTransferProgress(aggregate, normalizedPath, kind, completedBytes, totalBytes);
+    const room = this.resolveDownloadedRoomByLocalPath(normalizedPath);
+    if (!room) {
+      return;
+    }
+    const roomRoot = (0, import_obsidian9.normalizePath)(getRoomRoot(this.data.settings.syncRoot, room.folderName));
+    let parentPath = getParentPath2(normalizedPath);
+    while (parentPath) {
+      if (parentPath !== roomRoot && !parentPath.startsWith(`${roomRoot}/`)) {
+        break;
+      }
+      this.mergeExplorerTransferProgress(aggregate, parentPath, kind, completedBytes, totalBytes);
+      if (parentPath === roomRoot) {
+        break;
+      }
+      parentPath = getParentPath2(parentPath);
+    }
+  }
+  mergeExplorerTransferProgress(aggregate, localPath, kind, completedBytes, totalBytes) {
+    const normalizedTotalBytes = Math.max(1, Math.trunc(totalBytes));
+    const normalizedCompletedBytes = Math.max(
+      0,
+      Math.min(Math.trunc(completedBytes), normalizedTotalBytes)
+    );
+    const existing = aggregate.get(localPath);
+    if (!existing) {
+      aggregate.set(localPath, {
+        kind,
+        completedBytes: normalizedCompletedBytes,
+        totalBytes: normalizedTotalBytes,
+        itemCount: 1
+      });
+      return;
+    }
+    aggregate.set(localPath, {
+      kind: existing.kind === "download" || kind === "download" ? "download" : "upload",
+      completedBytes: existing.completedBytes + normalizedCompletedBytes,
+      totalBytes: existing.totalBytes + normalizedTotalBytes,
+      itemCount: existing.itemCount + 1
+    });
+  }
+  formatExplorerTransferAggregatePercentLabel(state) {
+    if (state.totalBytes <= 0) {
+      return "0%";
+    }
+    const percent = Math.round(state.completedBytes / state.totalBytes * 100);
+    return `${Math.max(0, Math.min(100, percent))}%`;
+  }
+  getMarkdownLockProgress(workspaceId, localPath) {
+    const runtime = this.roomRuntime.get(workspaceId);
+    const room = this.getDownloadedRooms().find((entry2) => entry2.workspaceId === workspaceId);
+    if (!runtime || !room) {
+      return {
+        completedBytes: 0,
+        totalBytes: 1
+      };
+    }
+    const serverPath = toServerPathForRoom(localPath, this.data.settings.syncRoot, room.folderName);
+    const entry = serverPath ? runtime.treeStore.getEntryByPath(serverPath) : null;
+    if (!entry) {
+      return {
+        completedBytes: 0,
+        totalBytes: 1
+      };
+    }
+    const totalBytes = Math.max(
+      1,
+      runtime.markdownBootstrap.documentBytesByEntryId.get(entry.id) ?? 1
+    );
+    const completed = runtime.markdownBootstrap.completedEntryIds.has(entry.id) || this.hasPersistedCrdtCache(entry.id);
+    return {
+      completedBytes: completed ? totalBytes : 0,
+      totalBytes
+    };
+  }
+  getLocalFileSizeOrOne(localPath) {
+    const file = this.app.vault.getAbstractFileByPath(localPath);
+    if (file instanceof import_obsidian9.TFile && Number.isFinite(file.stat.size) && file.stat.size > 0) {
+      return file.stat.size;
+    }
+    return 1;
+  }
+  isExplorerPathUploading(localPath) {
+    const normalizedPath = (0, import_obsidian9.normalizePath)(localPath);
+    if (normalizedPath in this.data.pendingMarkdownCreates) {
+      return true;
+    }
+    if (normalizedPath in this.data.pendingBinaryWrites) {
+      return true;
+    }
+    if (Object.values(this.data.pendingMarkdownMerges).some((entry) => {
+      return (0, import_obsidian9.normalizePath)(entry.localPath) === normalizedPath;
+    })) {
+      return true;
+    }
+    const transfer = this.binaryTransferState.get(normalizedPath);
+    return Boolean(
+      transfer && transfer.kind === "upload" && (transfer.status === "preparing" || transfer.status === "uploading" || transfer.status === "canceling" || transfer.status === "committing")
+    );
   }
   updateExplorerTransferBadge(element2, badgeState) {
     const titleHost = this.findExplorerTitleHost(element2);
@@ -18977,9 +19827,11 @@ ${keptTail}`;
     if (!badge) {
       badge = document.createElement("span");
       badge.className = "rolay-transfer-progress-badge";
-      const notePresenceBadge = titleHost.querySelector(".rolay-note-presence-badge");
-      if (notePresenceBadge) {
-        titleHost.insertBefore(badge, notePresenceBadge);
+      const presenceBadge = titleHost.querySelector(
+        ".rolay-note-presence-badge, .rolay-note-anonymous-presence-badge"
+      );
+      if (presenceBadge) {
+        titleHost.insertBefore(badge, presenceBadge);
       } else {
         titleHost.appendChild(badge);
       }
@@ -18995,19 +19847,14 @@ ${keptTail}`;
   findExplorerTitleHost(element2) {
     return element2.querySelector(".nav-file-title-content") ?? element2.querySelector(".tree-item-inner");
   }
-  formatBinaryTransferPercentLabel(transfer) {
-    const totalBytes = Math.max(0, transfer.bytesTotal);
-    const doneBytes = Math.min(Math.max(0, transfer.bytesDone), totalBytes);
-    if (totalBytes <= 0) {
-      return transfer.status === "committing" ? "100%" : "0%";
-    }
-    return `${Math.max(0, Math.min(100, Math.round(doneBytes / totalBytes * 100)))}%`;
-  }
   getLoadingExplorerPaths() {
     const loadingPaths = /* @__PURE__ */ new Set();
+    const uploadingPaths = this.getUploadingExplorerPaths();
     for (const runtime of this.roomRuntime.values()) {
       for (const lockedPath of runtime.markdownBootstrap.lockedLocalPaths) {
-        loadingPaths.add(lockedPath);
+        if (!uploadingPaths.has(lockedPath)) {
+          loadingPaths.add(lockedPath);
+        }
       }
     }
     for (const placeholderPath of this.fileBridge.getProtectedRemoteBinaryPlaceholderPaths()) {
@@ -19069,21 +19916,28 @@ ${keptTail}`;
   getNotePresenceForLocalPath(localPath) {
     const room = this.resolveDownloadedRoomByLocalPath(localPath);
     if (!room) {
-      return [];
+      return createEmptyNotePresenceDisplayState();
     }
     const serverPath = toServerPathForRoom(localPath, this.data.settings.syncRoot, room.folderName);
     if (!serverPath) {
-      return [];
+      return createEmptyNotePresenceDisplayState();
     }
     const entry = this.getRoomStore(room.workspaceId)?.getEntryByPath(serverPath);
     if (!entry || entry.deleted || entry.kind !== "markdown") {
-      return [];
+      return createEmptyNotePresenceDisplayState();
     }
     return this.getNotePresenceForEntry(room.workspaceId, entry.id);
   }
   getNotePresenceForEntry(workspaceId, entryId) {
-    const viewers = this.roomRuntime.get(workspaceId)?.notePresenceByEntryId.get(entryId) ?? [];
-    return [...viewers];
+    const runtime = this.roomRuntime.get(workspaceId);
+    if (!runtime) {
+      return createEmptyNotePresenceDisplayState();
+    }
+    const viewers = runtime.notePresenceByEntryId.get(entryId) ?? [];
+    return {
+      viewers: this.mergeLocalNotePresenceViewer(workspaceId, entryId, viewers),
+      anonymousViewerCount: runtime.noteAnonymousViewerCountByEntryId.get(entryId) ?? 0
+    };
   }
   applyNotePresenceSnapshot(workspaceId, payload) {
     const snapshot = extractNotePresenceSnapshotPayload(payload);
@@ -19092,11 +19946,14 @@ ${keptTail}`;
     }
     const runtime = this.ensureRoomRuntime(workspaceId);
     runtime.notePresenceByEntryId.clear();
+    runtime.noteAnonymousViewerCountByEntryId.clear();
     for (const note of snapshot.notes) {
-      if (note.viewers.length === 0) {
-        continue;
+      if (note.viewers.length > 0) {
+        runtime.notePresenceByEntryId.set(note.entryId, note.viewers);
       }
-      runtime.notePresenceByEntryId.set(note.entryId, note.viewers);
+      if (note.anonymousViewerCount > 0) {
+        runtime.noteAnonymousViewerCountByEntryId.set(note.entryId, note.anonymousViewerCount);
+      }
     }
     this.scheduleExplorerLoadingDecorations();
     this.scheduleNotePresenceUiRefresh();
@@ -19111,6 +19968,11 @@ ${keptTail}`;
       runtime.notePresenceByEntryId.delete(update.entryId);
     } else {
       runtime.notePresenceByEntryId.set(update.entryId, update.viewers);
+    }
+    if (update.anonymousViewerCount <= 0) {
+      runtime.noteAnonymousViewerCountByEntryId.delete(update.entryId);
+    } else {
+      runtime.noteAnonymousViewerCountByEntryId.set(update.entryId, update.anonymousViewerCount);
     }
     this.scheduleExplorerLoadingDecorations();
     this.scheduleNotePresenceUiRefresh();
@@ -19362,6 +20224,27 @@ ${keptTail}`;
     }
     this.clearBinaryTransferState(normalizedLocalPath);
   }
+  async cancelRoomBinaryTransfers(workspaceId, reason) {
+    for (const localPath of [...this.binarySyncTokens.keys()]) {
+      const room = this.resolveDownloadedRoomByLocalPath(localPath);
+      if (room?.workspaceId !== workspaceId) {
+        continue;
+      }
+      this.invalidateBinarySyncToken(localPath);
+      this.pendingBinarySyncReruns.delete((0, import_obsidian9.normalizePath)(localPath));
+    }
+    const transfers = this.getBinaryTransfersForWorkspace(workspaceId);
+    if (transfers.length === 0) {
+      return;
+    }
+    this.recordLog(
+      "blob",
+      `[${workspaceId}] Canceling ${transfers.length} active binary transfer(s) because room sync was disconnected.`
+    );
+    await Promise.all(
+      transfers.map((transfer) => this.cancelBinaryTransferForLocalPath(transfer.localPath, reason))
+    );
+  }
   findDownloadingBinaryPathAtOrBelow(localPath) {
     const normalizedLocalPath = (0, import_obsidian9.normalizePath)(localPath);
     for (const transfer of this.binaryTransferState.values()) {
@@ -19553,13 +20436,29 @@ ${keptTail}`;
     return false;
   }
   registerPendingLocalDelete(workspaceId, path) {
-    this.pendingLocalDeletes.add(this.buildPendingRoomPathKey(workspaceId, path));
+    this.pendingLocalDeletes.set(this.buildPendingRoomPathKey(workspaceId, path), Date.now());
   }
   clearPendingLocalDelete(workspaceId, path) {
     this.pendingLocalDeletes.delete(this.buildPendingRoomPathKey(workspaceId, path));
   }
   hasPendingLocalDelete(workspaceId, path) {
-    return this.pendingLocalDeletes.has(this.buildPendingRoomPathKey(workspaceId, path));
+    const prefix = `${workspaceId}::`;
+    const normalizedPath = (0, import_obsidian9.normalizePath)(path);
+    const now = Date.now();
+    for (const [key, createdAt] of [...this.pendingLocalDeletes.entries()]) {
+      if (now - createdAt > _RolayPlugin.PENDING_DELETE_GUARD_MS) {
+        this.pendingLocalDeletes.delete(key);
+        continue;
+      }
+      if (!key.startsWith(prefix)) {
+        continue;
+      }
+      const pendingPath = key.slice(prefix.length);
+      if (normalizedPath === pendingPath || normalizedPath.startsWith(`${pendingPath}/`)) {
+        return true;
+      }
+    }
+    return false;
   }
   clearPendingRoomPathsForWorkspace(workspaceId) {
     const prefix = `${workspaceId}::`;
@@ -19568,7 +20467,7 @@ ${keptTail}`;
         this.pendingLocalCreates.delete(key);
       }
     }
-    for (const key of [...this.pendingLocalDeletes]) {
+    for (const key of [...this.pendingLocalDeletes.keys()]) {
       if (key.startsWith(prefix)) {
         this.pendingLocalDeletes.delete(key);
       }
@@ -19600,6 +20499,22 @@ ${keptTail}`;
         continue;
       }
       this.clearPendingLocalCreate(workspaceId, entry.path);
+    }
+  }
+  confirmSnapshotPendingDeletes(workspaceId, entries) {
+    const prefix = `${workspaceId}::`;
+    const activePaths = entries.filter((entry) => !entry.deleted).map((entry) => (0, import_obsidian9.normalizePath)(entry.path));
+    for (const key of [...this.pendingLocalDeletes.keys()]) {
+      if (!key.startsWith(prefix)) {
+        continue;
+      }
+      const pendingPath = key.slice(prefix.length);
+      const stillActive = activePaths.some((activePath) => {
+        return activePath === pendingPath || activePath.startsWith(`${pendingPath}/`);
+      });
+      if (!stillActive) {
+        this.pendingLocalDeletes.delete(key);
+      }
     }
   }
   buildRemoteObservedPathKey(workspaceId, localPath) {
@@ -19695,6 +20610,12 @@ ${keptTail}`;
       return false;
     }
     return toServerPathForRoom(localPath, this.data.settings.syncRoot, folderName) !== null;
+  }
+  isRoomSyncActive(workspaceId) {
+    const runtime = this.roomRuntime.get(workspaceId);
+    return Boolean(
+      !this.isUnloading && runtime && runtime.streamStatus !== "stopped" && this.getStoredRoomBinding(workspaceId)?.downloaded
+    );
   }
   isFolderNameUsedByAnotherRoom(workspaceId, folderName) {
     for (const room of this.roomList) {
@@ -19838,6 +20759,16 @@ ${keptTail}`;
     }
     this.roomInvites.set(invite.workspaceId, invite);
     this.patchInviteEnabled(invite.workspaceId, invite.enabled);
+    this.updateStatusBar();
+  }
+  applySettingsRoomPublicationUpdate(update) {
+    if (!update) {
+      return;
+    }
+    this.patchRoomPublication(
+      update.workspaceId,
+      normalizeRoomPublicationState(update.publication, update.workspaceId)
+    );
     this.updateStatusBar();
   }
   applySettingsManagedUserUpsert(user) {
@@ -20516,7 +21447,7 @@ ${keptTail}`;
     );
   }
   async fetchMarkdownTargetsFromBootstrap(workspaceId, targets, reason, updateLocks) {
-    if (targets.length === 0) {
+    if (targets.length === 0 || !this.isRoomSyncActive(workspaceId)) {
       return;
     }
     const targetsByEntryId = new Map(
@@ -20526,6 +21457,9 @@ ${keptTail}`;
       entryIds: [...targetsByEntryId.keys()],
       includeState: false
     });
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     if (metadataResponse.encoding !== "base64") {
       throw new Error(`Unsupported markdown bootstrap encoding: ${metadataResponse.encoding}`);
     }
@@ -20544,6 +21478,9 @@ ${keptTail}`;
         entryIds: batch.map((entry) => entry.id),
         includeState: true
       });
+      if (!this.isRoomSyncActive(workspaceId)) {
+        return;
+      }
       if (response.encoding !== "base64") {
         throw new Error(`Unsupported markdown bootstrap encoding: ${response.encoding}`);
       }
@@ -20554,6 +21491,9 @@ ${keptTail}`;
         response.documents.map((document2) => [document2.entryId, document2])
       );
       for (const entry of batch) {
+        if (!this.isRoomSyncActive(workspaceId)) {
+          return;
+        }
         const target = targetsByEntryId.get(entry.id);
         const document2 = responseByEntryId.get(entry.id);
         if (!target || !document2?.state) {
@@ -20688,6 +21628,8 @@ ${keptTail}`;
     runtime.markdownBootstrap.completedTargets = 0;
     runtime.markdownBootstrap.totalBytes = 0;
     runtime.markdownBootstrap.completedBytes = 0;
+    runtime.markdownBootstrap.documentBytesByEntryId.clear();
+    runtime.markdownBootstrap.completedEntryIds.clear();
     runtime.markdownBootstrap.hydratedTargets = 0;
     runtime.markdownBootstrap.lastError = null;
     this.scheduleExplorerLoadingDecorations();
@@ -20720,6 +21662,8 @@ ${keptTail}`;
     runtime.markdownBootstrap.completedTargets = 0;
     runtime.markdownBootstrap.totalBytes = 0;
     runtime.markdownBootstrap.completedBytes = 0;
+    runtime.markdownBootstrap.documentBytesByEntryId.clear();
+    runtime.markdownBootstrap.completedEntryIds.clear();
     runtime.markdownBootstrap.hydratedTargets = 0;
     runtime.markdownBootstrap.lastRunAt = (/* @__PURE__ */ new Date()).toISOString();
     runtime.markdownBootstrap.lastError = null;
@@ -20747,6 +21691,12 @@ ${keptTail}`;
       const metadataByEntryId = new Map(
         metadataResponse.documents.map((document2) => [document2.entryId, document2])
       );
+      for (const document2 of metadataResponse.documents) {
+        runtime.markdownBootstrap.documentBytesByEntryId.set(
+          document2.entryId,
+          Math.max(0, document2.encodedBytes)
+        );
+      }
       const knownEntries = markdownEntries.filter((entry) => metadataByEntryId.has(entry.id));
       const metadataMissingCount = markdownEntries.length - knownEntries.length;
       runtime.markdownBootstrap.totalTargets = metadataResponse.documentCount > 0 ? metadataResponse.documentCount : metadataResponse.documents.length;
@@ -20804,6 +21754,7 @@ ${keptTail}`;
             0,
             document2.encodedBytes ?? metadataDocument.encodedBytes
           );
+          runtime.markdownBootstrap.completedEntryIds.add(entry.id);
           if (activeFilePath && localPath === activeFilePath) {
             await this.bindActiveMarkdownToCrdt();
           }
@@ -20837,7 +21788,18 @@ ${keptTail}`;
       if (runtime.markdownBootstrap.runToken !== runToken) {
         return;
       }
-      const message = error instanceof Error ? error.message : String(error);
+      const message = getErrorMessage(error);
+      if (isStaleMarkdownBootstrapError(error)) {
+        runtime.markdownBootstrap.lastError = null;
+        runtime.markdownBootstrap.status = "idle";
+        this.recordLog(
+          "crdt",
+          `[${workspaceId}] HTTP markdown bootstrap saw a stale markdown entry; refreshing snapshot before retry.`
+        );
+        this.scheduleSnapshotRefresh(workspaceId, "markdown-bootstrap-stale-entry");
+        this.updateStatusBar();
+        return;
+      }
       runtime.markdownBootstrap.lastError = message;
       runtime.markdownBootstrap.status = "error";
       this.recordLog(
@@ -20946,7 +21908,31 @@ ${keptTail}`;
       };
     });
   }
+  patchRoomPublication(workspaceId, publication) {
+    this.roomList = this.roomList.map((room) => {
+      if (room.workspace.id !== workspaceId) {
+        return room;
+      }
+      return {
+        ...room,
+        publication: normalizeRoomPublicationState(publication, workspaceId)
+      };
+    });
+    this.adminRoomList = this.adminRoomList.map((room) => {
+      if (room.workspace.id !== workspaceId) {
+        return room;
+      }
+      return {
+        ...room,
+        publication: normalizeRoomPublicationState(publication, workspaceId)
+      };
+    });
+  }
   async queueCreateFolder(workspaceId, path) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      this.recordLog("ops", `[${workspaceId}] Ignored local folder create ${path} because the room is disconnected.`);
+      return;
+    }
     this.registerPendingLocalCreate(workspaceId, path);
     let confirmedServerCreate = false;
     try {
@@ -20974,6 +21960,15 @@ ${keptTail}`;
     await this.syncMarkdownCreate(workspaceId, path, localPath, localContent, 0);
   }
   async syncMarkdownCreate(workspaceId, path, localPath, localContent = "", conflictDepth = 0) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      await this.rememberPendingMarkdownCreate(
+        workspaceId,
+        localPath,
+        path,
+        new Error("Room is disconnected; markdown create will retry after reconnect.")
+      );
+      return;
+    }
     this.registerPendingLocalCreate(workspaceId, path);
     let confirmedServerCreate = false;
     try {
@@ -21221,6 +22216,16 @@ ${keptTail}`;
   }
   async queueBinaryWrite(workspaceId, serverPath, localContent, existingEntry) {
     const localPath = (0, import_obsidian9.normalizePath)(this.fileBridge.toLocalPath(workspaceId, serverPath) ?? serverPath);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      this.rememberPendingBinaryWrite(
+        workspaceId,
+        localPath,
+        serverPath,
+        existingEntry?.id ?? null,
+        new Error("Room is disconnected; binary write will retry after reconnect.")
+      );
+      return;
+    }
     if (this.binarySyncTokens.has(localPath)) {
       this.pendingBinarySyncReruns.add(localPath);
       this.rememberPendingBinaryWrite(workspaceId, localPath, serverPath, existingEntry?.id ?? null);
@@ -21257,6 +22262,9 @@ ${keptTail}`;
     let finalEntryId = initialEntryId;
     let createdPlaceholderEntry = null;
     try {
+      if (!this.isRoomSyncActive(workspaceId)) {
+        return;
+      }
       const currentLocalPath = this.getBinarySyncPathForToken(token);
       if (!currentLocalPath) {
         return;
@@ -21296,6 +22304,9 @@ ${keptTail}`;
             },
             `local binary placeholder ${currentServerPath}`
           );
+          if (!this.isRoomSyncActive(workspaceId)) {
+            return;
+          }
           const appliedEntry = response.results.find((result) => result.status === "applied")?.entry ?? null;
           if (appliedEntry) {
             this.optimisticUpsertRoomEntry(workspaceId, appliedEntry);
@@ -21325,6 +22336,9 @@ ${keptTail}`;
         }
         if (!entry) {
           await this.refreshRoomSnapshot(workspaceId, "binary-placeholder-create");
+          if (!this.isRoomSyncActive(workspaceId)) {
+            return;
+          }
           entry = this.getRoomStore(workspaceId)?.getEntryByPath(currentServerPath) ?? null;
           if (entry && entry.kind === "binary") {
             createdPlaceholderEntry = entry;
@@ -21388,6 +22402,9 @@ ${keptTail}`;
         sizeBytes,
         mimeType
       });
+      if (!this.isRoomSyncActive(workspaceId)) {
+        return;
+      }
       this.traceBlob(
         `[${workspaceId}] upload-ticket response entryId=${entry.id} localPath=${desiredLocalPath} serverPath=${desiredServerPath} status=${ticket._meta.status} requestId=${ticket._meta.requestId ?? "-"} alreadyExists=${ticket.alreadyExists} uploadId=${ticket.uploadId} uploadedBytes=${ticket.uploadedBytes} sizeBytes=${ticket.sizeBytes} hash=${ticket.hash}`
       );
@@ -21455,6 +22472,9 @@ ${keptTail}`;
               abortController.signal,
               currentOffset === 0 && nextChunkEnd === totalUploadBytes ? ticket.upload : void 0
             );
+            if (!this.isRoomSyncActive(workspaceId)) {
+              return;
+            }
           } catch (error) {
             const expectedOffset = extractBlobOffsetMismatchExpectedOffset(error, totalUploadBytes);
             if (expectedOffset !== null) {
@@ -21541,6 +22561,9 @@ ${keptTail}`;
       this.traceBlob(
         `[${workspaceId}] commit_blob_revision request entryId=${entry.id} localPath=${desiredLocalPath} hash=${commitHash} sizeBytes=${totalUploadBytes} entryVersion=${entry.entryVersion} path=${entry.path}`
       );
+      if (!this.isRoomSyncActive(workspaceId)) {
+        return;
+      }
       const commitResponse = await this.operationsQueue.enqueue(
         workspaceId,
         {
@@ -21556,6 +22579,9 @@ ${keptTail}`;
         },
         `commit blob revision ${desiredServerPath}`
       );
+      if (!this.isRoomSyncActive(workspaceId)) {
+        return;
+      }
       const committedEntry = commitResponse.results.find((result) => result.status === "applied")?.entry ?? null;
       if (committedEntry) {
         this.optimisticUpsertRoomEntry(workspaceId, committedEntry);
@@ -21724,6 +22750,9 @@ ${keptTail}`;
     }
   }
   async syncBinaryEntriesFromSnapshot(workspaceId, entries, reason) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     for (const entry of entries) {
       if (entry.kind === "binary" && entry.deleted) {
         this.clearPersistedBinaryCacheEntry(entry.id);
@@ -21739,6 +22768,9 @@ ${keptTail}`;
       { length: Math.min(_RolayPlugin.BINARY_DOWNLOAD_CONCURRENCY, queue.length) },
       async () => {
         while (queue.length > 0) {
+          if (!this.isRoomSyncActive(workspaceId)) {
+            return;
+          }
           const entry = queue.shift();
           if (!entry) {
             return;
@@ -21761,6 +22793,9 @@ ${keptTail}`;
     }
   }
   async ensureBinaryEntryDownloaded(workspaceId, entry, reason) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     if (entry.deleted || entry.kind !== "binary" || !entry.blob) {
       return;
     }
@@ -21814,6 +22849,9 @@ ${keptTail}`;
         `[${workspaceId}] download-ticket request entryId=${entry.id} localPath=${localPath} serverPath=${entry.path} expectedHash=${remoteHash} expectedSizeBytes=${remoteSize}`
       );
       const ticket = await this.apiClient.createBlobDownloadTicket(entry.id);
+      if (!this.isRoomSyncActive(workspaceId)) {
+        return;
+      }
       this.traceBlob(
         `[${workspaceId}] download-ticket response entryId=${entry.id} localPath=${localPath} serverPath=${entry.path} status=${ticket._meta.status} requestId=${ticket._meta.requestId ?? "-"} hash=${ticket.hash} sizeBytes=${ticket.sizeBytes} contentUrl=${ticket.contentUrl ?? "-"} rangeSupported=${ticket.rangeSupported === true}`
       );
@@ -21901,6 +22939,9 @@ ${keptTail}`;
           },
           transfer.abortController?.signal
         );
+        if (!this.isRoomSyncActive(workspaceId)) {
+          return;
+        }
         this.traceBlob(
           `[${workspaceId}] blob content response entryId=${entry.id} localPath=${localPath} transport=${download.transport} status=${download.status} requestId=${download.requestId ?? "-"} contentLength=${download.contentLength ?? -1} contentRange=${download.contentRange ?? "-"} acceptRanges=${download.acceptRanges ?? "-"} blobHash=${download.hash ?? "-"}`
         );
@@ -21947,7 +22988,7 @@ ${keptTail}`;
       if (this.isUnloading) {
         return;
       }
-      this.updateBinaryTransferState(localPath, {
+      this.maybeUpdateBinaryTransferState(localPath, {
         status: "failed",
         lastError: error instanceof Error ? error.message : String(error),
         abortController: null
@@ -21955,6 +22996,9 @@ ${keptTail}`;
     }
   }
   async applyDownloadedBinary(workspaceId, entry, localPath, partPath, downloadMeta, reason) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     const downloadData = await this.readBinaryTransferPart(partPath);
     if (!downloadData) {
       throw new Error(`Downloaded binary part for ${entry.path} is missing.`);
@@ -21969,6 +23013,9 @@ ${keptTail}`;
       );
     }
     const computedHash = await sha256Hash(downloadData);
+    if (!this.isRoomSyncActive(workspaceId)) {
+      return;
+    }
     this.traceBlob(
       `[${workspaceId}] download finalize entryId=${entry.id} localPath=${localPath} partPath=${partPath} computedHash=${computedHash} expectedHash=${effectiveHash ?? "-"} sizeBytes=${downloadData.byteLength}`
     );
@@ -22071,6 +23118,13 @@ ${keptTail}`;
     throw new Error(`No free conflict-safe binary path is available for ${desiredServerPath}.`);
   }
   async queueRenameOrMove(workspaceId, entry, newPath, type) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      this.recordLog(
+        "ops",
+        `[${workspaceId}] Ignored local ${type} ${entry.path} -> ${newPath} because the room is disconnected.`
+      );
+      return;
+    }
     this.optimisticUpsertRoomEntry(workspaceId, {
       ...entry,
       path: newPath
@@ -22100,6 +23154,10 @@ ${keptTail}`;
     }
   }
   async queueDeleteEntry(workspaceId, entry) {
+    if (!this.isRoomSyncActive(workspaceId)) {
+      this.recordLog("ops", `[${workspaceId}] Ignored local delete ${entry.path} because the room is disconnected.`);
+      return;
+    }
     this.registerPendingLocalDelete(workspaceId, entry.path);
     this.optimisticDeleteRoomEntry(workspaceId, entry.id);
     try {
@@ -22128,10 +23186,9 @@ ${keptTail}`;
         this.clearPersistedBinaryCacheEntry(entry.id);
       }
     } catch (error) {
+      this.clearPendingLocalDelete(workspaceId, entry.path);
       this.scheduleSnapshotRefresh(workspaceId, "delete-recovery");
       throw error;
-    } finally {
-      this.clearPendingLocalDelete(workspaceId, entry.path);
     }
   }
   findAvailableMarkdownConflictPath(workspaceId, desiredServerPath) {
@@ -22202,7 +23259,9 @@ _RolayPlugin.ENABLE_BLOB_TRANSFER_TRACE = true;
 _RolayPlugin.BINARY_TRANSFER_PARTS_FOLDER = "transfers";
 _RolayPlugin.BINARY_UPLOAD_CHUNK_SIZE = 4 * 1024 * 1024;
 _RolayPlugin.MAX_BINARY_UPLOAD_OFFSET_RECOVERY_ATTEMPTS = 8;
-_RolayPlugin.MAX_LOG_FILE_BYTES = 512 * 1024;
+_RolayPlugin.LOG_FILE_RETENTION_MS = 48 * 60 * 60 * 1e3;
+_RolayPlugin.MAX_LOG_FILE_BYTES = 256 * 1024;
+_RolayPlugin.LOG_FILE_TRIM_TARGET_BYTES = 192 * 1024;
 _RolayPlugin.LOG_FILE_NAME = "rolay-sync.log";
 _RolayPlugin.PENDING_CREATE_CONFIRMATION_TTL_MS = 6e4;
 _RolayPlugin.RECENT_REMOTE_PATH_TTL_MS = 3e4;
@@ -22212,6 +23271,9 @@ _RolayPlugin.ROOM_MARKDOWN_REFRESH_AFTER_SNAPSHOT_MS = 1200;
 _RolayPlugin.MARKDOWN_BOOTSTRAP_BATCH_MAX_DOCS = 8;
 _RolayPlugin.MARKDOWN_BOOTSTRAP_BATCH_TARGET_ENCODED_BYTES = 512 * 1024;
 _RolayPlugin.BINARY_DOWNLOAD_CONCURRENCY = 2;
+_RolayPlugin.PENDING_DELETE_GUARD_MS = 6e4;
+_RolayPlugin.STARTUP_BOOTSTRAP_DELAY_MS = 1500;
+_RolayPlugin.STARTUP_ROOM_CONNECT_STAGGER_MS = 900;
 var RolayPlugin = _RolayPlugin;
 function normalizeSettingsEventEnvelope(event) {
   const rawData = isRecord2(event.data) ? event.data : {};
@@ -22237,6 +23299,8 @@ function inferSettingsScopeFromType(type) {
       return "auth.me";
     case "room.invite.updated":
       return "room.invite";
+    case "room.publication.updated":
+      return "room.publication";
     case "admin.user.created":
     case "admin.user.updated":
     case "admin.user.deleted":
@@ -22294,7 +23358,8 @@ function extractRoomFromSettingsPayload(payload) {
     membershipRole,
     createdAt,
     memberCount,
-    inviteEnabled
+    inviteEnabled,
+    publication: extractRoomPublicationState(candidate.publication, workspace.id) ?? void 0
   };
 }
 function extractAdminRoomFromSettingsPayload(payload) {
@@ -22370,6 +23435,32 @@ function extractAdminRoomMembersPayload(payload) {
     members
   };
 }
+function extractRoomPublicationUpdatedPayload(payload) {
+  if (!isRecord2(payload) || typeof payload.workspaceId !== "string") {
+    return null;
+  }
+  const publication = extractRoomPublicationState(payload.publication, payload.workspaceId);
+  if (!publication) {
+    return null;
+  }
+  return {
+    workspaceId: payload.workspaceId,
+    publication
+  };
+}
+function extractRoomPublicationState(payload, fallbackWorkspaceId) {
+  if (!isRecord2(payload)) {
+    return createDefaultRoomPublicationState(fallbackWorkspaceId);
+  }
+  const workspaceId = typeof payload.workspaceId === "string" && payload.workspaceId.trim() ? payload.workspaceId : fallbackWorkspaceId;
+  const enabled = typeof payload.enabled === "boolean" ? payload.enabled : false;
+  const updatedAt = typeof payload.updatedAt === "string" && payload.updatedAt.trim() ? payload.updatedAt : null;
+  return {
+    workspaceId,
+    enabled,
+    updatedAt
+  };
+}
 function extractNotePresenceSnapshotPayload(payload) {
   if (!isRecord2(payload) || typeof payload.workspaceId !== "string" || !Array.isArray(payload.notes)) {
     return null;
@@ -22388,7 +23479,8 @@ function extractNotePresenceUpdatedPayload(payload) {
   return {
     workspaceId: payload.workspaceId,
     entryId: payload.entryId,
-    viewers
+    viewers,
+    anonymousViewerCount: extractAnonymousViewerCount(payload.anonymousViewerCount)
   };
 }
 function extractNotePresenceSnapshotNote(payload) {
@@ -22398,7 +23490,8 @@ function extractNotePresenceSnapshotNote(payload) {
   const viewers = payload.viewers.map((viewer) => extractNotePresenceViewer(viewer)).filter((viewer) => viewer !== null).sort(compareNotePresenceViewers);
   return {
     entryId: payload.entryId,
-    viewers
+    viewers,
+    anonymousViewerCount: extractAnonymousViewerCount(payload.anonymousViewerCount)
   };
 }
 function extractNotePresenceViewer(payload) {
@@ -22411,6 +23504,18 @@ function extractNotePresenceViewer(payload) {
     displayName: payload.displayName,
     color: payload.color,
     hasSelection: payload.hasSelection
+  };
+}
+function extractAnonymousViewerCount(value) {
+  if (typeof value !== "number" || !Number.isFinite(value) || value <= 0) {
+    return 0;
+  }
+  return Math.trunc(value);
+}
+function createEmptyNotePresenceDisplayState() {
+  return {
+    viewers: [],
+    anonymousViewerCount: 0
   };
 }
 function extractRoomMember(payload) {
@@ -22461,6 +23566,28 @@ function compareRoomMembers(left, right) {
     return left.role === "owner" ? -1 : 1;
   }
   return left.user.username.localeCompare(right.user.username);
+}
+function createDefaultRoomPublicationState(workspaceId) {
+  return {
+    workspaceId,
+    enabled: false,
+    updatedAt: null
+  };
+}
+function normalizeRoomPublicationState(publication, workspaceId) {
+  return extractRoomPublicationState(publication, workspaceId) ?? createDefaultRoomPublicationState(workspaceId);
+}
+function normalizeRoomListItem(room) {
+  return {
+    ...room,
+    publication: normalizeRoomPublicationState(room.publication, room.workspace.id)
+  };
+}
+function normalizeAdminRoomListItem(room) {
+  return {
+    ...room,
+    publication: normalizeRoomPublicationState(room.publication, room.workspace.id)
+  };
 }
 function compareNotePresenceViewers(left, right) {
   const displayNameComparison = left.displayName.localeCompare(right.displayName);
@@ -22532,6 +23659,20 @@ function formatBlobHashMismatchDetails(error) {
   }
   return parts.join(", ");
 }
+function getErrorMessage(error) {
+  return error instanceof Error ? error.message : String(error);
+}
+function isStaleMarkdownBootstrapError(error) {
+  const message = getErrorMessage(error).toLowerCase();
+  return message.includes("markdown entry not found");
+}
+function isRetryableBackgroundMarkdownError(error) {
+  if (error instanceof RolayApiError && [408, 429, 500, 502, 503, 504].includes(error.status)) {
+    return true;
+  }
+  const message = getErrorMessage(error);
+  return message.includes("ERR_CONTENT_LENGTH_MISMATCH") || message.includes("ERR_NETWORK_IO_SUSPENDED") || message.includes("Failed to fetch") || message.includes("NetworkError");
+}
 function clampTransferBytes(value, totalBytes) {
   if (!Number.isFinite(value) || value <= 0) {
     return 0;
@@ -22569,6 +23710,93 @@ function formatPersistentLogLine(entry) {
   const sanitizedMessage = entry.message.replace(/\r?\n/g, " ");
   return `[${entry.at}] ${entry.scope}/${entry.level}: ${sanitizedMessage}
 `;
+}
+function trimRecentLogEntries(entries, nowMs, retentionMs, maxEntries) {
+  const cutoffMs = nowMs - retentionMs;
+  return entries.filter((entry) => {
+    const timestampMs = Date.parse(entry.at);
+    return Number.isFinite(timestampMs) && timestampMs >= cutoffMs;
+  }).slice(-maxEntries);
+}
+function trimPersistentLogByAge(contents, retentionMs, nowMs) {
+  if (!contents) {
+    return contents;
+  }
+  const cutoffMs = nowMs - retentionMs;
+  const lines = splitPersistentLogLines(contents);
+  const keptLines = [];
+  let droppedLineCount = 0;
+  for (const line of lines) {
+    const timestampMs = parsePersistentLogTimestampMs(line);
+    if (timestampMs === null) {
+      if (line.includes("trimmed older Rolay log lines")) {
+        droppedLineCount += 1;
+        continue;
+      }
+      keptLines.push(line);
+      continue;
+    }
+    if (timestampMs >= cutoffMs) {
+      keptLines.push(line);
+    } else {
+      droppedLineCount += 1;
+    }
+  }
+  if (droppedLineCount === 0) {
+    return contents;
+  }
+  const retentionHours = Math.round(retentionMs / (60 * 60 * 1e3));
+  return formatPersistentLogTrimLine(
+    nowMs,
+    `Trimmed ${droppedLineCount} Rolay log line(s) older than ${retentionHours} hours.`
+  ) + keptLines.join("");
+}
+function trimPersistentLogBySize(contents, maxBytes, targetBytes, nowMs) {
+  if (!contents || getTextByteLength(contents) <= maxBytes) {
+    return contents;
+  }
+  const marker = formatPersistentLogTrimLine(
+    nowMs,
+    `Trimmed persistent Rolay log to the newest ${formatByteCount(targetBytes)} because it exceeded ${formatByteCount(
+      maxBytes
+    )}.`
+  );
+  const lines = splitPersistentLogLines(contents);
+  const keptLines = [];
+  let keptBytes = getTextByteLength(marker);
+  for (let index = lines.length - 1; index >= 0; index -= 1) {
+    const line = lines[index];
+    const lineBytes = getTextByteLength(line);
+    if (keptBytes + lineBytes > targetBytes && keptLines.length > 0) {
+      break;
+    }
+    if (keptBytes + lineBytes <= targetBytes) {
+      keptLines.push(line);
+      keptBytes += lineBytes;
+    }
+  }
+  if (keptLines.length === 0) {
+    return marker;
+  }
+  return marker + keptLines.reverse().join("");
+}
+function splitPersistentLogLines(contents) {
+  return contents.match(/[^\r\n]*(?:\r?\n|$)/g)?.filter((line) => line.length > 0) ?? [];
+}
+function parsePersistentLogTimestampMs(line) {
+  const match2 = /^\[([^\]]+)\]/.exec(line);
+  if (!match2) {
+    return null;
+  }
+  const timestampMs = Date.parse(match2[1]);
+  return Number.isFinite(timestampMs) ? timestampMs : null;
+}
+function formatPersistentLogTrimLine(nowMs, message) {
+  return `[${new Date(nowMs).toISOString()}] plugin/info: ${message}
+`;
+}
+function getTextByteLength(text2) {
+  return new TextEncoder().encode(text2).byteLength;
 }
 function getFileName(path) {
   const separatorIndex = path.lastIndexOf("/");
