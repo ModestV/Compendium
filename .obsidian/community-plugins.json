@@ -1,5 +1,4 @@
 [
-  "obsidian-git",
   "obsidian-icon-folder",
   "obsidian-excalidraw-plugin",
   "highlightr-plugin",
@@ -7,14 +6,13 @@
   "obsidian-math-plus",
   "obsidian-plotly",
   "obsidian-latex-suite",
-  "system3-relay",
   "obsidian-full-calendar",
   "callout-manager",
   "obsidian-meta-bind-plugin",
   "text-snippets-obsidian",
   "obsidian-task-progress-bar",
   "obsidian-wrap-with-shortcuts",
-  "rolay",
+  "folder-notes",
   "obsidian42-brat",
-  "folder-notes"
+  "obsidian-git"
 ]
