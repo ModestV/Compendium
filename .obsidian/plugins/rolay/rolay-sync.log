@@ -1356,3 +1356,15 @@
 [2026-05-11T17:18:56.022Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-05-11T17:19:03.077Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
 [2026-05-11T17:19:13.827Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-11T17:19:21.906Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-11T17:19:30.115Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-11T17:19:38.049Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-11T17:19:44.473Z] sse/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Event 443: tree.entry.updated
+[2026-05-11T17:21:52.267Z] tree/info: Fetched snapshot for main150911 with 183 entries (event-stream).
+[2026-05-11T17:21:52.447Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Preloading 56 markdown document(s) via HTTP bootstrap metadata + state batches (event-stream).
+[2026-05-11T17:21:52.487Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 1 state update(s)).
+[2026-05-11T17:21:54.554Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] HTTP markdown bootstrap stored 56 markdown document(s) with 1.27 MB downloaded.
+[2026-05-11T17:22:00.889Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (post-snapshot-background-refresh, 0 state update(s)).
+[2026-05-11T17:22:08.127Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-11T17:22:14.930Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
+[2026-05-11T17:22:21.915Z] crdt/info: [ws_c3f3722a-8d5c-4545-98b7-022ff4ff5768] Refreshed 56/56 closed markdown document(s) via HTTP bootstrap (background-markdown, 0 state update(s)).
